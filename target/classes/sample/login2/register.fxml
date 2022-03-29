@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.RegisterController">
+    <left>
+        <AnchorPane pickOnBounds="false" prefHeight="500.0" prefWidth="320.0" style="-fx-background-color: #21BAB5;" BorderPane.alignment="CENTER">
+            <children>
+                <Circle fill="#1f93ff00" layoutX="160.0" layoutY="250.0" radius="100.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="4.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" />
+                <Line endX="100.0" layoutX="110.0" layoutY="250.0" stroke="WHITE" strokeWidth="4.0" AnchorPane.leftAnchor="108.0" AnchorPane.rightAnchor="108.0" />
+                <Label alignment="CENTER" layoutX="100.0" layoutY="208.0" scaleZ="13.0" text="QUẢN LÝ" textFill="WHITE" textOverrun="CLIP" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                    <font>
+                        <Font name="Calibri Bold" size="32.0" />
+                    </font>
+                    <rotationAxis>
+                        <Point3D x="1.0" z="1.0" />
+                    </rotationAxis>
+                </Label>
+                <Label alignment="CENTER" layoutX="32.0" layoutY="257.0" text="PHÒNG TRỌ" textFill="WHITE" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0">
+                    <font>
+                        <Font name="Calibri" size="18.0" />
+                    </font>
+                </Label>
+                <Label layoutX="58.0" layoutY="14.0" prefHeight="18.0" prefWidth="250.0" text="Quản lý phòng trọ" textFill="WHITE" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="14.0">
+                    <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="60.0" layoutY="32.0" prefHeight="18.0" prefWidth="249.0" text="Dành cho chủ trọ" textFill="WHITE" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="12.0">
+                    <font>
+                        <Font name="Calibri" size="12.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="147.0" layoutY="428.0" text="Copyright by NguyenHung" textFill="WHITE" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0">
+                    <font>
+                        <Font name="Calibri" size="12.0" />
+                    </font></Label>
+                <Circle fill="#21bab5" layoutX="81.0" layoutY="192.0" radius="16.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="4.0" />
+                <Circle fill="#21bab5" layoutX="207.0" layoutY="326.0" radius="35.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="4.0" />
+                <Circle fill="WHITE" layoutX="207.0" layoutY="326.0" radius="18.0" stroke="WHITE" strokeType="INSIDE" />
+            </children>
+        </AnchorPane>
+    </left>
+    <right>
+        <AnchorPane prefHeight="500.0" prefWidth="380.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+            <children>
+            <PasswordField fx:id="passField_confirmPassword" layoutX="32.0" layoutY="273.0" promptText="Nhập lại mật khẩu" style="-fx-background-color: #FFF; -fx-border-color: #5e5e5e; -fx-padding: 8 8;" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="273.0">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </PasswordField>
+                <Label layoutX="32.0" layoutY="49.0" text="Đăng ký tài khoản mới" textFill="#1ed7d1" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="49.0">
+                    <font>
+                        <Font name="Calibri Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Label layoutX="32.0" layoutY="92.0" text="Tên đăng nhập" textFill="#5e5e5e" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="92.0">
+                    <font>
+                        <Font name="Calibri" size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="textField_UserName" layoutX="32.0" layoutY="113.0" promptText="Nguyễn Văn A" style="-fx-border-color: #5E5E5E; -fx-background-color: #FFFFFF; -fx-padding: 8 8;" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0">
+                    <font>
+                        <Font name="Calibri" size="14.0" />
+                    </font>
+                </TextField>
+                <Label layoutX="32.0" layoutY="172.0" text="Mật khẩu" textFill="#5e5e5e" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="172.0">
+                    <font>
+                        <Font name="Calibri" size="14.0" />
+                    </font>
+                </Label>
+                <CheckBox layoutX="32.0" layoutY="332.0" mnemonicParsing="false" text="Đồng ý với" textFill="#797979" AnchorPane.leftAnchor="32.0">
+                    <font>
+                        <Font name="Calibri" size="14.0" />
+                    </font>
+                </CheckBox>
+                <Button fx:id="button_Register" layoutX="32.0" layoutY="375.0" mnemonicParsing="false" onAction="#button_RegisterOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #21BAB5; -fx-border-radius: 0; -fx-font-size: 16px; -fx-font-weight: bold; -fx-font-family: &quot;roboto&quot;, sans-serif;" text="Đăng ký" textFill="WHITE" AnchorPane.bottomAnchor="83.0" AnchorPane.leftAnchor="32.0">
+                    <font>
+                        <Font name="Calibri" size="18.0" />
+                    </font>
+                </Button>
+                <Label layoutX="342.0" layoutY="475.0" text="V.0.01" textFill="#797979">
+                    <font>
+                        <Font size="10.0" />
+                    </font>
+                </Label>
+            <Label layoutX="32.0" layoutY="252.0" text="Xác nhận mật khẩu" textFill="#5e5e5e" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="252.0">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="passField_Password" layoutX="32.0" layoutY="193.0" promptText="Nhập mật khẩu" style="-fx-background-color: #FFF; -fx-border-color: #5e5e5e; -fx-padding: 8 8;" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </PasswordField>
+            <Label layoutX="121.0" layoutY="333.0" text="Điều khoản và dịch vụ" textFill="#0a7aff" AnchorPane.leftAnchor="121.0" AnchorPane.rightAnchor="32.0">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="buttonBackLogin" layoutX="114.0" layoutY="426.0" mnemonicParsing="false" onAction="#buttonBackLoginOnAction" style="-fx-background-color: #FFF;" text="Đăng nhập" textFill="#0a7aff">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="32.0" layoutY="431.0" text="Đã có tài khoản">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="message_UserName" alignment="CENTER_RIGHT" layoutX="32.0" layoutY="152.0" textFill="#fd3d39" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="message_Password" alignment="CENTER_RIGHT" layoutX="32.0" layoutY="232.0" textFill="#fd3d39" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="message_confirmPassword" alignment="CENTER_RIGHT" layoutX="32.0" layoutY="312.0" textFill="#fd3d39" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" />
+            </children>
+        </AnchorPane>
+    </right>
+</BorderPane>

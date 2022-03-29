@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="700.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Register_2Controller">
+   <children>
+      <Pane prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: #163A5F;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <FontAwesomeIconView fill="WHITE" glyphName="HOME" layoutX="14.0" layoutY="33.0" size="20" />
+            <Label layoutX="45.0" layoutY="14.0" text="Đăng ký tài khoản" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="button_backLogin" contentDisplay="RIGHT" layoutX="529.0" layoutY="14.0" mnemonicParsing="false" onAction="#button_backLoginOnAction" style="-fx-background-color: #163A5F;" text="Trở về trang đăng nhập" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="ARROW_RIGHT" />
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <Accordion layoutX="249.0" layoutY="213.0" />
+      <VBox layoutX="150.0" layoutY="81.0" prefHeight="400.0" prefWidth="400.0" spacing="12.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="81.0">
+         <children>
+            <VBox prefHeight="52.0" prefWidth="100.0" spacing="8.0">
+               <children>
+                  <Label text="Họ và Tên" textFill="#163a5f">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textField_name" promptText="VD: Nguyễn Văn A" style="-fx-background-color: #FFF; -fx-border-color: #797979; -fx-padding: 8 12;" />
+                  <Label fx:id="message_name" alignment="CENTER_RIGHT" prefWidth="400.0" textFill="#fd3d39" />
+               </children>
+            </VBox>
+            <VBox prefHeight="52.0" prefWidth="100.0" spacing="8.0">
+               <children>
+                  <Label text="Giới tính" textFill="#163a5f">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textField_gender" promptText="VD: Nam" style="-fx-background-color: #FFF; -fx-border-color: #797979; -fx-padding: 8 12;" />
+                  <Label fx:id="message_gender" alignment="CENTER_RIGHT" prefWidth="400.0" textFill="#fd3d39" />
+               </children>
+            </VBox>
+            <VBox prefHeight="52.0" prefWidth="100.0" spacing="8.0">
+               <children>
+                  <Label text="Ngày sinh" textFill="#163a5f">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="textField_dateTime" prefHeight="35.0" prefWidth="400.0" promptText="VD: 10/10/2002" style="-fx-background-color: #FFF; -fx-border-color: #797979; -fx-padding: 4 12;" />
+                  <Label fx:id="message_dateTime" alignment="CENTER_RIGHT" prefWidth="400.0" textFill="#fd3d39" />
+               </children>
+            </VBox>
+            <VBox prefHeight="52.0" prefWidth="100.0" spacing="8.0">
+               <children>
+                  <Label text="Số điện thoại" textFill="#163a5f">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textField_numberPhone" promptText="VD: 0123456789" style="-fx-background-color: #FFF; -fx-border-color: #797979; -fx-padding: 8 12;" />
+                  <Label fx:id="message_numberPhone" alignment="CENTER_RIGHT" prefWidth="400.0" textFill="#fd3d39" />
+               </children>
+            </VBox>
+            <VBox prefHeight="52.0" prefWidth="100.0" spacing="8.0">
+               <children>
+                  <Label text="Địa chỉ" textFill="#163a5f">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textField_address" promptText="VD: 448, Lê Văn Việt, Tăng Nhơn Phú A, TP. Thủ Đức" style="-fx-background-color: #FFF; -fx-border-color: #797979; -fx-padding: 8 12;" />
+                  <Label fx:id="message_address" alignment="CENTER_RIGHT" prefWidth="400.0" textFill="#fd3d39" />
+               </children>
+            </VBox>
+            <Button fx:id="button_confirm" mnemonicParsing="false" onAction="#button_confirmOnAction" prefHeight="25.0" prefWidth="400.0" style="-fx-background-color: #21BAB5; -fx-padding: 8 12; -fx-border-radius: 0;" text="Xác nhận" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
