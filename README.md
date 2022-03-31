@@ -1,49 +1,58 @@
-# BLT_Java-Database
+## Bài tập lớn môn **Công Nghệ JAVA**
 
-@Authorities:
-- Nguyen Ho Hung
-- Mai Danh Dung
-- Duong Van Hoang
-- Dang Dinh Sang 
-- Kieu Dat Quoc Hung
+### Phần mềm quản lý phòng trọ (Dành cho chủ nhà trọ)
 
-@Topics:
-- English name: Room management software
-- Vietnamese name: Phần mềm quản lý phòng trọ
+#### :clipboard: Target
 
-@Function:
-- Đăng ký
-- Đăng nhập
-- Thêm dãy trọ, phòng trọ, người dùng
-- Tìm kiếm dãy trọ, phòng trọ
-- Chỉnh sửa thông tin dãy trọ, phòng trọ, người dùng
-- Xóa dãy trọ, phòng trọ, người dùng
-- Tính tổng tiền người dùng chưa thanh toán
-- Hiển thị danh sách người chưa thanh toán
-- Hiển thị danh sách phòng trọ đang trống
+Trong quá trình xây dựng một phần mềm quản lý, phân tích hệ thống thông tin đóng vai trò rất quan trọng. Có thông tin logic, chính xác với thực tế thì việc lên ý tưởng, xây dựng và thực hiện sản xuất phần mềm mới tối ưu, phù hợp với người sử dụng. Mục tiêu đặt ra là tạo một sản phẩm có các chức năng cơ bản như thêm, sửa, xóa, tìm kiếm. Bằng việc sử dụng các thư viện cơ bản của java, nhóm muốn tạo nên một sản phẩm có giao diện trực quan giống với các phần mềm thực tế trong đó phần mềm có các chức năng, tác vụ cơ bản phù hợp với kiến thức cũng như quy mô hiện tại của nhóm.
 
-@Language:
-- JavaFX 
-- FXML
-- CSS
+#### :speaker: Limit
 
-@Database:
-- MySQL
-- SQL workbench
+Phần mềm Quản Lý Phòng Trọ (Dành cho chủ trọ) sẽ quản lý dãy trọ bao gồm những phòng nào. Mỗi phòng sẽ có mã riêng để quản lý. Quản lý số lượng, thông tin của người sử dụng phòng, tổng tiền cần phải thanh toán trong 1 tháng. Các tác vụ mà phần mềm sẽ có như là: Thêm, sửa, xóa, tìm kiếm các đối tượng trọ hay người sử dụng trọ.
 
-@IDE:
-- IntelliJ IDEA
-- Scene Builder
+#### Environment
 
-@Library:
-- Maven - version: 4.0.0
-- Java 8
-- JavaFX - SDK version: 18
-- Font Awesome - version: 9.2.1
-- JDK
+- JAVA: https://www.oracle.com/java/technologies/downloads/
+- SDK: https://gluonhq.com/products/javafx/
 
-@Document:
-- https://openjfx.io/
-- https://fontawesome.com/
+#### JAR
+- FontAwesomeFX_commons_9.1.2
+- FontAwesomeFX_controls_9.1.2
+- FontAwesomeFX_FontAwesome_9.1.2
+- mysql_connector_java_8.0.28
 
-Update...
+#### Libraries
+- JavaFX: https://openjfx.io/
+- Maven: https://maven.apache.org/
+- FXML: https://docs.oracle.com/javafx/2/get_started/fxml_tutorial.htm
+
+#### IDE
+- Scene Builder: https://gluonhq.com/products/scene-builder/
+- Intellij 2021.3.3
+- MySQL, MySQL WorkBench
+
+#### What's included?
+- FXML: Thiết kế UI cho chương trình
+- JAR: Chứa các thư viện bên ngoài
+- Image: Chứa các hình ảnh sử dụng trong chương trình
+- Icon: Chứa các bộ icon không nằm trong thư viện icon fontAwesome
+- src: chứa mã nguồn chính của chương trình
+    - Main: Chạy chương trình chính
+    - Controller: Bắt sự kiên của người dùng
+    - DatabaseConnection: Liên kết với Database
+
+#### How to Use?
+- Comming soon
+
+#### :v: Member
+- Dương Văn Hoàng
+- Đặng Đình Sang
+- Mai Danh Dũng
+- Kiều Đạt Quốc Hưng
+- Nguyễn Hồ Hưng
+
+#### :mag_right: Place
+- English name: University of Transport and Communications campus in HCMC
+- Vietnamese name: Trường Đại Học Giao Thông Vận Tải phân hiệu tại TP.Hồ Chí Minh
+
+### Update Comming Soon
