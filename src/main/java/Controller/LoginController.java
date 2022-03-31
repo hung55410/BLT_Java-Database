@@ -18,19 +18,13 @@ import java.sql.ResultSet;
 
 public class LoginController {
     @FXML
-    private Button buttonLogin;
+    private Button buttonLogin, buttonRegister;
     @FXML
-    private Label message_Password;
-    @FXML
-    private Label message_UserName;
+    private Label message_Password, message_UserName, message_User_Password;
     @FXML
     private TextField textField_UserName;
     @FXML
     private PasswordField passField_Password;
-    @FXML
-    private Label message_User_Password;
-    @FXML
-    private Button buttonRegister;
 
 
     public void buttonLoginOnAction(ActionEvent e) {

@@ -12,25 +12,11 @@ import java.io.IOException;
 
 public class Register_2Controller {
     @FXML
-    private TextField textField_name;
-    @FXML
-    private Label message_name;
+    private TextField textField_name, textField_numberPhone, textField_address, textField_gender;
     @FXML
     private DatePicker textField_dateTime;
     @FXML
-    private TextField textField_numberPhone;
-    @FXML
-    private Label message_numberPhone;
-    @FXML
-    private TextField textField_address;
-    @FXML
-    private Label message_address;
-    @FXML
-    private Label message_dateTime;
-    @FXML
-    private TextField textField_gender;
-    @FXML
-    private Label message_gender;
+    private Label message_name, message_numberPhone, message_address, message_dateTime, message_gender;
     @FXML
     private Button button_backLogin;
 

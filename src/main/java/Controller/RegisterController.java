@@ -20,21 +20,13 @@ import java.sql.ResultSet;
 
 public class RegisterController {
     @FXML
-    private Button buttonBackLogin;
+    private Button buttonBackLogin, button_Register;
     @FXML
     private TextField textField_UserName;
     @FXML
-    private PasswordField passField_Password;
+    private PasswordField passField_Password, passField_confirmPassword;
     @FXML
-    private PasswordField passField_confirmPassword;
-    @FXML
-    private Label message_UserName;
-    @FXML
-    private Label message_Password;
-    @FXML
-    private Label message_confirmPassword;
-    @FXML
-    private  Button button_Register;
+    private Label message_UserName, message_Password, message_confirmPassword;
 
 
 //  Bắt sự kiện
