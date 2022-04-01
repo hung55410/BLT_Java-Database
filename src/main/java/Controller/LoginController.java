@@ -116,5 +116,4 @@ public class LoginController {
         passField_Password.setStyle("-fx-border-color: #fd3d39; -fx-padding: 8 8; -fx-background-color: #FFFFFF;");
     }
 //    End common
-
 }
