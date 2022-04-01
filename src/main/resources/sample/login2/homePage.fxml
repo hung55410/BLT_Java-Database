@@ -19,7 +19,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="809.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomePageController">
     <children>
-        <Pane layoutX="250.0" prefHeight="52.0" prefWidth="301.0" style="-fx-background-color: #FFF;" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="0.0">
+        <Pane layoutX="250.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: #FFF;" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="0.0">
          <children>
             <FontAwesomeIconView fx:id="icon_title" fill="#163a5f" glyphName="HOME" layoutX="26.0" layoutY="33.0" size="20" />
             <Label fx:id="label_title" layoutX="57.0" layoutY="13.0" text="Trang chủ" textFill="#163a5f">

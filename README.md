@@ -4,10 +4,27 @@
 
 #### Mô tả dự án
 - Tên: Phần mềm quản lý phòng trọ (Dành cho chủ trọ)
-- Mô tả: Phần mềm tạo ra nhằm mục đích quản lý phòng trọ dành cho chủ nhà trọ. Một chủ trọ sẽ có nhiều dãy trọ để quản lý, phần mềm sẽ cho phép 1 chủ trộ có thể quản lý nhiều dãy trọ cùng lúc trên 1 tài khoản duy nhất mà phần mềm cung cấp. Chủ trọ có thể thêm, sửa, xóa các dãy trọ của mình. Mỗi dãy trọ sẽ có nhiều phòng trọ và tất cả đều được cập nhật quản lý bởi chủ trọ. Trong mỗi dãy trọ có các dịch vụ với mức giá khác nhau, tùy thuộc vào vị trí điều kiện mức sống tại nơi đó mà chủ trọ có thể cập nhật giá các dịch vụ cho từng dãy trọ của mình. Các dịch vụ cơ bản bao gồm: Điện, nước, wifi, vệ sinh, nhà để xe, và các chi phí phát sinh sẽ được tính chung vào phí dịch vụ. Hóa đơn sẽ tính theo tháng, để có sự chính xác 1 tháng sẽ tương đương với 30 ngày, vd: ngày bắt đầu mở dãy trọ (đưa dãy trọ vào hoạt động là ngày 15/2/2022), thì các phòng trọ sẽ phải thanh toán sau 30 ngày (theo ví dụ tức ngày 17/3/2022) các phòng sẽ phải thanh toán hóa đơn. Các thông số cho phí dịch vụ chủ trọ sẽ làm khảo sát tại dãy trọ. Trường hợp các phòng không thanh toán hóa đơn trong tháng này thì khoản tiền đó sẽ được cộng dồn. 
+- Mô tả: Phần mềm tạo ra nhằm mục đích quản lý phòng trọ dành cho chủ nhà trọ. Một chủ trọ sẽ có nhiều dãy trọ để quản lý, phần mềm sẽ cho phép 1 chủ trộ có thể quản lý nhiều dãy trọ cùng lúc trên 1 tài khoản duy nhất mà phần mềm cung cấp. Chủ trọ có thể thêm, sửa, xóa các dãy trọ của mình. Mỗi dãy trọ sẽ có nhiều phòng trọ và tất cả đều được cập nhật quản lý bởi chủ trọ. Trong mỗi dãy trọ có các dịch vụ với mức giá khác nhau, tùy thuộc vào vị trí điều kiện mức sống tại nơi đó mà chủ trọ có thể cập nhật giá các dịch vụ cho từng dãy trọ của mình. Các dịch vụ cơ bản bao gồm: Điện, nước, wifi, vệ sinh, nhà để xe, và các chi phí phát sinh sẽ được tính chung vào phí dịch vụ. Hóa đơn sẽ tính theo tháng, để có sự chính xác 1 tháng sẽ tương đương với 30 ngày, vd: ngày bắt đầu mở dãy trọ (đưa dãy trọ vào hoạt động là ngày 15/2/2022), thì các phòng trọ sẽ phải thanh toán sau 30 ngày (theo ví dụ tức ngày 17/3/2022) các phòng sẽ phải thanh toán hóa đơn. Các thông số cho phí dịch vụ chủ trọ sẽ làm khảo sát tại dãy trọ. Trường hợp các phòng không thanh toán hóa đơn trong tháng này thì khoản tiền đó sẽ được cộng dồn. Khoản nợ có thể trả dần dần.
 - Chức năng:
     - Trang chủ: Tìm kiếm phòng, hiển thị danh sách phòng đang trống, hiển thị danh sách phòng chưa thanh toán tiền
-    - 
+    - Quản lý phòng: Tìm kiếm phòng, thêm dãy trọ, hiển thị dãy trọ đang hoạt động.
+      - Thêm dãy trọ, thông tin bao gồm: ID dãy trọ, tên dãy trọ, địa chỉ...
+      - Hiển thị dãy trọ đang hoạt động (click vào để xem các phòng trọ bên trong dãy trọ): thêm phòng trọ.
+        - Thêm phòng trọ bao gồm các thông tin sau: ID phòng trọ, tên phòng trọ, địa chỉ...
+        - Chỉnh sửa phòng trọ: Cập nhật các thông tin về tên phòng trọ, số lượng người ở trong 1 phòng trọ, thông tin người ở trong phòng, xóa bỏ người ở ra khỏi phòng, xóa phòng.
+        - Thanh toán: Hiển thị list các phòng trong dãy đang hoạt động. Tên phòng, người đứng tên phòng, số điện thoại, tổng tiền cần thanh toán. (click vào xem chi tiết) -> Sẽ hiển thị thông tin của phòng, số điện tiêu thụ, số nước tiêu thụ, các khoản dịch vụ dùng theo tháng(phí vệ sinh, wifi, ...), tổng tiền cần thanh toán, số tiền thanh toán, tiền nợ
+      - Chỉnh sửa dãy trọ: cập nhật các thông tin về tên dãy trọ, giá dãy trọ, thêm phòng trọ trong dãy, giá các dịch vụ hoặc xóa bỏ dãy trọ hay cho dãy trọ ngừng hoạt động
+    - Cài đặt: Comming Soon
+    - About us: Comming Soon
+    - Account: hiển thị các thông tin của tài khoản, số lượng dãy trọ quản lý, số lượng phòng đang hoạt động.
+    - Update Comming Soon
+
+#### Using for Developers
+1. cài đặt IDE intellij: https://www.jetbrains.com/idea/download/#section=windows
+2. Cài đặt SceneBuilder: https://gluonhq.com/products/scene-builder/
+3. Cài đặt môi trường JAVA, JDK: Tham khảo tại(https://howkteam.vn/course/lap-trinh-java-co-ban-den-huong-doi-tuong/cai-dat-moi-truong-java-3834)
+4. cài đặt môi trường lập trình javaFX SDK: https://gluonhq.com/products/javafx/
+5. khởi động intellij -> mở project -> Khởi chạy dự án bằng file main.class
 
 #### :clipboard: Target
 
