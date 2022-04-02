@@ -9,6 +9,7 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -17,7 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="809.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomePageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="809.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomePageController">
     <children>
         <Pane layoutX="250.0" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: #FFF;" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -28,7 +29,7 @@
                </font>
             </Label>
          </children></Pane>
-      <AnchorPane fx:id="page_homePage" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="52.0">
+      <AnchorPane fx:id="page_homePage" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="52.0">
          <children>
               <SplitPane dividerPositions="0.5" prefHeight="32.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                   <items>
@@ -81,8 +82,45 @@
               </GridPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="page_roomManager" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="52.0" />
-      <AnchorPane fx:id="page_setting" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="52.0" />
+      <AnchorPane fx:id="page_search" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="52.0">
+         <children>
+            <Pane prefHeight="52.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <TextField layoutX="14.0" layoutY="11.0" prefHeight="32.0" prefWidth="350.0" promptText="Tìm kiếm" style="-fx-background-color: #FFF; -fx-border-color: #797979;">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button graphicTextGap="8.0" layoutX="377.0" layoutY="11.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="110.0" style="-fx-background-color: #21bab5;" text="Tìm kiếm" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="14" />
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Label layoutX="14.0" layoutY="52.0" text="Kết quả tìm kiếm" textFill="#163a5f" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="page_roomManager" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="52.0">
+         <children>
+            <Pane prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: #FFF;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button graphicTextGap="12.0" layoutX="14.0" layoutY="6.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="152.0" style="-fx-background-color: #21bab5;" text="Thêm dãy trọ" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="PLUS" />
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Label layoutX="14.0" layoutY="52.0" text="Danh sách dãy trọ hiện có" textFill="#163a5f" AnchorPane.topAnchor="52.0" />
+         </children></AnchorPane>
+      <AnchorPane fx:id="page_setting" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="52.0" />
       <AnchorPane fx:id="page_aboutUs" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="52.0" />
       <AnchorPane fx:id="page_account" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="52.0" />
       <AnchorPane layoutX="553.0" layoutY="-74.0" prefHeight="52.0" prefWidth="250.0" style="-fx-background-color: #FFF;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -121,6 +159,17 @@
                </font>
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="16" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="button_search" alignment="BASELINE_LEFT" graphicTextGap="12.0" maxWidth="250.0" mnemonicParsing="false" onAction="#button_searchOnAction" style="-fx-background-color: #163A5F; -fx-padding: 12 24;" text="Tìm kiếm" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="16" />
                </graphic>
                <cursor>
                   <Cursor fx:constant="HAND" />
