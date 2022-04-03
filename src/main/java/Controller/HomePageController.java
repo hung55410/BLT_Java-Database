@@ -9,6 +9,7 @@ import javafx.scene.control.MenuItem;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 
@@ -16,175 +17,90 @@ import javafx.scene.control.Button;
 public class HomePageController {
 
     @FXML
-    private FontAwesomeIconView icon_title;
+    private Button button_home, button_search, button_room, button_setting, button_account;
+
     @FXML
-    private Label label_title;
+    private Label title_header;
+
     @FXML
-    private Button button_homePage, button_roomManager, button_setting, button_aboutUs, button_account, button_search;
+    private FontAwesomeIconView title_icon;
+
     @FXML
-    private MenuItem menuItem_account, menuItem_exit;
-    @FXML
-    private AnchorPane page_homePage, page_roomManager, page_setting, page_aboutUs, page_account, page_search;
-//  Start Home
-    public void button_homePageOnAction(ActionEvent e) {
-        page_roomManager.setVisible(false);
-        page_setting.setVisible(false);
-        page_aboutUs.setVisible(false);
-        page_account.setVisible(false);
-        page_homePage.setVisible(true);
-        page_search.setVisible(false);
+    private HBox bg_button_home, bg_button_search, bg_button_room, bg_button_setting, bg_button_account;
 
-        button_homePage.setStyle("-fx-background-color: #21bab5; -fx-padding: 12 24");
-        button_roomManager.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-        button_setting.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-        button_aboutUs.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-        button_account.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-        button_search.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
+    public void button_homeOnAction(ActionEvent e) {
+//      start Text
+        title_icon.setGlyphName("HOME");
+        title_header.setText("trang chủ");
+        String title_header_upcase = title_header.getText().toUpperCase();
+        title_header.setText(title_header_upcase);
+        title_header.setStyle("-fx-text-fill: #FFF; -fx-font-size: 14px; -fx-font-weight: bold; -fx-font-family: 'Verdana';");
+//      end Text
 
-        icon_title.setGlyphName("HOME");
-        icon_title.setSize("20");
-        label_title.setText("Trang chủ");
-        label_title.setStyle("-fx-font-size: 16; -fx-font-weight: bold");
-    }
-    public void button_searchOnAction(ActionEvent e){
-        page_homePage.setVisible(false);
-        page_roomManager.setVisible(false);
-        page_setting.setVisible(false);
-        page_aboutUs.setVisible(false);
-        page_account.setVisible(false);
-        page_search.setVisible(true);
+        bg_button_home.setStyle("-fx-background-color: #21BAB5;");
+        bg_button_search.setStyle("-fx-background-color: transparent;");
+        bg_button_room.setStyle("-fx-background-color: transparent;");
+        bg_button_setting.setStyle("-fx-background-color: transparent;");
+        bg_button_account.setStyle("-fx-background-color: transparent;");
 
-        button_homePage.setStyle("-fx-background-color: #163A5F; -fx-padding: 12 24");
-        button_roomManager.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-        button_setting.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-        button_aboutUs.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-        button_account.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-        button_search.setStyle("-fx-background-color:  #21bab5; -fx-padding: 12 24");
-
-        icon_title.setGlyphName("SEARCH");
-        icon_title.setSize("20");
-        label_title.setText("Tìm kiếm");
-        label_title.setStyle("-fx-font-size: 16; -fx-font-weight: bold");
-    }
-    public void button_roomManagerOnAction(ActionEvent e){
-        page_homePage.setVisible(false);
-        page_setting.setVisible(false);
-        page_aboutUs.setVisible(false);
-        page_account.setVisible(false);
-        page_roomManager.setVisible(true);
-        page_search.setVisible(false);
-
-        button_homePage.setStyle("-fx-background-color: #163A5F; -fx-padding: 12 24");
-        button_roomManager.setStyle("-fx-background-color:  #21bab5; -fx-padding: 12 24");
-        button_setting.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-        button_aboutUs.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-        button_account.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-        button_search.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-
-        icon_title.setGlyphName("ARCHIVE");
-        icon_title.setSize("16");
-        label_title.setText("Quản lý phòng");
-        label_title.setStyle("-fx-font-size: 16; -fx-font-weight: bold");
-    }
-    public void button_settingOnAction(ActionEvent e){
-        page_homePage.setVisible(false);
-        page_setting.setVisible(true);
-        page_aboutUs.setVisible(false);
-        page_account.setVisible(false);
-        page_roomManager.setVisible(false);
-        page_search.setVisible(false);
-
-        button_homePage.setStyle("-fx-background-color: #163A5F; -fx-padding: 12 24");
-        button_roomManager.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-        button_setting.setStyle("-fx-background-color:  #21bab5; -fx-padding: 12 24");
-        button_aboutUs.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-        button_account.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-        button_search.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-
-        icon_title.setGlyphName("COG");
-        icon_title.setSize("16");
-        label_title.setText("Cài đặt");
-        label_title.setStyle("-fx-font-size: 16; -fx-font-weight: bold");
-    }
-    public void button_aboutUsOnAction(ActionEvent e){
-        page_homePage.setVisible(false);
-        page_setting.setVisible(false);
-        page_aboutUs.setVisible(true);
-        page_account.setVisible(false);
-        page_roomManager.setVisible(false);
-        page_search.setVisible(false);
-
-        button_homePage.setStyle("-fx-background-color: #163A5F; -fx-padding: 12 24");
-        button_roomManager.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-        button_setting.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-        button_aboutUs.setStyle("-fx-background-color:  #21bab5; -fx-padding: 12 24");
-        button_account.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-        button_search.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-
-        icon_title.setGlyphName("INFO_CIRCLE");
-        icon_title.setSize("16");
-        label_title.setText("About Us");
-        label_title.setStyle("-fx-font-size: 16; -fx-font-weight: bold");
-    }
-    public void button_accountOnAction(ActionEvent e){
-        page_homePage.setVisible(false);
-        page_setting.setVisible(false);
-        page_aboutUs.setVisible(false);
-        page_account.setVisible(true);
-        page_roomManager.setVisible(false);
-        page_search.setVisible(false);
-
-        button_homePage.setStyle("-fx-background-color: #163A5F; -fx-padding: 12 24");
-        button_roomManager.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-        button_setting.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-        button_aboutUs.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-        button_account.setStyle("-fx-background-color:  #21bab5; -fx-padding: 12 24");
-        button_search.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-
-        icon_title.setGlyphName("USER");
-        icon_title.setSize("16");
-        label_title.setText("Tài khoản");
-        label_title.setStyle("-fx-font-size: 16; -fx-font-weight: bold");
-    }
-//  end Home
-
-//  Start Search
-//  End Search
-
-//  Start RoomManager
-//  End RoomManager
-
-//  Start Setting
-//  End Setting
-
-//  Start AboutUs
-//  End AboutUs
-
-//  Start Account
-//  End Account
-
-
-    public void menuItem_accountOnAction(ActionEvent e){
-        page_homePage.setVisible(false);
-        page_setting.setVisible(false);
-        page_aboutUs.setVisible(false);
-        page_account.setVisible(true);
-        page_roomManager.setVisible(false);
-
-        button_homePage.setStyle("-fx-background-color: #163A5F; -fx-padding: 12 24");
-        button_roomManager.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-        button_setting.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-        button_aboutUs.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-        button_account.setStyle("-fx-background-color:  #21bab5; -fx-padding: 12 24");
-        button_search.setStyle("-fx-background-color:  #163A5F; -fx-padding: 12 24");
-
-        icon_title.setGlyphName("USER");
-        icon_title.setSize("16");
-        label_title.setText("Tài khoản");
-        label_title.setStyle("-fx-font-size: 16; -fx-font-weight: bold");
-    }
-    public void menuItem_exitOnAction(ActionEvent e){
-        System.exit(0);
     }
 
+    public void button_searchOnAction(ActionEvent e) {
+        title_icon.setGlyphName("SEARCH");
+        title_header.setText("tìm kiếm");
+        String title_header_upcase = title_header.getText().toUpperCase();
+        title_header.setText(title_header_upcase);
+        title_header.setStyle("-fx-text-fill: #FFF; -fx-font-size: 14px; -fx-font-weight: bold; -fx-font-family: 'Verdana';");
+
+        bg_button_home.setStyle("-fx-background-color: transparent;");
+        bg_button_search.setStyle("-fx-background-color: #21BAB5;");
+        bg_button_room.setStyle("-fx-background-color: transparent;");
+        bg_button_setting.setStyle("-fx-background-color: transparent;");
+        bg_button_account.setStyle("-fx-background-color: transparent;");
+
+    }
+
+    public void button_roomOnAction(ActionEvent e) {
+        title_icon.setGlyphName("ARCHIVE");
+        title_header.setText("quản lý phòng");
+        String title_header_upcase = title_header.getText().toUpperCase();
+        title_header.setText(title_header_upcase);
+        title_header.setStyle("-fx-text-fill: #FFF; -fx-font-size: 14px; -fx-font-weight: bold; -fx-font-family: 'Verdana';");
+
+        bg_button_home.setStyle("-fx-background-color: transparent;");
+        bg_button_search.setStyle("-fx-background-color: transparent;");
+        bg_button_room.setStyle("-fx-background-color: #21BAB5;");
+        bg_button_setting.setStyle("-fx-background-color: transparent;");
+        bg_button_account.setStyle("-fx-background-color: transparent;");
+
+    }
+
+    public void button_settingOnAction(ActionEvent e) {
+        title_icon.setGlyphName("COG");
+        title_header.setText("cài đặt");
+        String title_header_upcase = title_header.getText().toUpperCase();
+        title_header.setText(title_header_upcase);
+        title_header.setStyle("-fx-text-fill: #FFF; -fx-font-size: 14px; -fx-font-weight: bold; -fx-font-family: 'Verdana';");
+
+        bg_button_home.setStyle("-fx-background-color: transparent;");
+        bg_button_search.setStyle("-fx-background-color: transparent;");
+        bg_button_room.setStyle("-fx-background-color: transparent;");
+        bg_button_setting.setStyle("-fx-background-color: #21BAB5;");
+        bg_button_account.setStyle("-fx-background-color: transparent;");
+
+    }
+
+    public void button_accountOnAction(ActionEvent e) {
+        title_icon.setGlyphName("USER");
+        title_header.setText("tài khoản");
+        String title_header_upcase = title_header.getText().toUpperCase();
+        title_header.setText(title_header_upcase);
+        title_header.setStyle("-fx-text-fill: #FFF; -fx-font-size: 14px; -fx-font-weight: bold; -fx-font-family: 'Verdana';");
+
+        bg_button_home.setStyle("-fx-background-color: transparent;");
+        bg_button_search.setStyle("-fx-background-color: transparent;");
+        bg_button_room.setStyle("-fx-background-color: transparent;");
+        bg_button_setting.setStyle("-fx-background-color: transparent;");
+        bg_button_account.setStyle("-fx-background-color: #21BAB5;");
+    }
 }

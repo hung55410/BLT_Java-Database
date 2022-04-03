@@ -1,0 +1,19 @@
+.title {
+    -fx-text-transform: uppercase !important;
+}
+
+.button_hover:hover {
+    -fx-background-color: #205388 !important;
+    -fx-border-color: #21BAB5;
+    -fx-border-width: 0 4px 0 0;
+}
+
+.button_addEditDel_hover:hover {
+    -fx-opacity: 0.8! important;
+    -fx-cursor: hand;
+}
+
+.items_hover:hover {
+    -fx-background-color: #DBE9F8 !important;
+    -fx-cursor: hand;
+}
