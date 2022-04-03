@@ -6,7 +6,7 @@
 - Tên: Phần mềm quản lý phòng trọ (Dành cho chủ trọ)
 - Mô tả: Phần mềm tạo ra nhằm mục đích quản lý phòng trọ dành cho chủ nhà trọ. Một chủ trọ sẽ có nhiều dãy trọ để quản lý, phần mềm sẽ cho phép 1 chủ trộ có thể quản lý nhiều dãy trọ cùng lúc trên 1 tài khoản duy nhất mà phần mềm cung cấp. Chủ trọ có thể thêm, sửa, xóa các dãy trọ của mình. Mỗi dãy trọ sẽ có nhiều phòng trọ và tất cả đều được cập nhật quản lý bởi chủ trọ. Trong mỗi dãy trọ có các dịch vụ với mức giá khác nhau, tùy thuộc vào vị trí điều kiện mức sống tại nơi đó mà chủ trọ có thể cập nhật giá các dịch vụ cho từng dãy trọ của mình. Các dịch vụ cơ bản bao gồm: Điện, nước, wifi, vệ sinh, nhà để xe, và các chi phí phát sinh sẽ được tính chung vào phí dịch vụ. Hóa đơn sẽ tính theo tháng, để có sự chính xác 1 tháng sẽ tương đương với 30 ngày, vd: ngày bắt đầu mở dãy trọ (đưa dãy trọ vào hoạt động là ngày 15/2/2022), thì các phòng trọ sẽ phải thanh toán sau 30 ngày (theo ví dụ tức ngày 17/3/2022) các phòng sẽ phải thanh toán hóa đơn. Các thông số cho phí dịch vụ chủ trọ sẽ làm khảo sát tại dãy trọ. Trường hợp các phòng không thanh toán hóa đơn trong tháng này thì khoản tiền đó sẽ được cộng dồn. Khoản nợ có thể trả dần dần.
 - Chức năng:
-    - Trang chủ: Tìm kiếm phòng, hiển thị danh sách phòng đang trống, hiển thị danh sách phòng chưa thanh toán tiền
+    - Trang chủ: Hiển thị danh sách các dãy phòng và phòng đang mở
     - Quản lý phòng: Tìm kiếm phòng, thêm dãy trọ, hiển thị dãy trọ đang hoạt động.
       - Thêm dãy trọ, thông tin bao gồm: ID dãy trọ, tên dãy trọ, địa chỉ...
       - Hiển thị dãy trọ đang hoạt động (click vào để xem các phòng trọ bên trong dãy trọ): thêm phòng trọ.
