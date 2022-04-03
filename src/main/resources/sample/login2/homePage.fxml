@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="997.0" prefWidth="1369.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomePageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomePageController">
    <children>
       <HBox layoutX="117.0" layoutY="185.0" prefHeight="100.0" prefWidth="200.0" styleClass="font" stylesheets="@../../styles/Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -238,7 +238,15 @@
                                                    </children>
                                                 </HBox>
                                                 <Label style="-fx-text-fill: #163A5F; -fx-font-family: Verdana; -fx-font-size: 14; -fx-font-weight: Bold;" text="D001" />
-                                                <HBox alignment="CENTER_RIGHT" spacing="12.0" HBox.hgrow="ALWAYS">
+                                                <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                                                   <children>
+                                                      <Label style="-fx-font-family: Verdana; -fx-font-style: 13; -fx-text-fill: #163A5F;" text="Địa chỉ: 448, Lê Văn Việt, Tăng Nhơn Phú A,  TP.HCM" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="24.0" right="24.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <HBox alignment="CENTER_RIGHT" spacing="12.0">
                                                    <children>
                                                       <Button graphicTextGap="8.0" mnemonicParsing="false" style="-fx-font-family: Verana; -fx-font-size: 13; -fx-text-fill: #FFF; -fx-background-color: #21BAB5;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Thêm phòng">
                                                          <graphic>
@@ -656,7 +664,7 @@
                                                       <FontAwesomeIconView fill="#163a5f" glyphName="HOME" size="16" />
                                                    </children>
                                                 </HBox>
-                                                <Label style="-fx-text-fill: #163A5F; -fx-font-family: Verdana; -fx-font-size: 14; -fx-font-weight: Bold;" text="D001" />
+                                                <Label style="-fx-text-fill: #163A5F; -fx-font-family: Verdana; -fx-font-size: 14; -fx-font-weight: Bold;" text="D002" />
                                                 <HBox alignment="CENTER_RIGHT" spacing="12.0" HBox.hgrow="ALWAYS">
                                                    <children>
                                                       <Button graphicTextGap="8.0" mnemonicParsing="false" style="-fx-font-family: Verana; -fx-font-size: 13; -fx-text-fill: #FFF; -fx-background-color: #21BAB5;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Thêm phòng">
