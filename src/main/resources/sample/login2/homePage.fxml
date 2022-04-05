@@ -6,12 +6,13 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomePageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="728.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomePageController">
    <children>
       <HBox layoutX="117.0" layoutY="185.0" prefHeight="100.0" prefWidth="200.0" styleClass="font" stylesheets="@../../styles/Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -190,65 +191,26 @@
                     <content>
                       <AnchorPane style="-fx-background-color: #FFF;">
                            <children>
-                              <VBox spacing="24.0">
+                              <AnchorPane visible="false">
                                  <children>
-                                    <HBox alignment="CENTER_LEFT" style="-fx-background-color: #f3f4f9;">
-                                       <padding>
-                                          <Insets bottom="8.0" left="24.0" right="24.0" top="8.0" />
-                                       </padding>
-                                       <VBox.margin>
-                                          <Insets />
-                                       </VBox.margin>
+                                    <VBox spacing="24.0">
                                        <children>
-                                          <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #163A5F;" text="DANH SÁCH CÁC DÃY PHÒNG HIỆN CÓ">
-                                             <HBox.margin>
-                                                <Insets left="8.0" right="8.0" />
-                                             </HBox.margin>
-                                          </Label>
-                                          <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
-                                             <children>
-                                                <Button graphicTextGap="8.0" mnemonicParsing="false" style="-fx-font-family: Verana; -fx-font-size: 13; -fx-text-fill: #FFF; -fx-background-color: #21BAB5;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Thêm dãy trọ">
-                                                   <graphic>
-                                                      <FontAwesomeIconView fill="WHITE" glyphName="PLUS" />
-                                                   </graphic>
-                                                   <padding>
-                                                      <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
-                                                   </padding>
-                                                </Button>
-                                             </children>
-                                          </HBox>
-                                       </children>
-                                    </HBox>
-                                    <VBox spacing="32.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
-                                       <padding>
-                                          <Insets bottom="4.0" left="12.0" right="12.0" top="4.0" />
-                                       </padding>
-                                       <VBox.margin>
-                                          <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
-                                       </VBox.margin>
-                                       <children>
-                                          <HBox alignment="CENTER_LEFT" spacing="4.0">
+                                          <HBox alignment="CENTER_LEFT" style="-fx-background-color: #f3f4f9;">
                                              <padding>
-                                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                <Insets bottom="8.0" left="24.0" right="24.0" top="8.0" />
                                              </padding>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
                                              <children>
-                                                <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #163A5F;" text="DANH SÁCH CÁC DÃY PHÒNG HIỆN CÓ">
+                                                   <HBox.margin>
+                                                      <Insets left="8.0" right="8.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
                                                    <children>
-                                                      <FontAwesomeIconView fill="#163a5f" glyphName="HOME" size="16" />
-                                                   </children>
-                                                </HBox>
-                                                <Label style="-fx-text-fill: #163A5F; -fx-font-family: Verdana; -fx-font-size: 14; -fx-font-weight: Bold;" text="D001" />
-                                                <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
-                                                   <children>
-                                                      <Label style="-fx-font-family: Verdana; -fx-font-style: 13; -fx-text-fill: #163A5F;" text="Địa chỉ: 448, Lê Văn Việt, Tăng Nhơn Phú A,  TP.HCM" />
-                                                   </children>
-                                                   <padding>
-                                                      <Insets left="24.0" right="24.0" />
-                                                   </padding>
-                                                </HBox>
-                                                <HBox alignment="CENTER_RIGHT" spacing="12.0">
-                                                   <children>
-                                                      <Button graphicTextGap="8.0" mnemonicParsing="false" style="-fx-font-family: Verana; -fx-font-size: 13; -fx-text-fill: #FFF; -fx-background-color: #21BAB5;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Thêm phòng">
+                                                      <Button graphicTextGap="8.0" mnemonicParsing="false" style="-fx-font-family: Verana; -fx-font-size: 13; -fx-text-fill: #FFF; -fx-background-color: #21BAB5;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Thêm dãy trọ">
                                                          <graphic>
                                                             <FontAwesomeIconView fill="WHITE" glyphName="PLUS" />
                                                          </graphic>
@@ -256,446 +218,849 @@
                                                             <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
                                                          </padding>
                                                       </Button>
-                                                      <Button graphicTextGap="8.0" mnemonicParsing="false" style="-fx-font-family: Verana; -fx-font-size: 13; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa">
-                                                         <graphic>
-                                                            <FontAwesomeIconView fill="WHITE" glyphName="EDIT" />
-                                                         </graphic>
-                                                         <padding>
-                                                            <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
-                                                         </padding>
-                                                      </Button>
-                                                      <Button graphicTextGap="8.0" mnemonicParsing="false" style="-fx-font-family: Verana; -fx-font-size: 13; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa">
-                                                         <graphic>
-                                                            <FontAwesomeIconView fill="WHITE" glyphName="TRASH" />
-                                                         </graphic>
-                                                         <padding>
-                                                            <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
-                                                         </padding>
-                                                      </Button>
                                                    </children>
                                                 </HBox>
                                              </children>
                                           </HBox>
-                                          <HBox alignment="CENTER_LEFT" spacing="32.0" VBox.vgrow="ALWAYS">
+                                          <VBox spacing="32.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                             <padding>
+                                                <Insets bottom="4.0" left="12.0" right="12.0" top="4.0" />
+                                             </padding>
+                                             <VBox.margin>
+                                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                             </VBox.margin>
                                              <children>
-                                                <VBox spacing="24.0" style="-fx-border-color: #F3f4f9; -fx-border-width: 2px;" styleClass="items_hover" stylesheets="@../../styles/Style.css">
-                                                   <HBox.margin>
-                                                      <Insets />
-                                                   </HBox.margin>
+                                                <HBox alignment="CENTER_LEFT" spacing="4.0">
                                                    <padding>
-                                                      <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                                                      <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                                                    </padding>
                                                    <children>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                      <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
                                                          <children>
-                                                            <FontAwesomeIconView fill="#21bab5" glyphName="CHECK" size="16" />
-                                                            <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #21BAB5;" text="MÃ: P001" />
+                                                            <FontAwesomeIconView fill="#163a5f" glyphName="HOME" size="16" />
                                                          </children>
                                                       </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                      <Label style="-fx-text-fill: #163A5F; -fx-font-family: Verdana; -fx-font-size: 14; -fx-font-weight: Bold;" text="D001" />
+                                                      <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
                                                          <children>
-                                                            <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
-                                                               <children>
-                                                                  <FontAwesomeIconView fill="#163a5f" glyphName="USER" size="16" />
-                                                               </children>
-                                                            </HBox>
-                                                            <Label style="-fx-font-family: Verdana; -fx-text-fill: #163A5F;" text="Nguyễn Văn A" HBox.hgrow="ALWAYS" />
+                                                            <Label style="-fx-font-family: Verdana; -fx-font-style: 13; -fx-text-fill: #163A5F;" text="Địa chỉ: 448, Lê Văn Việt, Tăng Nhơn Phú A,  TP.HCM" />
                                                          </children>
                                                          <padding>
-                                                            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                            <Insets left="24.0" right="24.0" />
                                                          </padding>
                                                       </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                      <HBox alignment="CENTER_RIGHT" spacing="12.0">
                                                          <children>
-                                                            <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
-                                                               <children>
-                                                                  <FontAwesomeIconView fill="#163a5f" glyphName="MONEY" size="16" />
-                                                               </children>
-                                                            </HBox>
-                                                            <Label style="-fx-font-family: Verdana; -fx-text-fill: #FD3D39; -fx-font-weight: Bold;" text="1.500.000" />
-                                                            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
-                                                               <children>
-                                                                  <Label text="VNĐ" />
-                                                               </children>
-                                                            </HBox>
-                                                         </children>
-                                                         <padding>
-                                                            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
-                                                         </padding>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0">
-                                                         <children>
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="52.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #163A5F;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xem" />
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa" />
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="72.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa" />
+                                                            <Button graphicTextGap="8.0" mnemonicParsing="false" style="-fx-font-family: Verana; -fx-font-size: 13; -fx-text-fill: #FFF; -fx-background-color: #21BAB5;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Thêm phòng">
+                                                               <graphic>
+                                                                  <FontAwesomeIconView fill="WHITE" glyphName="PLUS" />
+                                                               </graphic>
+                                                               <padding>
+                                                                  <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                                               </padding>
+                                                            </Button>
+                                                            <Button graphicTextGap="8.0" mnemonicParsing="false" style="-fx-font-family: Verana; -fx-font-size: 13; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa">
+                                                               <graphic>
+                                                                  <FontAwesomeIconView fill="WHITE" glyphName="EDIT" />
+                                                               </graphic>
+                                                               <padding>
+                                                                  <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                                               </padding>
+                                                            </Button>
+                                                            <Button graphicTextGap="8.0" mnemonicParsing="false" style="-fx-font-family: Verana; -fx-font-size: 13; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa">
+                                                               <graphic>
+                                                                  <FontAwesomeIconView fill="WHITE" glyphName="TRASH" />
+                                                               </graphic>
+                                                               <padding>
+                                                                  <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                                               </padding>
+                                                            </Button>
                                                          </children>
                                                       </HBox>
                                                    </children>
-                                                </VBox>
-                                                <VBox spacing="24.0" style="-fx-border-color: #F3f4f9; -fx-border-width: 2px;" styleClass="items_hover" stylesheets="@../../styles/Style.css">
-                                                   <padding>
-                                                      <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
-                                                   </padding>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="32.0" VBox.vgrow="ALWAYS">
                                                    <children>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0">
-                                                         <children>
-                                                            <FontAwesomeIconView fill="#fd3d39" glyphName="TIMES" size="16" />
-                                                            <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #FD3D39;" text="MÃ: P002" />
-                                                         </children>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
-                                                         <children>
-                                                            <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
-                                                               <children>
-                                                                  <FontAwesomeIconView fill="#163a5f" glyphName="USER" size="16" />
-                                                               </children>
-                                                            </HBox>
-                                                            <Label style="-fx-font-family: Verdana; -fx-text-fill: #163A5F;" text="Trống" HBox.hgrow="ALWAYS" />
-                                                         </children>
+                                                      <VBox spacing="24.0" style="-fx-border-color: #F3f4f9; -fx-border-width: 2px;" styleClass="items_hover" stylesheets="@../../styles/Style.css">
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
                                                          <padding>
-                                                            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
                                                          </padding>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
                                                          <children>
-                                                            <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
                                                                <children>
-                                                                  <FontAwesomeIconView fill="#163a5f" glyphName="MONEY" size="16" />
+                                                                  <FontAwesomeIconView fill="#21bab5" glyphName="CHECK" size="16" />
+                                                                  <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #21BAB5;" text="MÃ: P001" />
                                                                </children>
                                                             </HBox>
-                                                            <Label style="-fx-font-family: Verdana; -fx-text-fill: #FD3D39; -fx-font-weight: Bold;" text="1.500.000" />
-                                                            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
                                                                <children>
-                                                                  <Label text="VNĐ" />
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="USER" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #163A5F;" text="Nguyễn Văn A" HBox.hgrow="ALWAYS" />
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="MONEY" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #FD3D39; -fx-font-weight: Bold;" text="1.500.000" />
+                                                                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                                     <children>
+                                                                        <Label text="VNĐ" />
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                               <children>
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="52.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #163A5F;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xem" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="72.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa" />
                                                                </children>
                                                             </HBox>
                                                          </children>
+                                                      </VBox>
+                                                      <VBox spacing="24.0" style="-fx-border-color: #F3f4f9; -fx-border-width: 2px;" styleClass="items_hover" stylesheets="@../../styles/Style.css">
                                                          <padding>
-                                                            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
                                                          </padding>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0">
                                                          <children>
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="52.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #163A5F;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xem" />
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa" />
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="72.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa" />
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                               <children>
+                                                                  <FontAwesomeIconView fill="#fd3d39" glyphName="TIMES" size="16" />
+                                                                  <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #FD3D39;" text="MÃ: P002" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="USER" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #163A5F;" text="Trống" HBox.hgrow="ALWAYS" />
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="MONEY" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #FD3D39; -fx-font-weight: Bold;" text="1.500.000" />
+                                                                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                                     <children>
+                                                                        <Label text="VNĐ" />
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                               <children>
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="52.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #163A5F;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xem" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="72.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa" />
+                                                               </children>
+                                                            </HBox>
                                                          </children>
-                                                      </HBox>
+                                                      </VBox>
+                                                      <VBox spacing="24.0" style="-fx-border-color: #F3f4f9; -fx-border-width: 2px;" styleClass="items_hover" stylesheets="@../../styles/Style.css">
+                                                         <padding>
+                                                            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                                                         </padding>
+                                                         <children>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                               <children>
+                                                                  <FontAwesomeIconView fill="#21bab5" glyphName="CHECK" size="16" />
+                                                                  <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #21BAB5;" text="MÃ: P003" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="USER" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #163A5F;" text="Nguyễn Văn C" HBox.hgrow="ALWAYS" />
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="MONEY" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #FD3D39; -fx-font-weight: Bold;" text="1.500.000" />
+                                                                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                                     <children>
+                                                                        <Label text="VNĐ" />
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                               <children>
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="52.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #163A5F;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xem" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="72.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa" />
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox spacing="24.0" style="-fx-border-color: #F3f4f9; -fx-border-width: 2px;" styleClass="items_hover" stylesheets="@../../styles/Style.css">
+                                                         <padding>
+                                                            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                                                         </padding>
+                                                         <children>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                               <children>
+                                                                  <FontAwesomeIconView fill="#21bab5" glyphName="CHECK" size="16" />
+                                                                  <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #21BAB5;" text="MÃ: P004" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="USER" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #163A5F;" text="Nguyễn Văn D" HBox.hgrow="ALWAYS" />
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="MONEY" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #FD3D39; -fx-font-weight: Bold;" text="1.500.000" />
+                                                                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                                     <children>
+                                                                        <Label text="VNĐ" />
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                               <children>
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="52.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #163A5F;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xem" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="72.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa" />
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
                                                    </children>
-                                                </VBox>
-                                                <VBox spacing="24.0" style="-fx-border-color: #F3f4f9; -fx-border-width: 2px;" styleClass="items_hover" stylesheets="@../../styles/Style.css">
-                                                   <padding>
-                                                      <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
-                                                   </padding>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="32.0">
                                                    <children>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0">
-                                                         <children>
-                                                            <FontAwesomeIconView fill="#21bab5" glyphName="CHECK" size="16" />
-                                                            <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #21BAB5;" text="MÃ: P003" />
-                                                         </children>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
-                                                         <children>
-                                                            <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
-                                                               <children>
-                                                                  <FontAwesomeIconView fill="#163a5f" glyphName="USER" size="16" />
-                                                               </children>
-                                                            </HBox>
-                                                            <Label style="-fx-font-family: Verdana; -fx-text-fill: #163A5F;" text="Nguyễn Văn C" HBox.hgrow="ALWAYS" />
-                                                         </children>
+                                                      <VBox spacing="24.0" style="-fx-border-color: #F3f4f9; -fx-border-width: 2px;" styleClass="items_hover" stylesheets="@../../styles/Style.css">
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
                                                          <padding>
-                                                            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
                                                          </padding>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
                                                          <children>
-                                                            <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
                                                                <children>
-                                                                  <FontAwesomeIconView fill="#163a5f" glyphName="MONEY" size="16" />
+                                                                  <FontAwesomeIconView fill="#21bab5" glyphName="CHECK" size="16" />
+                                                                  <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #21BAB5;" text="MÃ: P005" />
                                                                </children>
                                                             </HBox>
-                                                            <Label style="-fx-font-family: Verdana; -fx-text-fill: #FD3D39; -fx-font-weight: Bold;" text="1.500.000" />
-                                                            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
                                                                <children>
-                                                                  <Label text="VNĐ" />
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="USER" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #163A5F;" text="Nguyễn Văn E" HBox.hgrow="ALWAYS" />
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="MONEY" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #FD3D39; -fx-font-weight: Bold;" text="1.500.000" />
+                                                                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                                     <children>
+                                                                        <Label text="VNĐ" />
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                               <children>
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="52.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #163A5F;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xem" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="72.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa" />
                                                                </children>
                                                             </HBox>
                                                          </children>
+                                                      </VBox>
+                                                      <VBox spacing="24.0" style="-fx-border-color: #F3f4f9; -fx-border-width: 2px;" styleClass="items_hover" stylesheets="@../../styles/Style.css">
                                                          <padding>
-                                                            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
                                                          </padding>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0">
                                                          <children>
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="52.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #163A5F;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xem" />
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa" />
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="72.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa" />
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                               <children>
+                                                                  <FontAwesomeIconView fill="#21bab5" glyphName="CHECK" size="16" />
+                                                                  <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #21BAB5;" text="MÃ: P006" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="USER" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #163A5F;" text="Nguyễn Văn F" HBox.hgrow="ALWAYS" />
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="MONEY" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #FD3D39; -fx-font-weight: Bold;" text="1.500.000" />
+                                                                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                                     <children>
+                                                                        <Label text="VNĐ" />
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                               <children>
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="52.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #163A5F;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xem" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="72.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa" />
+                                                               </children>
+                                                            </HBox>
                                                          </children>
-                                                      </HBox>
+                                                      </VBox>
+                                                      <VBox spacing="24.0" style="-fx-border-color: #F3f4f9; -fx-border-width: 2px;" styleClass="items_hover" stylesheets="@../../styles/Style.css">
+                                                         <padding>
+                                                            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                                                         </padding>
+                                                         <children>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                               <children>
+                                                                  <FontAwesomeIconView fill="#fd3d39" glyphName="TIMES" size="16" />
+                                                                  <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #FD3D39;" text="MÃ: P007" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="USER" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #163A5F;" text="Trống" HBox.hgrow="ALWAYS" />
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="MONEY" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #FD3D39; -fx-font-weight: Bold;" text="1.500.000" />
+                                                                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                                     <children>
+                                                                        <Label text="VNĐ" />
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                               <children>
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="52.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #163A5F;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xem" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="72.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa" />
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
                                                    </children>
-                                                </VBox>
-                                                <VBox spacing="24.0" style="-fx-border-color: #F3f4f9; -fx-border-width: 2px;" styleClass="items_hover" stylesheets="@../../styles/Style.css">
-                                                   <padding>
-                                                      <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
-                                                   </padding>
-                                                   <children>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0">
-                                                         <children>
-                                                            <FontAwesomeIconView fill="#21bab5" glyphName="CHECK" size="16" />
-                                                            <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #21BAB5;" text="MÃ: P004" />
-                                                         </children>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
-                                                         <children>
-                                                            <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
-                                                               <children>
-                                                                  <FontAwesomeIconView fill="#163a5f" glyphName="USER" size="16" />
-                                                               </children>
-                                                            </HBox>
-                                                            <Label style="-fx-font-family: Verdana; -fx-text-fill: #163A5F;" text="Nguyễn Văn D" HBox.hgrow="ALWAYS" />
-                                                         </children>
-                                                         <padding>
-                                                            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
-                                                         </padding>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
-                                                         <children>
-                                                            <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
-                                                               <children>
-                                                                  <FontAwesomeIconView fill="#163a5f" glyphName="MONEY" size="16" />
-                                                               </children>
-                                                            </HBox>
-                                                            <Label style="-fx-font-family: Verdana; -fx-text-fill: #FD3D39; -fx-font-weight: Bold;" text="1.500.000" />
-                                                            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
-                                                               <children>
-                                                                  <Label text="VNĐ" />
-                                                               </children>
-                                                            </HBox>
-                                                         </children>
-                                                         <padding>
-                                                            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
-                                                         </padding>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0">
-                                                         <children>
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="52.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #163A5F;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xem" />
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa" />
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="72.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa" />
-                                                         </children>
-                                                      </HBox>
-                                                   </children>
-                                                </VBox>
+                                                </HBox>
                                              </children>
-                                          </HBox>
-                                          <HBox alignment="CENTER_LEFT" spacing="32.0">
+                                          </VBox>
+                                          <VBox spacing="32.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                             <padding>
+                                                <Insets bottom="4.0" left="12.0" right="12.0" top="4.0" />
+                                             </padding>
                                              <children>
-                                                <VBox spacing="24.0" style="-fx-border-color: #F3f4f9; -fx-border-width: 2px;" styleClass="items_hover" stylesheets="@../../styles/Style.css">
-                                                   <HBox.margin>
-                                                      <Insets />
-                                                   </HBox.margin>
+                                                <HBox alignment="CENTER_LEFT" spacing="4.0">
                                                    <padding>
-                                                      <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                                                      <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                                                    </padding>
                                                    <children>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                      <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
                                                          <children>
-                                                            <FontAwesomeIconView fill="#21bab5" glyphName="CHECK" size="16" />
-                                                            <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #21BAB5;" text="MÃ: P005" />
+                                                            <FontAwesomeIconView fill="#163a5f" glyphName="HOME" size="16" />
                                                          </children>
                                                       </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                      <Label style="-fx-text-fill: #163A5F; -fx-font-family: Verdana; -fx-font-size: 14; -fx-font-weight: Bold;" text="D002" />
+                                                      <HBox alignment="CENTER_RIGHT" spacing="12.0" HBox.hgrow="ALWAYS">
                                                          <children>
-                                                            <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
-                                                               <children>
-                                                                  <FontAwesomeIconView fill="#163a5f" glyphName="USER" size="16" />
-                                                               </children>
-                                                            </HBox>
-                                                            <Label style="-fx-font-family: Verdana; -fx-text-fill: #163A5F;" text="Nguyễn Văn E" HBox.hgrow="ALWAYS" />
-                                                         </children>
-                                                         <padding>
-                                                            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
-                                                         </padding>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
-                                                         <children>
-                                                            <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
-                                                               <children>
-                                                                  <FontAwesomeIconView fill="#163a5f" glyphName="MONEY" size="16" />
-                                                               </children>
-                                                            </HBox>
-                                                            <Label style="-fx-font-family: Verdana; -fx-text-fill: #FD3D39; -fx-font-weight: Bold;" text="1.500.000" />
-                                                            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
-                                                               <children>
-                                                                  <Label text="VNĐ" />
-                                                               </children>
-                                                            </HBox>
-                                                         </children>
-                                                         <padding>
-                                                            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
-                                                         </padding>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0">
-                                                         <children>
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="52.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #163A5F;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xem" />
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa" />
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="72.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa" />
+                                                            <Button graphicTextGap="8.0" mnemonicParsing="false" style="-fx-font-family: Verana; -fx-font-size: 13; -fx-text-fill: #FFF; -fx-background-color: #21BAB5;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Thêm phòng">
+                                                               <graphic>
+                                                                  <FontAwesomeIconView fill="WHITE" glyphName="PLUS" />
+                                                               </graphic>
+                                                               <padding>
+                                                                  <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                                               </padding>
+                                                            </Button>
+                                                            <Button graphicTextGap="8.0" mnemonicParsing="false" style="-fx-font-family: Verana; -fx-font-size: 13; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa">
+                                                               <graphic>
+                                                                  <FontAwesomeIconView fill="WHITE" glyphName="EDIT" />
+                                                               </graphic>
+                                                               <padding>
+                                                                  <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                                               </padding>
+                                                            </Button>
+                                                            <Button graphicTextGap="8.0" mnemonicParsing="false" style="-fx-font-family: Verana; -fx-font-size: 13; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa">
+                                                               <graphic>
+                                                                  <FontAwesomeIconView fill="WHITE" glyphName="TRASH" />
+                                                               </graphic>
+                                                               <padding>
+                                                                  <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                                               </padding>
+                                                            </Button>
                                                          </children>
                                                       </HBox>
                                                    </children>
-                                                </VBox>
-                                                <VBox spacing="24.0" style="-fx-border-color: #F3f4f9; -fx-border-width: 2px;" styleClass="items_hover" stylesheets="@../../styles/Style.css">
-                                                   <padding>
-                                                      <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
-                                                   </padding>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="32.0" VBox.vgrow="ALWAYS">
                                                    <children>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0">
-                                                         <children>
-                                                            <FontAwesomeIconView fill="#21bab5" glyphName="CHECK" size="16" />
-                                                            <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #21BAB5;" text="MÃ: P006" />
-                                                         </children>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
-                                                         <children>
-                                                            <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
-                                                               <children>
-                                                                  <FontAwesomeIconView fill="#163a5f" glyphName="USER" size="16" />
-                                                               </children>
-                                                            </HBox>
-                                                            <Label style="-fx-font-family: Verdana; -fx-text-fill: #163A5F;" text="Nguyễn Văn F" HBox.hgrow="ALWAYS" />
-                                                         </children>
+                                                      <VBox spacing="24.0" style="-fx-border-color: #F3f4f9; -fx-border-width: 2px;" styleClass="items_hover" stylesheets="@../../styles/Style.css">
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
                                                          <padding>
-                                                            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
                                                          </padding>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
                                                          <children>
-                                                            <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
                                                                <children>
-                                                                  <FontAwesomeIconView fill="#163a5f" glyphName="MONEY" size="16" />
+                                                                  <FontAwesomeIconView fill="#21bab5" glyphName="CHECK" size="16" />
+                                                                  <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #21BAB5;" text="MÃ: P001" />
                                                                </children>
                                                             </HBox>
-                                                            <Label style="-fx-font-family: Verdana; -fx-text-fill: #FD3D39; -fx-font-weight: Bold;" text="1.500.000" />
-                                                            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
                                                                <children>
-                                                                  <Label text="VNĐ" />
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="USER" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #163A5F;" text="Nguyễn Văn A" HBox.hgrow="ALWAYS" />
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="MONEY" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #FD3D39; -fx-font-weight: Bold;" text="1.500.000" />
+                                                                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                                     <children>
+                                                                        <Label text="VNĐ" />
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                               <children>
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="52.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #163A5F;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xem" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="72.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa" />
                                                                </children>
                                                             </HBox>
                                                          </children>
+                                                      </VBox>
+                                                      <VBox spacing="24.0" style="-fx-border-color: #F3f4f9; -fx-border-width: 2px;" styleClass="items_hover" stylesheets="@../../styles/Style.css">
                                                          <padding>
-                                                            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
                                                          </padding>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0">
                                                          <children>
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="52.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #163A5F;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xem" />
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa" />
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="72.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa" />
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                               <children>
+                                                                  <FontAwesomeIconView fill="#fd3d39" glyphName="TIMES" size="16" />
+                                                                  <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #FD3D39;" text="MÃ: P002" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="USER" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #163A5F;" text="Trống" HBox.hgrow="ALWAYS" />
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="MONEY" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #FD3D39; -fx-font-weight: Bold;" text="1.500.000" />
+                                                                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                                     <children>
+                                                                        <Label text="VNĐ" />
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                               <children>
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="52.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #163A5F;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xem" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="72.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa" />
+                                                               </children>
+                                                            </HBox>
                                                          </children>
-                                                      </HBox>
+                                                      </VBox>
+                                                      <VBox spacing="24.0" style="-fx-border-color: #F3f4f9; -fx-border-width: 2px;" styleClass="items_hover" stylesheets="@../../styles/Style.css">
+                                                         <padding>
+                                                            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                                                         </padding>
+                                                         <children>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                               <children>
+                                                                  <FontAwesomeIconView fill="#21bab5" glyphName="CHECK" size="16" />
+                                                                  <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #21BAB5;" text="MÃ: P003" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="USER" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #163A5F;" text="Nguyễn Văn C" HBox.hgrow="ALWAYS" />
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="MONEY" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #FD3D39; -fx-font-weight: Bold;" text="1.500.000" />
+                                                                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                                     <children>
+                                                                        <Label text="VNĐ" />
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                               <children>
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="52.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #163A5F;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xem" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="72.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa" />
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox spacing="24.0" style="-fx-border-color: #F3f4f9; -fx-border-width: 2px;" styleClass="items_hover" stylesheets="@../../styles/Style.css">
+                                                         <padding>
+                                                            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                                                         </padding>
+                                                         <children>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                               <children>
+                                                                  <FontAwesomeIconView fill="#21bab5" glyphName="CHECK" size="16" />
+                                                                  <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #21BAB5;" text="MÃ: P004" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="USER" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #163A5F;" text="Nguyễn Văn D" HBox.hgrow="ALWAYS" />
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="MONEY" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #FD3D39; -fx-font-weight: Bold;" text="1.500.000" />
+                                                                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                                     <children>
+                                                                        <Label text="VNĐ" />
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                               <children>
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="52.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #163A5F;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xem" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="72.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa" />
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
                                                    </children>
-                                                </VBox>
-                                                <VBox spacing="24.0" style="-fx-border-color: #F3f4f9; -fx-border-width: 2px;" styleClass="items_hover" stylesheets="@../../styles/Style.css">
-                                                   <padding>
-                                                      <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
-                                                   </padding>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="32.0">
                                                    <children>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0">
-                                                         <children>
-                                                            <FontAwesomeIconView fill="#fd3d39" glyphName="TIMES" size="16" />
-                                                            <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #FD3D39;" text="MÃ: P007" />
-                                                         </children>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
-                                                         <children>
-                                                            <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
-                                                               <children>
-                                                                  <FontAwesomeIconView fill="#163a5f" glyphName="USER" size="16" />
-                                                               </children>
-                                                            </HBox>
-                                                            <Label style="-fx-font-family: Verdana; -fx-text-fill: #163A5F;" text="Trống" HBox.hgrow="ALWAYS" />
-                                                         </children>
+                                                      <VBox spacing="24.0" style="-fx-border-color: #F3f4f9; -fx-border-width: 2px;" styleClass="items_hover" stylesheets="@../../styles/Style.css">
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
                                                          <padding>
-                                                            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
                                                          </padding>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
                                                          <children>
-                                                            <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
                                                                <children>
-                                                                  <FontAwesomeIconView fill="#163a5f" glyphName="MONEY" size="16" />
+                                                                  <FontAwesomeIconView fill="#21bab5" glyphName="CHECK" size="16" />
+                                                                  <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #21BAB5;" text="MÃ: P005" />
                                                                </children>
                                                             </HBox>
-                                                            <Label style="-fx-font-family: Verdana; -fx-text-fill: #FD3D39; -fx-font-weight: Bold;" text="1.500.000" />
-                                                            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
                                                                <children>
-                                                                  <Label text="VNĐ" />
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="USER" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #163A5F;" text="Nguyễn Văn E" HBox.hgrow="ALWAYS" />
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="MONEY" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #FD3D39; -fx-font-weight: Bold;" text="1.500.000" />
+                                                                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                                     <children>
+                                                                        <Label text="VNĐ" />
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                               <children>
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="52.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #163A5F;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xem" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="72.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa" />
                                                                </children>
                                                             </HBox>
                                                          </children>
+                                                      </VBox>
+                                                      <VBox spacing="24.0" style="-fx-border-color: #F3f4f9; -fx-border-width: 2px;" styleClass="items_hover" stylesheets="@../../styles/Style.css">
                                                          <padding>
-                                                            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
                                                          </padding>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0">
                                                          <children>
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="52.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #163A5F;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xem" />
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa" />
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="72.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa" />
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                               <children>
+                                                                  <FontAwesomeIconView fill="#21bab5" glyphName="CHECK" size="16" />
+                                                                  <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #21BAB5;" text="MÃ: P006" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="USER" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #163A5F;" text="Nguyễn Văn F" HBox.hgrow="ALWAYS" />
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
+                                                               <children>
+                                                                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                                     <children>
+                                                                        <FontAwesomeIconView fill="#163a5f" glyphName="MONEY" size="16" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Label style="-fx-font-family: Verdana; -fx-text-fill: #FD3D39; -fx-font-weight: Bold;" text="1.500.000" />
+                                                                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                                     <children>
+                                                                        <Label text="VNĐ" />
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                               <children>
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="52.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #163A5F;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xem" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa" />
+                                                                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="72.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa" />
+                                                               </children>
+                                                            </HBox>
                                                          </children>
-                                                      </HBox>
+                                                      </VBox>
                                                    </children>
-                                                </VBox>
+                                                </HBox>
                                              </children>
-                                          </HBox>
+                                             <VBox.margin>
+                                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                             </VBox.margin>
+                                          </VBox>
                                        </children>
                                     </VBox>
-                                    <VBox spacing="32.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
-                                       <padding>
-                                          <Insets bottom="4.0" left="12.0" right="12.0" top="4.0" />
-                                       </padding>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane>
+                                 <children>
+                                    <VBox AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                                        <children>
-                                          <HBox alignment="CENTER_LEFT" spacing="4.0">
+                                          <HBox alignment="CENTER_LEFT" spacing="12.0" style="-fx-background-color: #f3f4f9;" VBox.vgrow="ALWAYS">
                                              <padding>
-                                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
                                              </padding>
                                              <children>
-                                                <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
+                                                <HBox style="-fx-background-color: #f3f4f9; -fx-border-radius: 12px;">
                                                    <children>
-                                                      <FontAwesomeIconView fill="#163a5f" glyphName="HOME" size="16" />
+                                                      <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: #FFF; -fx-border-radius: 10px;">
+                                                         <children>
+                                                            <FontAwesomeIconView fill="#163a5f" glyphName="SEARCH" size="16" />
+                                                         </children>
+                                                         <padding>
+                                                            <Insets left="8.0" right="8.0" />
+                                                         </padding>
+                                                      </HBox>
+                                                      <TextField prefWidth="350.0" promptText="Tìm kiếm" style="-fx-padding: 12 12; -fx-font-family: Verdana; -fx-background-color: #FFF; -fx-font-weight: bold; -fx-border-radius: 10px;" />
                                                    </children>
+                                                   <padding>
+                                                      <Insets bottom="4.0" left="8.0" right="8.0" top="4.0" />
+                                                   </padding>
                                                 </HBox>
-                                                <Label style="-fx-text-fill: #163A5F; -fx-font-family: Verdana; -fx-font-size: 14; -fx-font-weight: Bold;" text="D002" />
-                                                <HBox alignment="CENTER_RIGHT" spacing="12.0" HBox.hgrow="ALWAYS">
-                                                   <children>
-                                                      <Button graphicTextGap="8.0" mnemonicParsing="false" style="-fx-font-family: Verana; -fx-font-size: 13; -fx-text-fill: #FFF; -fx-background-color: #21BAB5;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Thêm phòng">
-                                                         <graphic>
-                                                            <FontAwesomeIconView fill="WHITE" glyphName="PLUS" />
-                                                         </graphic>
-                                                         <padding>
-                                                            <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
-                                                         </padding>
-                                                      </Button>
-                                                      <Button graphicTextGap="8.0" mnemonicParsing="false" style="-fx-font-family: Verana; -fx-font-size: 13; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa">
-                                                         <graphic>
-                                                            <FontAwesomeIconView fill="WHITE" glyphName="EDIT" />
-                                                         </graphic>
-                                                         <padding>
-                                                            <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
-                                                         </padding>
-                                                      </Button>
-                                                      <Button graphicTextGap="8.0" mnemonicParsing="false" style="-fx-font-family: Verana; -fx-font-size: 13; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa">
-                                                         <graphic>
-                                                            <FontAwesomeIconView fill="WHITE" glyphName="TRASH" />
-                                                         </graphic>
-                                                         <padding>
-                                                            <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
-                                                         </padding>
-                                                      </Button>
-                                                   </children>
-                                                </HBox>
+                                                <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" style="-fx-background-color: #21BAB5; -fx-text-fill: #FFF; -fx-font-family: Verdana; -fx-font-weight: Bold;" text="Tìm kiếm" />
                                              </children>
                                           </HBox>
-                                          <HBox alignment="CENTER_LEFT" spacing="32.0" VBox.vgrow="ALWAYS">
+                                          <Label style="-fx-font-family: Verdana; -fx-font-weight: Bold; -fx-text-fill: #163A5F;" text="Kết quả tìm kiếm">
+                                             <VBox.margin>
+                                                <Insets bottom="12.0" left="24.0" right="24.0" top="12.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <HBox alignment="CENTER_LEFT" spacing="32.0">
                                              <children>
                                                 <VBox spacing="24.0" style="-fx-border-color: #F3f4f9; -fx-border-width: 2px;" styleClass="items_hover" stylesheets="@../../styles/Style.css">
                                                    <HBox.margin>
@@ -905,120 +1270,14 @@
                                                    </children>
                                                 </VBox>
                                              </children>
-                                          </HBox>
-                                          <HBox alignment="CENTER_LEFT" spacing="32.0">
-                                             <children>
-                                                <VBox spacing="24.0" style="-fx-border-color: #F3f4f9; -fx-border-width: 2px;" styleClass="items_hover" stylesheets="@../../styles/Style.css">
-                                                   <HBox.margin>
-                                                      <Insets />
-                                                   </HBox.margin>
-                                                   <padding>
-                                                      <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
-                                                   </padding>
-                                                   <children>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0">
-                                                         <children>
-                                                            <FontAwesomeIconView fill="#21bab5" glyphName="CHECK" size="16" />
-                                                            <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #21BAB5;" text="MÃ: P005" />
-                                                         </children>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
-                                                         <children>
-                                                            <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
-                                                               <children>
-                                                                  <FontAwesomeIconView fill="#163a5f" glyphName="USER" size="16" />
-                                                               </children>
-                                                            </HBox>
-                                                            <Label style="-fx-font-family: Verdana; -fx-text-fill: #163A5F;" text="Nguyễn Văn E" HBox.hgrow="ALWAYS" />
-                                                         </children>
-                                                         <padding>
-                                                            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
-                                                         </padding>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
-                                                         <children>
-                                                            <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
-                                                               <children>
-                                                                  <FontAwesomeIconView fill="#163a5f" glyphName="MONEY" size="16" />
-                                                               </children>
-                                                            </HBox>
-                                                            <Label style="-fx-font-family: Verdana; -fx-text-fill: #FD3D39; -fx-font-weight: Bold;" text="1.500.000" />
-                                                            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
-                                                               <children>
-                                                                  <Label text="VNĐ" />
-                                                               </children>
-                                                            </HBox>
-                                                         </children>
-                                                         <padding>
-                                                            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
-                                                         </padding>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0">
-                                                         <children>
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="52.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #163A5F;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xem" />
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa" />
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="72.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa" />
-                                                         </children>
-                                                      </HBox>
-                                                   </children>
-                                                </VBox>
-                                                <VBox spacing="24.0" style="-fx-border-color: #F3f4f9; -fx-border-width: 2px;" styleClass="items_hover" stylesheets="@../../styles/Style.css">
-                                                   <padding>
-                                                      <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
-                                                   </padding>
-                                                   <children>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0">
-                                                         <children>
-                                                            <FontAwesomeIconView fill="#21bab5" glyphName="CHECK" size="16" />
-                                                            <Label style="-fx-font-family: Verdana; -fx-font-size: 12; -fx-font-weight: Bold; -fx-text-fill: #21BAB5;" text="MÃ: P006" />
-                                                         </children>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
-                                                         <children>
-                                                            <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
-                                                               <children>
-                                                                  <FontAwesomeIconView fill="#163a5f" glyphName="USER" size="16" />
-                                                               </children>
-                                                            </HBox>
-                                                            <Label style="-fx-font-family: Verdana; -fx-text-fill: #163A5F;" text="Nguyễn Văn F" HBox.hgrow="ALWAYS" />
-                                                         </children>
-                                                         <padding>
-                                                            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
-                                                         </padding>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0" style="-fx-border-color: #f3f4f9; -fx-border-width: 2px;">
-                                                         <children>
-                                                            <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
-                                                               <children>
-                                                                  <FontAwesomeIconView fill="#163a5f" glyphName="MONEY" size="16" />
-                                                               </children>
-                                                            </HBox>
-                                                            <Label style="-fx-font-family: Verdana; -fx-text-fill: #FD3D39; -fx-font-weight: Bold;" text="1.500.000" />
-                                                            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
-                                                               <children>
-                                                                  <Label text="VNĐ" />
-                                                               </children>
-                                                            </HBox>
-                                                         </children>
-                                                         <padding>
-                                                            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
-                                                         </padding>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" spacing="8.0">
-                                                         <children>
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="52.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #163A5F;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xem" />
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #53D86A;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Chỉnh sửa" />
-                                                            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="72.0" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-background-color: #FD3D39;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Xóa" />
-                                                         </children>
-                                                      </HBox>
-                                                   </children>
-                                                </VBox>
-                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="12.0" left="20.0" right="20.0" top="12.0" />
+                                             </VBox.margin>
                                           </HBox>
                                        </children>
                                     </VBox>
                                  </children>
-                              </VBox>
+                              </AnchorPane>
                            </children>
                         </AnchorPane>
                     </content>
