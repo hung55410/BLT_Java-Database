@@ -42,7 +42,7 @@
                                     <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="20" />
                                  </children>
                               </HBox>
-                              <Button fx:id="button_home" mnemonicParsing="false" onAction="#button_homeOnAction" prefHeight="23.0" prefWidth="200.0" style="-fx-font-family: Verdana; -fx-font-weight: bold; -fx-text-fill: #FFF; -fx-alignment: center-left; -fx-background-color: transparent;" stylesheets="@../../styles/Style.css" text="Trang chủ">
+                              <Button fx:id="button_home" mnemonicParsing="false" onAction="#button_homeOnAction" prefHeight="23.0" prefWidth="200.0" style="-fx-font-family: Verdana; -fx-font-weight: bold; -fx-text-fill: #FFF; -fx-alignment: center-left; -fx-background-color: transparent; -fx-alignment: left;" stylesheets="@../../styles/Style.css" text="Trang chủ">
                                  <opaqueInsets>
                                     <Insets />
                                  </opaqueInsets>
@@ -191,7 +191,7 @@
                     <content>
                       <AnchorPane style="-fx-background-color: #FFF;">
                            <children>
-                              <AnchorPane visible="false">
+                              <AnchorPane fx:id="page_home">
                                  <children>
                                     <VBox spacing="24.0">
                                        <children>
@@ -1027,7 +1027,7 @@
                                     </VBox>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane>
+                              <AnchorPane fx:id="page_search" visible="false">
                                  <children>
                                     <VBox AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                                        <children>

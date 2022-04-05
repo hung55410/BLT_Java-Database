@@ -28,79 +28,59 @@ public class HomePageController {
     @FXML
     private HBox bg_button_home, bg_button_search, bg_button_room, bg_button_setting, bg_button_account;
 
+    @FXML
+    private AnchorPane page_home, page_search;
+
     public void button_homeOnAction(ActionEvent e) {
-//      start Text
-        title_icon.setGlyphName("HOME");
-        title_header.setText("trang chủ");
-        String title_header_upcase = title_header.getText().toUpperCase();
-        title_header.setText(title_header_upcase);
-        title_header.setStyle("-fx-text-fill: #FFF; -fx-font-size: 14px; -fx-font-weight: bold; -fx-font-family: 'Verdana';");
-//      end Text
+        button_home.setStyle("-fx-font-family: 'Verdana'; -fx-font-weight: Bold; -fx-text-fill: #FFF; fx-alignment: Center-left; -fx-background-color: Transperent; -fx-alignment: Left;");
+        bg_button_home.setStyle("-fx-background-color: #21BAB5");
+        bg_button_search.setStyle("-fx-background-color: Transparent");
+        bg_button_room.setStyle("-fx-background-color: Transparent;");
+        bg_button_setting.setStyle("-fx-background-color: Transparent;");
+        bg_button_account.setStyle("-fx-background-color: Transparent;");
 
-        bg_button_home.setStyle("-fx-background-color: #21BAB5;");
-        bg_button_search.setStyle("-fx-background-color: transparent;");
-        bg_button_room.setStyle("-fx-background-color: transparent;");
-        bg_button_setting.setStyle("-fx-background-color: transparent;");
-        bg_button_account.setStyle("-fx-background-color: transparent;");
-
+        page_home.setVisible(true);
+        page_search.setVisible(false);
     }
 
     public void button_searchOnAction(ActionEvent e) {
-        title_icon.setGlyphName("SEARCH");
-        title_header.setText("tìm kiếm");
-        String title_header_upcase = title_header.getText().toUpperCase();
-        title_header.setText(title_header_upcase);
-        title_header.setStyle("-fx-text-fill: #FFF; -fx-font-size: 14px; -fx-font-weight: bold; -fx-font-family: 'Verdana';");
+        button_home.setStyle("-fx-font-family: 'Verdana'; -fx-font-weight: Bold; -fx-text-fill: #FFF; fx-alignment: Center-left; -fx-background-color: Transperent; -fx-alignment: Left;");
+        bg_button_home.setStyle("-fx-background-color: Transparent");
+        bg_button_search.setStyle("-fx-background-color:  #21BAB5");
+        bg_button_room.setStyle("-fx-background-color: Transparent;");
+        bg_button_setting.setStyle("-fx-background-color: Transparent;");
+        bg_button_account.setStyle("-fx-background-color: Transparent;");
 
-        bg_button_home.setStyle("-fx-background-color: transparent;");
-        bg_button_search.setStyle("-fx-background-color: #21BAB5;");
-        bg_button_room.setStyle("-fx-background-color: transparent;");
-        bg_button_setting.setStyle("-fx-background-color: transparent;");
-        bg_button_account.setStyle("-fx-background-color: transparent;");
+        title_header.setText("Tìm kiếm");
 
+        page_home.setVisible(false);
+        page_search.setVisible(true);
     }
 
     public void button_roomOnAction(ActionEvent e) {
-        title_icon.setGlyphName("ARCHIVE");
-        title_header.setText("quản lý phòng");
-        String title_header_upcase = title_header.getText().toUpperCase();
-        title_header.setText(title_header_upcase);
-        title_header.setStyle("-fx-text-fill: #FFF; -fx-font-size: 14px; -fx-font-weight: bold; -fx-font-family: 'Verdana';");
-
-        bg_button_home.setStyle("-fx-background-color: transparent;");
-        bg_button_search.setStyle("-fx-background-color: transparent;");
-        bg_button_room.setStyle("-fx-background-color: #21BAB5;");
-        bg_button_setting.setStyle("-fx-background-color: transparent;");
-        bg_button_account.setStyle("-fx-background-color: transparent;");
-
+        button_home.setStyle("-fx-font-family: 'Verdana'; -fx-font-weight: Bold; -fx-text-fill: #FFF; fx-alignment: Center-left; -fx-background-color: Transperent; -fx-alignment: Left;");
+        bg_button_home.setStyle("-fx-background-color: Transparent");
+        bg_button_search.setStyle("-fx-background-color: Transparent");
+        bg_button_room.setStyle("-fx-background-color: #21BAB5");
+        bg_button_setting.setStyle("-fx-background-color: Transparent;");
+        bg_button_account.setStyle("-fx-background-color: Transparent;");
     }
 
     public void button_settingOnAction(ActionEvent e) {
-        title_icon.setGlyphName("COG");
-        title_header.setText("cài đặt");
-        String title_header_upcase = title_header.getText().toUpperCase();
-        title_header.setText(title_header_upcase);
-        title_header.setStyle("-fx-text-fill: #FFF; -fx-font-size: 14px; -fx-font-weight: bold; -fx-font-family: 'Verdana';");
-
-        bg_button_home.setStyle("-fx-background-color: transparent;");
-        bg_button_search.setStyle("-fx-background-color: transparent;");
-        bg_button_room.setStyle("-fx-background-color: transparent;");
-        bg_button_setting.setStyle("-fx-background-color: #21BAB5;");
-        bg_button_account.setStyle("-fx-background-color: transparent;");
-
+        button_home.setStyle("-fx-font-family: 'Verdana'; -fx-font-weight: Bold; -fx-text-fill: #FFF; fx-alignment: Center-left; -fx-background-color: Transperent; -fx-alignment: Left;");
+        bg_button_home.setStyle("-fx-background-color: Transparent");
+        bg_button_search.setStyle("-fx-background-color: Transparent");
+        bg_button_room.setStyle("-fx-background-color: Transparent;");
+        bg_button_setting.setStyle("-fx-background-color: #21BAB5");
+        bg_button_account.setStyle("-fx-background-color: Transparent;");
     }
 
     public void button_accountOnAction(ActionEvent e) {
-        title_icon.setGlyphName("USER");
-        title_header.setText("tài khoản");
-        String title_header_upcase = title_header.getText().toUpperCase();
-        title_header.setText(title_header_upcase);
-        title_header.setStyle("-fx-text-fill: #FFF; -fx-font-size: 14px; -fx-font-weight: bold; -fx-font-family: 'Verdana';");
-
-        bg_button_home.setStyle("-fx-background-color: transparent;");
-        bg_button_search.setStyle("-fx-background-color: transparent;");
-        bg_button_room.setStyle("-fx-background-color: transparent;");
-        bg_button_setting.setStyle("-fx-background-color: transparent;");
-        bg_button_account.setStyle("-fx-background-color: #21BAB5;");
+        button_home.setStyle("-fx-font-family: 'Verdana'; -fx-font-weight: Bold; -fx-text-fill: #FFF; fx-alignment: Center-left; -fx-background-color: Transperent; -fx-alignment: Left;");
+        bg_button_home.setStyle("-fx-background-color: Transparent");
+        bg_button_search.setStyle("-fx-background-color: Transparent");
+        bg_button_room.setStyle("-fx-background-color: Transparent;");
+        bg_button_setting.setStyle("-fx-background-color: Transparent;");
+        bg_button_account.setStyle("-fx-background-color: #21BAB5");
     }
 }
