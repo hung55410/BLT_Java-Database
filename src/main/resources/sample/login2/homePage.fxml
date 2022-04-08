@@ -148,7 +148,10 @@
                                     <FontAwesomeIconView fx:id="title_icon" fill="WHITE" glyphName="HOME" size="20" />
                                  </children>
                               </HBox>
-                              <Label fx:id="title_header" style="-fx-font-family: Verdana; -fx-font-size: 14; -fx-font-weight: Bold; -fx-text-fill: #FFF;" styleClass="title" text="TRANG CHỦ" />
+                              <Label fx:id="title_header" style="-fx-font-family: Verdana; -fx-font-size: 14; -fx-font-weight: Bold; -fx-text-fill: #FFF;" styleClass="title" text="TRANG CHỦ">
+                                 <padding>
+                                    <Insets bottom="12.0" right="12.0" top="12.0" />
+                                 </padding></Label>
                            </children>
                            <padding>
                               <Insets left="24.0" right="24.0" />
@@ -158,9 +161,6 @@
                            <padding>
                               <Insets bottom="12.0" left="24.0" right="24.0" top="12.0" />
                            </padding>
-                           <children>
-                              <Label fx:id="label_name" style="-fx-font-family: Verdana; -fx-text-fill: #FFF;" text="Xin chào, Nguyễn Hưng" />
-                           </children>
                         </HBox>
                      </children>
                   </HBox>
