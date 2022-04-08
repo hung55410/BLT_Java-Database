@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="728.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomePageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="728.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
    <children>
       <HBox layoutX="117.0" layoutY="185.0" prefHeight="100.0" prefWidth="200.0" styleClass="font" stylesheets="@../../styles/Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -66,29 +66,6 @@
                                  </children>
                               </HBox>
                               <Button fx:id="button_search" mnemonicParsing="false" onAction="#button_searchOnAction" prefHeight="39.0" prefWidth="200.0" style="-fx-font-family: Verdana; -fx-font-weight: Bold; -fx-text-fill: #FFF; -fx-alignment: center-left; -fx-background-color: transparent;" stylesheets="@../../styles/Style.css" text="Tìm kiếm">
-                                 <opaqueInsets>
-                                    <Insets />
-                                 </opaqueInsets>
-                                 <padding>
-                                    <Insets bottom="12.0" right="12.0" top="12.0" />
-                                 </padding>
-                              </Button>
-                           </children>
-                           <padding>
-                              <Insets bottom="4.0" left="12.0" right="12.0" top="4.0" />
-                           </padding>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </HBox>
-                        <HBox fx:id="bg_button_room" alignment="CENTER_LEFT" spacing="12.0" styleClass="button_hover" stylesheets="@../../styles/Style.css">
-                           <children>
-                              <HBox alignment="CENTER" prefHeight="24.0" prefWidth="24.0">
-                                 <children>
-                                    <FontAwesomeIconView fill="WHITE" glyphName="ARCHIVE" size="20" />
-                                 </children>
-                              </HBox>
-                              <Button fx:id="button_room" mnemonicParsing="false" onAction="#button_roomOnAction" prefHeight="39.0" prefWidth="200.0" style="-fx-font-family: Verdana; -fx-font-weight: Bold; -fx-alignment: center-left; -fx-background-color: transparent; -fx-text-fill: #FFF;" stylesheets="@../../styles/Style.css" text="Quản lý phòng">
                                  <opaqueInsets>
                                     <Insets />
                                  </opaqueInsets>
@@ -182,7 +159,7 @@
                               <Insets bottom="12.0" left="24.0" right="24.0" top="12.0" />
                            </padding>
                            <children>
-                              <Label style="-fx-font-family: Verdana; -fx-text-fill: #FFF;" text="Xin chào, Nguyễn Hưng" />
+                              <Label fx:id="label_name" style="-fx-font-family: Verdana; -fx-text-fill: #FFF;" text="Xin chào, Nguyễn Hưng" />
                            </children>
                         </HBox>
                      </children>
@@ -1278,6 +1255,8 @@
                                     </VBox>
                                  </children>
                               </AnchorPane>
+                              <AnchorPane fx:id="page_setting" />
+                              <AnchorPane fx:id="page_account" />
                            </children>
                         </AnchorPane>
                     </content>
