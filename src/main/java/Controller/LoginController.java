@@ -124,7 +124,7 @@ public class LoginController {
     @FXML
     private Button button_home, button_search, button_setting, button_account;
     @FXML
-    private Label title_header, label_name;
+    private Label title_header;
     @FXML
     private FontAwesomeIconView title_icon;
     @FXML
@@ -201,4 +201,8 @@ public class LoginController {
         page_account.setVisible(true);
     }
 //    End HomePage
+
+//    Start add room
+
+//    End add room
 }
