@@ -147,6 +147,7 @@ public class LoginController {
         page_search.setVisible(false);
         page_setting.setVisible(false);
         page_account.setVisible(false);
+        page_add_rooms.setVisible(false);
     }
 
     public void button_searchOnAction(ActionEvent e) {
@@ -164,6 +165,7 @@ public class LoginController {
         page_search.setVisible(true);
         page_setting.setVisible(false);
         page_account.setVisible(false);
+        page_add_rooms.setVisible(false);
     }
 
     public void button_settingOnAction(ActionEvent e) {
@@ -181,6 +183,7 @@ public class LoginController {
         page_search.setVisible(false);
         page_setting.setVisible(true);
         page_account.setVisible(false);
+        page_add_rooms.setVisible(false);
 
     }
 
@@ -199,10 +202,22 @@ public class LoginController {
         page_search.setVisible(false);
         page_setting.setVisible(false);
         page_account.setVisible(true);
+        page_add_rooms.setVisible(false);
     }
 //    End HomePage
 
-//    Start add room
+//    Start add rooms
+    @FXML
+    private Button button_add_rooms;
+    @FXML
+    private AnchorPane page_add_rooms;
 
-//    End add room
+    public void button_add_roomsOnAction(ActionEvent e) {
+        page_home.setVisible(false);
+        page_search.setVisible(false);
+        page_setting.setVisible(false);
+        page_account.setVisible(false);
+        page_add_rooms.setVisible(true);
+    }
+//    End add rooms
 }

@@ -187,7 +187,7 @@
                                                 </Label>
                                                 <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
                                                    <children>
-                                                      <Button graphicTextGap="8.0" mnemonicParsing="false" style="-fx-font-family: Verana; -fx-font-size: 13; -fx-text-fill: #FFF; -fx-background-color: #21BAB5;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Thêm dãy trọ">
+                                                      <Button fx:id="button_add_rooms" graphicTextGap="8.0" mnemonicParsing="false" onAction="#button_add_roomsOnAction" style="-fx-font-family: Verana; -fx-font-size: 13; -fx-text-fill: #FFF; -fx-background-color: #21BAB5;" styleClass="button_addEditDel_hover" stylesheets="@../../styles/Style.css" text="Thêm dãy trọ">
                                                          <graphic>
                                                             <FontAwesomeIconView fill="WHITE" glyphName="PLUS" />
                                                          </graphic>
@@ -1257,6 +1257,76 @@
                               </AnchorPane>
                               <AnchorPane fx:id="page_setting" />
                               <AnchorPane fx:id="page_account" />
+                              <AnchorPane fx:id="page_add_rooms" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <children>
+                                    <VBox AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT">
+                                             <padding>
+                                                <Insets bottom="12.0" left="24.0" right="24.0" top="12.0" />
+                                             </padding>
+                                             <children>
+                                                <Label style="-fx-font-family: Verdana; -fx-font-weight: Bold; -fx-text-fill: #163A5F;" text="Thêm dãy trọ mới" HBox.hgrow="ALWAYS" />
+                                                <HBox alignment="CENTER_RIGHT" spacing="24.0" HBox.hgrow="ALWAYS">
+                                                   <children>
+                                                      <Button alignment="CENTER" mnemonicParsing="false" style="-fx-font-family: Verdana; -fx-text-fill: #FD3D39; -fx-font-size: 13; -fx-border-color: #FD3D39; -fx-border-width: 2px; -fx-background-color: #FFF; -fx-font-weight: Bold;" text="Hủy">
+                                                         <padding>
+                                                            <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                                         </padding>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </Button>
+                                                      <Button alignment="CENTER" mnemonicParsing="false" style="-fx-font-family: Verdana; -fx-text-fill: #FFF; -fx-font-size: 13; -fx-background-color: #21BAB5; -fx-border-color: #21BAB5; -fx-border-width: 2px; -fx-font-weight: bold;" text="Xong">
+                                                         <padding>
+                                                            <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                                         </padding>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <AnchorPane>
+                                             <VBox.margin>
+                                                <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <VBox spacing="24.0">
+                                                   <children>
+                                                      <VBox spacing="8.0">
+                                                         <children>
+                                                            <Label style="-fx-font-family: Verdana;" text="Mã dãy trọ" />
+                                                            <TextField prefWidth="400.0" style="-fx-background-color: #FFF; -fx-border-color: #797979; -fx-padding: 8 12; -fx-font-family: Verdana;" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox spacing="8.0">
+                                                         <children>
+                                                            <Label style="-fx-font-family: Verdana;" text="Tên dãy trọ" />
+                                                            <TextField prefWidth="400.0" style="-fx-background-color: #FFF; -fx-border-color: #797979; -fx-padding: 8 12; -fx-font-family: Verdana;" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox spacing="8.0">
+                                                         <children>
+                                                            <Label style="-fx-font-family: Verdana;" text="Địa chỉ" />
+                                                            <TextField prefWidth="400.0" style="-fx-background-color: #FFF; -fx-border-color: #797979; -fx-padding: 8 12; -fx-font-family: Verdana;" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox spacing="8.0">
+                                                         <children>
+                                                            <Label style="-fx-font-family: Verdana;" text="Số lượng phòng" />
+                                                            <TextField prefWidth="400.0" style="-fx-background-color: #FFF; -fx-border-color: #797979; -fx-padding: 8 12; -fx-font-family: Verdana;" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </VBox>
+                                 </children></AnchorPane>
                            </children>
                         </AnchorPane>
                     </content>
