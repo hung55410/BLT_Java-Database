@@ -1,12 +1,12 @@
-package sample.login2;
+package Main;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DatabaseConnection {
-    public Connection databaseLink;
+    public static Connection databaseLink;
 
-    public Connection getConnection () {
+    public static Connection getConnection() {
         String dataName = "login";
         String dataUser = "root";
         String dataPassword = "hung55410";

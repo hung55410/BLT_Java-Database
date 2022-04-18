@@ -1,4 +1,4 @@
-module sample.login2 {
+module Main {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
@@ -6,8 +6,8 @@ module sample.login2 {
     requires de.jensd.fx.glyphs.fontawesome;
 
 
-    opens sample.login2 to javafx.fxml;
-    exports sample.login2;
+    opens Main to javafx.fxml;
+    exports Main;
     exports Controller;
     opens Controller to javafx.fxml;
 }

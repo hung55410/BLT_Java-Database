@@ -1,9 +1,8 @@
-package sample.login2;
+package Main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
@@ -17,7 +16,7 @@ public class Main extends Application {
         FontAwesomeIconView fontAwesomeIconView = new FontAwesomeIconView(FontAwesomeIcon.ANDROID);
         fontAwesomeIconView.setSize("4em");
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("login.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("GiaoDienDangNhap.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Quản lý phòng trọ");
         stage.setScene(scene);
