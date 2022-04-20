@@ -1,19 +1,26 @@
+.AnchorPane {
+    -fx-background-color: #FFF;
+}
+
 .title {
-    -fx-text-transform: uppercase !important;
+    -fx-font-size: 18px;
 }
 
-.button_hover:hover {
-    -fx-background-color: #205388 !important;
-    -fx-border-color: #21BAB5;
-    -fx-border-width: 0 4px 0 0;
+.label {
+    -fx-font-size: 14px;
 }
 
-.button_addEditDel_hover:hover {
-    -fx-opacity: 0.8! important;
-    -fx-cursor: hand;
+.textField {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #797979;
+    -fx-padding: 8px 12px 8px 12px;
 }
 
-.items_hover:hover {
-    -fx-background-color: #DBE9F8 !important;
-    -fx-cursor: hand;
+.button {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #797979;
+    -fx-padding: 8px 12px 8px 12px;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-border-width: 2px;
 }
