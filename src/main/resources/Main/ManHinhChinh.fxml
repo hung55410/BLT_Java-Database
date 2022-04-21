@@ -34,9 +34,9 @@
                                     <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="DS dãy trọ" HBox.hgrow="ALWAYS" />
                                     <HBox alignment="CENTER_RIGHT" spacing="24.0" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Button mnemonicParsing="false" styleClass="button_add" text="Thêm dãy mới" />
-                                          <Button mnemonicParsing="false" styleClass="button_edit" text="Chỉnh sửa" />
-                                          <Button mnemonicParsing="false" styleClass="button_delete" text="Xóa dãy" />
+                                          <Button mnemonicParsing="false" styleClass="button_add" stylesheets="@../styles/Style.css" text="Thêm dãy mới" />
+                                          <Button mnemonicParsing="false" styleClass="button_edit" stylesheets="@../styles/Style.css" text="Chỉnh sửa" />
+                                          <Button mnemonicParsing="false" styleClass="button_delete" stylesheets="@../styles/Style.css" text="Xóa dãy" />
                                        </children>
                                     </HBox>
                                  </children>
@@ -58,9 +58,9 @@
                                     <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="DS phòng" HBox.hgrow="ALWAYS" />
                                     <HBox alignment="CENTER_RIGHT" spacing="24.0" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Button mnemonicParsing="false" styleClass="button_add" text="Thêm phòng mới" />
-                                          <Button mnemonicParsing="false" styleClass="button_edit" text="Chỉnh sửa" />
-                                          <Button mnemonicParsing="false" styleClass="button_delete" text="Xóa phòng" />
+                                          <Button mnemonicParsing="false" styleClass="button_add" stylesheets="@../styles/Style.css" text="Thêm phòng mới" />
+                                          <Button mnemonicParsing="false" styleClass="button_edit" stylesheets="@../styles/Style.css" text="Chỉnh sửa" />
+                                          <Button mnemonicParsing="false" styleClass="button_delete" stylesheets="@../styles/Style.css" text="Xóa phòng" />
                                        </children>
                                     </HBox>
                                  </children>
@@ -78,9 +78,9 @@
                                     <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Thông tin phòng" HBox.hgrow="ALWAYS" />
                                     <HBox alignment="CENTER_RIGHT" spacing="24.0" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Button mnemonicParsing="false" styleClass="button_add" text="Đăng ký" />
-                                          <Button mnemonicParsing="false" styleClass="button_edit" text="Chỉnh sửa" />
-                                          <Button mnemonicParsing="false" styleClass="button_delete" text="Hủy đăng ký" />
+                                          <Button mnemonicParsing="false" styleClass="button_add" stylesheets="@../styles/Style.css" text="Đăng ký" />
+                                          <Button mnemonicParsing="false" styleClass="button_edit" stylesheets="@../styles/Style.css" text="Chỉnh sửa" />
+                                          <Button mnemonicParsing="false" styleClass="button_delete" stylesheets="@../styles/Style.css" text="Hủy đăng ký" />
                                        </children>
                                     </HBox>
                                  </children>
