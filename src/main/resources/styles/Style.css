@@ -33,9 +33,10 @@
 }
 
 .button_navbar:hover {
-    -fx-background-color: #f3f4f9;
+    -fx-background-color: #F3F4F9;
     -fx-border-width: 0 0 2px 0;
     -fx-border-color: #CCC;
+    -fx-cursor: hand;
 }
 
 .button_add {

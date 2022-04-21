@@ -31,7 +31,7 @@ public class DangNhap_Controller {
     @FXML
     private void Button_DangNhapOnAction(ActionEvent event) {
         String userName = TextField_TenDangNhap.getText();
-        String password = TextField_TenDangNhap.getText();
+        String password = PasswordField_MatKhau.getText();
 
         DatabaseConnection databaseConnection = new DatabaseConnection();
         Connection connection = databaseConnection.getConnection();
