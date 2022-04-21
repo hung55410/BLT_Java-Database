@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 public class DatabaseConnection {
     public static Connection databaseLink;
 
+//  Thay đổi cách kết nối
     public static Connection getConnection() {
         String dataName = "login";
         String dataUser = "root";
