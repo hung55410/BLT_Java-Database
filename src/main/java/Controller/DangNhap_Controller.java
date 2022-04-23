@@ -63,4 +63,24 @@ public class DangNhap_Controller {
             }
         }
     }
+
+    @FXML
+    private void Button_DangKyOnAction(ActionEvent event) {
+        try {
+            Stage stage = (Stage) GiaodienDangNhap.getScene().getWindow();
+            stage.close();
+
+            stage.setTitle("Quản lý phòng trọ");
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("GiaodienDangKy.fxml"));
+            Scene scene = new Scene(loader.load());
+            Stage stage1 = new Stage();
+            stage1.setScene(scene);
+            stage1.show();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
 }

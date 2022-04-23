@@ -17,30 +17,30 @@
             <children>
                 <HBox>
                     <children>
-                        <Label text="Sửa phòng trọ" />
+                        <Label text="Chỉnh sửa thông tin dãy trọ" />
                     </children>
                 </HBox>
                 <HBox alignment="CENTER_LEFT">
                     <children>
-                        <Label prefWidth="150.0" text="Mã phòng trọ" />
+                        <Label prefWidth="150.0" text="Mã dãy trọ" />
                         <TextField prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
                     </children>
                 </HBox>
                 <HBox alignment="CENTER_LEFT">
                     <children>
-                        <Label prefWidth="150.0" text="Tên phòng trọ" />
+                        <Label prefWidth="150.0" text="Tên dãy trọ" />
                         <TextField prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
                     </children>
                 </HBox>
                 <HBox alignment="CENTER_LEFT">
                     <children>
-                        <Label prefWidth="150.0" text="Số lượng người/phòng" />
+                        <Label prefWidth="150.0" text="Địa chỉ" />
                         <TextField prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
                     </children>
                 </HBox>
                 <HBox alignment="CENTER_LEFT">
                     <children>
-                        <Label prefWidth="150.0" text="Giá phòng" />
+                        <Label prefWidth="150.0" text="Số lượng phòng" />
                         <TextField prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
                     </children>
                 </HBox>

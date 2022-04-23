@@ -11,10 +11,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="GiaoDienDangKy" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DangKy_Controller">
    <children>
-      <VBox spacing="16.0" styleClass="AnchorPane" stylesheets="@../styles/Style.css">
+      <VBox spacing="12.0" styleClass="AnchorPane" stylesheets="@../styles/Style.css">
          <padding>
             <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
          </padding>
@@ -71,8 +70,8 @@
             <Label VBox.vgrow="ALWAYS" />
             <HBox spacing="24.0">
                <children>
-                  <Button mnemonicParsing="false" text="Đăng ký" />
-                  <Button mnemonicParsing="false" text="Trở lại đăng nhập" />
+                  <Button mnemonicParsing="false" styleClass="button_app" stylesheets="@../styles/Style.css" text="Đăng ký" />
+                  <Button mnemonicParsing="false" onAction="#Button_BackLoginOnAction" styleClass="button_app" stylesheets="@../styles/Style.css" text="Trở lại đăng nhập" />
                </children>
             </HBox>
          </children>
