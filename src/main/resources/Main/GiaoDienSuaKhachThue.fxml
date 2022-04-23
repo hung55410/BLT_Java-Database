@@ -10,65 +10,43 @@
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
-    <children>
-        <VBox spacing="16.0">
-            <padding>
-                <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
-            </padding>
-            <children>
-                <HBox>
-                    <children>
-                        <Label text="Chỉnh sửa thông tin khách thuê" />
-                    </children>
-                </HBox>
-                <HBox alignment="CENTER_LEFT">
-                    <children>
-                        <Label prefWidth="150.0" text="Họ và tên" />
-                        <TextField prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
-                    </children>
-                </HBox>
-                <HBox alignment="CENTER_LEFT">
-                    <children>
-                        <Label prefWidth="150.0" text="CCCD/CMND" />
-                        <TextField prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
-                    </children>
-                </HBox>
-                <HBox alignment="CENTER_LEFT">
-                    <children>
-                        <Label prefWidth="150.0" text="Quê quán" />
-                        <TextField prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
-                    </children>
-                </HBox>
-                <HBox alignment="CENTER_LEFT">
-                    <children>
-                        <Label prefWidth="150.0" text="Số điện thoại" />
-                        <TextField prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
-                    </children>
-                </HBox>
-                <HBox alignment="CENTER_LEFT">
-                    <children>
-                        <Label prefWidth="150.0" text="Giới tính" />
-                        <HBox spacing="24.0">
-                            <children>
-                                <RadioButton mnemonicParsing="false" text="Nam" />
-                                <RadioButton mnemonicParsing="false" text="Nữ" />
-                                <RadioButton mnemonicParsing="false" text="Khác" />
-                            </children>
-                        </HBox>
-                    </children>
-                </HBox>
-                <HBox>
-                    <children>
-                        <Label textFill="#e10e0e" HBox.hgrow="ALWAYS" />
-                    </children>
-                </HBox>
-                <HBox alignment="CENTER_RIGHT" spacing="24.0">
-                    <children>
-                        <Button mnemonicParsing="false" text="Xác nhận" />
-                        <Button mnemonicParsing="false" text="Hủy" />
-                    </children>
-                </HBox>
-            </children>
-        </VBox>
-    </children>
+    <VBox spacing="16.0" stylesheets="@../styles/Style.css">
+        <padding>
+            <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+        </padding>
+        <HBox>
+            <Label text="Chỉnh sửa thông tin khách thuê" />
+        </HBox>
+        <HBox alignment="CENTER_LEFT">
+            <Label prefWidth="150.0" text="Họ và tên" />
+            <TextField prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
+        </HBox>
+        <HBox alignment="CENTER_LEFT">
+            <Label prefWidth="150.0" text="CCCD/CMND" />
+            <TextField prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
+        </HBox>
+        <HBox alignment="CENTER_LEFT">
+            <Label prefWidth="150.0" text="Quê quán" />
+            <TextField prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
+        </HBox>
+        <HBox alignment="CENTER_LEFT">
+            <Label prefWidth="150.0" text="Số điện thoại" />
+            <TextField prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
+        </HBox>
+        <HBox alignment="CENTER_LEFT">
+            <Label prefWidth="150.0" text="Giới tính" />
+            <HBox spacing="24.0">
+                <RadioButton mnemonicParsing="false" text="Nam" />
+                <RadioButton mnemonicParsing="false" text="Nữ" />
+                <RadioButton mnemonicParsing="false" text="Khác" />
+            </HBox>
+        </HBox>
+        <HBox>
+            <Label textFill="#e10e0e" HBox.hgrow="ALWAYS" />
+        </HBox>
+        <HBox alignment="CENTER_RIGHT" spacing="24.0">
+            <Button mnemonicParsing="false" text="Xác nhận" />
+            <Button mnemonicParsing="false" text="Hủy" />
+        </HBox>
+    </VBox>
 </AnchorPane>

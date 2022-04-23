@@ -10,53 +10,35 @@
 
 
 <AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <VBox spacing="16.0">
-         <padding>
-            <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
-         </padding>
-         <children>
-            <HBox>
-               <children>
-                  <Label text="Thêm dãy trọ" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER_LEFT">
-               <children>
-                  <Label prefWidth="150.0" text="Mã dãy trọ" />
-                  <TextField prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER_LEFT">
-               <children>
-                  <Label prefWidth="150.0" text="Tên dãy trọ" />
-                  <TextField prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER_LEFT">
-               <children>
-                  <Label prefWidth="150.0" text="Địa chỉ" />
-                  <TextField prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER_LEFT">
-               <children>
-                  <Label prefWidth="150.0" text="Số lượng phòng" />
-                  <TextField prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
-               </children>
-            </HBox>
-            <HBox>
-               <children>
-                  <Label textFill="#e10e0e" HBox.hgrow="ALWAYS" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER_RIGHT" spacing="24.0">
-               <children>
-                  <Button mnemonicParsing="false" text="Xác nhận" />
-                  <Button mnemonicParsing="false" text="Hủy" />
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-   </children>
+   <VBox spacing="16.0">
+      <padding>
+         <Insets bottom="24.0" left="24.0" right="24.0" top="24.0"/>
+      </padding>
+      <HBox>
+         <Label text="Thêm dãy trọ"/>
+      </HBox>
+      <HBox alignment="CENTER_LEFT">
+         <Label prefWidth="150.0" text="Mã dãy trọ"/>
+         <TextField prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css"/>
+      </HBox>
+      <HBox alignment="CENTER_LEFT">
+         <Label prefWidth="150.0" text="Tên dãy trọ"/>
+         <TextField prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css"/>
+      </HBox>
+      <HBox alignment="CENTER_LEFT">
+         <Label prefWidth="150.0" text="Địa chỉ"/>
+         <TextField prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css"/>
+      </HBox>
+      <HBox alignment="CENTER_LEFT">
+         <Label prefWidth="150.0" text="Số lượng phòng"/>
+         <TextField prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css"/>
+      </HBox>
+      <HBox>
+         <Label textFill="#e10e0e" HBox.hgrow="ALWAYS"/>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" spacing="24.0">
+         <Button mnemonicParsing="false" text="Xác nhận"/>
+         <Button mnemonicParsing="false" text="Hủy"/>
+      </HBox>
+   </VBox>
 </AnchorPane>

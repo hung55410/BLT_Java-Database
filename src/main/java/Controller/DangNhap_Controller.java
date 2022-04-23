@@ -1,12 +1,10 @@
 package Controller;
 
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -20,6 +18,7 @@ import java.sql.Statement;
 import java.sql.ResultSet;
 
 public class DangNhap_Controller {
+    public Button Button_DangNhap;
     @FXML
     private AnchorPane GiaodienDangNhap;
     @FXML
