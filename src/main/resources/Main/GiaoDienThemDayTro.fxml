@@ -34,7 +34,7 @@
          <TextField prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
       </HBox>
       <HBox>
-         <Label textFill="#e10e0e" HBox.hgrow="ALWAYS" />
+         <Label styleClass="label_message_wrong" stylesheets="@../styles/Style.css" HBox.hgrow="ALWAYS" />
       </HBox>
       <HBox alignment="CENTER_RIGHT" spacing="24.0">
          <Button mnemonicParsing="false" stylesheets="@../styles/Style.css" text="Xác nhận">
