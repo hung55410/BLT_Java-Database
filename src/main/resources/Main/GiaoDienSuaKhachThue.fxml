@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -9,13 +10,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane stylesheets="@../styles/Style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
     <VBox spacing="16.0" stylesheets="@../styles/Style.css">
         <padding>
             <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
         </padding>
         <HBox>
-            <Label text="Chỉnh sửa thông tin khách thuê" />
+            <Label styleClass="heading" stylesheets="@../styles/Style.css" text="Chỉnh sửa thông tin khách thuê" />
         </HBox>
         <HBox alignment="CENTER_LEFT">
             <Label prefWidth="150.0" text="Họ và tên" />
@@ -45,8 +46,16 @@
             <Label textFill="#e10e0e" HBox.hgrow="ALWAYS" />
         </HBox>
         <HBox alignment="CENTER_RIGHT" spacing="24.0">
-            <Button mnemonicParsing="false" text="Xác nhận" />
-            <Button mnemonicParsing="false" text="Hủy" />
+            <Button mnemonicParsing="false" stylesheets="@../styles/Style.css" text="Xác nhận">
+            <styleClass>
+               <String fx:value="button_confirm" />
+               <String fx:value="button_style" />
+            </styleClass></Button>
+            <Button mnemonicParsing="false" stylesheets="@../styles/Style.css" text="Hủy">
+            <styleClass>
+               <String fx:value="button_cancel" />
+               <String fx:value="button_style" />
+            </styleClass></Button>
         </HBox>
     </VBox>
 </AnchorPane>
