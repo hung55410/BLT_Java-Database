@@ -1,5 +1,5 @@
 .AnchorPane {
-    -fx-background-color: #FFF;
+    -fx-background-color: #f3f4f9;
 }
 
 .title {
@@ -27,35 +27,37 @@
 }
 
 .button_navbar {
-    -fx-background-color: #FFF;
+    -fx-background-color: transparent;
     -fx-padding: 8px 12px;
     -fx-font-weight: bold;
+    -fx-border-radius: 0;
 }
 
 .button_navbar:hover {
-    -fx-background-color: #F3F4F9;
-    -fx-border-width: 0 0 2px 0;
+    -fx-background-color: #f3f4f9;
+    -fx-border-width:0;
     -fx-border-color: #CCC;
     -fx-cursor: hand;
+    -fx-border-radius: 0;
 }
 
 .button_add {
     -fx-background-color: #21BAB5;
-    -fx-padding: 4px 8px;
+    -fx-padding: 8px 12px;
     -fx-font-weight: bold;
     -fx-text-fill: #FFF;
 }
 
 .button_edit {
     -fx-background-color: #53D86A;
-    -fx-padding: 4px 8px;
+    -fx-padding: 8px 12px;
     -fx-font-weight: bold;
     -fx-text-fill: #FFF;
 }
 
 .button_delete {
     -fx-background-color: #FD3D39;
-    -fx-padding: 4px 8px;
+    -fx-padding: 8px 12px;
     -fx-font-weight: bold;
     -fx-text-fill: #FFF;
 }
@@ -63,4 +65,8 @@
 .button_add:hover, .button_edit:hover, .button_delete:hover {
     -fx-opacity: 0.7;
     -fx-cursor: hand;
+}
+
+.button  {
+    -fx-background-radius: 0;
 }

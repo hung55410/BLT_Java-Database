@@ -33,12 +33,12 @@
             </HBox>
             <HBox spacing="24.0">
                <children>
-                  <Button fx:id="Button_DangNhap" mnemonicParsing="false" onAction="#Button_DangNhapOnAction" text="Đăng nhập">
+                  <Button fx:id="Button_DangNhap" mnemonicParsing="false" onAction="#Button_DangNhapOnAction" styleClass="button_app" stylesheets="@../styles/Style.css" text="Đăng nhập">
                      <padding>
                         <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="button_DangKy" mnemonicParsing="false" text="Đăng ký">
+                  <Button fx:id="button_DangKy" mnemonicParsing="false" styleClass="button_app" stylesheets="@../styles/Style.css" text="Đăng ký">
                      <padding>
                         <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
                      </padding>
