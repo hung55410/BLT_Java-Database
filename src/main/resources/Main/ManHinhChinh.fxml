@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ManHinhChinh_Controller">
   <content>
     <AnchorPane styleClass="AnchorPane" stylesheets="@../styles/Style.css">
          <children>
@@ -55,9 +55,9 @@
                                     <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="DS dãy trọ" HBox.hgrow="ALWAYS" />
                                     <HBox alignment="CENTER_RIGHT" spacing="24.0" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Button mnemonicParsing="false" styleClass="button_add" stylesheets="@../styles/Style.css" text="Thêm dãy mới" />
-                                          <Button mnemonicParsing="false" styleClass="button_edit" stylesheets="@../styles/Style.css" text="Chỉnh sửa" />
-                                          <Button mnemonicParsing="false" styleClass="button_delete" stylesheets="@../styles/Style.css" text="Xóa dãy" />
+                                          <Button mnemonicParsing="false" onAction="#Button_ThemDayTroOnAction" styleClass="button_add" stylesheets="@../styles/Style.css" text="Thêm dãy mới" />
+                                          <Button mnemonicParsing="false" onAction="#Button_SuaDayTroOnAction" styleClass="button_edit" stylesheets="@../styles/Style.css" text="Chỉnh sửa" />
+                                          <Button mnemonicParsing="false" onAction="#Button_XoaDayTroOnAction" styleClass="button_delete" stylesheets="@../styles/Style.css" text="Xóa dãy" />
                                        </children>
                                     </HBox>
                                  </children>
@@ -83,9 +83,9 @@
                                     <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="DS phòng" HBox.hgrow="ALWAYS" />
                                     <HBox alignment="CENTER_RIGHT" spacing="24.0" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Button mnemonicParsing="false" styleClass="button_add" stylesheets="@../styles/Style.css" text="Thêm phòng mới" />
-                                          <Button mnemonicParsing="false" styleClass="button_edit" stylesheets="@../styles/Style.css" text="Chỉnh sửa" />
-                                          <Button mnemonicParsing="false" styleClass="button_delete" stylesheets="@../styles/Style.css" text="Xóa phòng" />
+                                          <Button mnemonicParsing="false" onAction="#Button_ThemPhongTroOnAction" styleClass="button_add" stylesheets="@../styles/Style.css" text="Thêm phòng mới" />
+                                          <Button mnemonicParsing="false" onAction="#Button_SuaPhongTroOnAction" styleClass="button_edit" stylesheets="@../styles/Style.css" text="Chỉnh sửa" />
+                                          <Button mnemonicParsing="false" onAction="#Button_XoaPhongTroOnAction" styleClass="button_delete" stylesheets="@../styles/Style.css" text="Xóa phòng" />
                                        </children>
                                     </HBox>
                                  </children>
@@ -103,9 +103,9 @@
                                     <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Thông tin phòng" HBox.hgrow="ALWAYS" />
                                     <HBox alignment="CENTER_RIGHT" spacing="24.0" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <Button mnemonicParsing="false" styleClass="button_add" stylesheets="@../styles/Style.css" text="Đăng ký" />
-                                          <Button mnemonicParsing="false" styleClass="button_edit" stylesheets="@../styles/Style.css" text="Chỉnh sửa" />
-                                          <Button mnemonicParsing="false" styleClass="button_delete" stylesheets="@../styles/Style.css" text="Hủy đăng ký" />
+                                          <Button mnemonicParsing="false" onAction="#Button_ThemKhachThueOnAction" styleClass="button_add" stylesheets="@../styles/Style.css" text="Đăng ký" />
+                                          <Button mnemonicParsing="false" onAction="#Button_SuaKhachThueOnAction" styleClass="button_edit" stylesheets="@../styles/Style.css" text="Chỉnh sửa" />
+                                          <Button mnemonicParsing="false" onAction="#Button_XoaKhachThueOnAction" styleClass="button_delete" stylesheets="@../styles/Style.css" text="Hủy đăng ký" />
                                        </children>
                                     </HBox>
                                  </children>
