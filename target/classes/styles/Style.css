@@ -1,0 +1,104 @@
+.AnchorPane {
+    -fx-background-color: #f3f4f9;
+}
+
+.title {
+    -fx-font-size: 14px;
+}
+
+.label {
+    -fx-font-size: 14px;
+}
+
+.textField {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #797979;
+    -fx-padding: 8px 12px 8px 12px;
+}
+
+.button_navbar {
+    -fx-background-color: transparent;
+    -fx-padding: 8px 12px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 0;
+}
+
+.button_navbar:hover {
+    -fx-background-color: #f3f4f9;
+    -fx-border-width:0;
+    -fx-border-color: #CCC;
+    -fx-cursor: hand;
+    -fx-border-radius: 0;
+}
+
+.button_add:hover, .button_edit:hover, .button_delete:hover {
+    -fx-opacity: 0.7;
+    -fx-cursor: hand;
+}
+
+.heading {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* Common button styles */
+.button_style {
+    -fx-padding: 6px 12px;
+    -fx-font-size: 12px;
+    -fx-border-width: 2px;
+    -fx-background-radius: 0;
+}
+
+.button_style:hover {
+    -fx-opacity: 0.7;
+    -fx-cursor: hand;
+}
+
+.button_DangNhap {
+    -fx-background-color: #21BAB5;
+    -fx-text-fill: #FFF;
+    -fx-border-color: #21BAB5;
+    -fx-font-weight: bold;
+}
+
+.button_DangKy {
+    -fx-background-color: #FFF;
+    -fx-text-fill: #21BAB5;
+    -fx-border-color: #21BAB5;
+    -fx-font-weight: bold;
+}
+
+.button_add {
+    -fx-background-color: #21BAB5;
+    -fx-text-fill: #FFF;
+    -fx-text-fill: #FFF;
+    -fx-font-weight: regular !important;
+}
+
+.button_edit {
+    -fx-background-color: #53D86A;
+    -fx-text-fill: #FFF;
+    -fx-font-weight: regular;
+}
+
+.button_delete {
+    -fx-background-color: #FD3D39;
+    -fx-text-fill: #FFF;
+    -fx-font-weight: regular;
+}
+
+.button_confirm {
+    -fx-background-color: #21BAB5;
+    -fx-text-fill: #FFF;
+    -fx-font-weight: regular;
+    -fx-border-color: #21BAB5;
+    -fx-border-width: 2px;
+}
+
+.button_cancel {
+    -fx-background-color: #FFF;
+    -fx-text-fill: #FD3D39;
+    -fx-font-weight: regular;
+    -fx-border-color: #FD3D39;
+    -fx-border-width: 2px;
+}
