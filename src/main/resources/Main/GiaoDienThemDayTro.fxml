@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane stylesheets="@../styles/Style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane stylesheets="@../styles/Style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ThemDayTro_Controller">
    <VBox spacing="16.0">
       <padding>
          <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
@@ -37,7 +37,7 @@
          <Label styleClass="label_message_wrong" stylesheets="@../styles/Style.css" HBox.hgrow="ALWAYS" />
       </HBox>
       <HBox alignment="CENTER_RIGHT" spacing="24.0">
-         <Button mnemonicParsing="false" stylesheets="@../styles/Style.css" text="Xác nhận">
+         <Button fx:id="button_confirm" mnemonicParsing="false" stylesheets="@../styles/Style.css" text="Xác nhận">
             <styleClass>
                <String fx:value="button_confirm" />
                <String fx:value="button_style" />

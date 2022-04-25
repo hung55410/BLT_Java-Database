@@ -25,7 +25,7 @@
          <PasswordField fx:id="PasswordField_MatKhau" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
       </HBox>
       <HBox>
-         <Label fx:id="Label_Message" textFill="#dd1717" HBox.hgrow="ALWAYS" />
+         <Label fx:id="Label_Message" styleClass="label_message_wrong" stylesheets="@../styles/Style.css" HBox.hgrow="ALWAYS" />
       </HBox>
       <HBox alignment="CENTER_LEFT" spacing="24.0">
          <Button mnemonicParsing="false" onAction="#Button_DangNhapOnAction" prefWidth="100.0" text="Đăng nhập">

@@ -31,6 +31,15 @@
                   <FontAwesomeIconView glyphName="HOME" />
                </graphic>
             </Button>
+            <Button mnemonicParsing="false" text="Tìm kiếm">
+               <styleClass>
+                  <String fx:value="button_navbar" />
+                  <String fx:value="button_style" />
+               </styleClass>
+               <graphic>
+                  <FontAwesomeIconView glyphName="SEARCH" />
+               </graphic>
+            </Button>
             <Button mnemonicParsing="false" styleClass="button_navbar" stylesheets="@../styles/Style.css" text="Thanh toán hóa đơn">
                <graphic>
                   <FontAwesomeIconView glyphName="MONEY" />

@@ -50,7 +50,7 @@
          <Label prefWidth="150.0" text="Địa chỉ" />
          <TextField prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
       </HBox>
-      <Label VBox.vgrow="ALWAYS" />
+         <Label styleClass="label_message_wrong" stylesheets="@../styles/Style.css" VBox.vgrow="ALWAYS" />
       <HBox spacing="24.0">
          <Button mnemonicParsing="false" onAction="#Button_DangKyOnAction" stylesheets="@../styles/Style.css" text="Đăng ký">
             <styleClass>
