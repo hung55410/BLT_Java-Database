@@ -12,17 +12,14 @@ import java.io.IOException;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-
         FontAwesomeIconView fontAwesomeIconView = new FontAwesomeIconView(FontAwesomeIcon.ANDROID);
         fontAwesomeIconView.setSize("4em");
-
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("GiaoDienDangNhap.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Quản lý phòng trọ");
         stage.setScene(scene);
         stage.show();
     }
-
     public static void main(String[] args) {
         launch();
     }

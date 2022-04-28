@@ -1,25 +1,23 @@
 package Main;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DatabaseConnection {
-    public static Connection databaseLink;
+    public Connection databaseLink;
 
-//  Thay đổi cách kết nối
-    public static Connection getConnection() {
-        String dataName = "login";
-        String dataUser = "root";
-        String dataPassword = "hung55410";
-        String url = "jdbc:mysql://localhost:3306/" + dataName;
-
+    public Connection getConnection() {
+        String dataName = "QLPT";
+        String dataUser = "sa";
+        String dataPassword = "123";
+        String url = "jdbc:sqlserver://localhost:1433;DatabaseName=" + dataName + ";encrypt=true;trustServerCertificate=true;";
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             databaseLink = DriverManager.getConnection(url, dataUser, dataPassword);
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return databaseLink;
     }
 }
