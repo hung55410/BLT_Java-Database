@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -34,6 +35,9 @@ public class SuaDayTro_Controller implements Initializable {
     @FXML
     private TextField TextField_SuaTenDayTro;
 
+    @FXML
+    private Label error_ChuaNhapDayDuThongTin;
+
     private DayTro Selected_DayTro;
     private ObservableList<DayTro> Data_DayTro;
 
@@ -49,32 +53,41 @@ public class SuaDayTro_Controller implements Initializable {
         TextField_SuaSLphong.setText(Integer.toString(Selected_DayTro.getSLphong()));
         TextField_SuaTenDayTro.setText(Selected_DayTro.getTenDayTro());
     }
+
     @FXML
     public void Button_ConfirmOnAction_SuaDayTro(ActionEvent event) {
-        String sql = "UPDATE daytro SET ten = ? , Slphong = ?, diachi = ? WHERE madaytro = ?";
-        try {
-            DatabaseConnection databaseConnection = new DatabaseConnection();
-            Connection connection = databaseConnection.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, TextField_SuaTenDayTro.getText());
-            preparedStatement.setString(2, TextField_SuaSLphong.getText());
-            preparedStatement.setString(3, TextField_SuaDiaChi.getText());
-            preparedStatement.setString(4, TextField_SuaMaDayTro.getText());
-            preparedStatement.executeUpdate();
-            preparedStatement.close();
-            Data_DayTro.set(Data_DayTro.indexOf(Selected_DayTro), new DayTro(TextField_SuaMaDayTro.getText(), TextField_SuaTenDayTro.getText(), Integer.parseInt(TextField_SuaSLphong.getText()), TextField_SuaDiaChi.getText()));
-            Stage stage = (Stage) GiaoDienSuaDayTro.getScene().getWindow();
-            stage.close();
-            System.out.println("Update thanh cong");
-        } catch (Exception e) {
-            System.out.println("Update that bai");
+        boolean ChuaNhapMaDayTro = Validation.TextFieldVallidation.isTextFieldnotEmpty(TextField_SuaMaDayTro, error_ChuaNhapDayDuThongTin, "Vui lòng nhập đầy đủ thông tin");
+        boolean ChuaNhapTenDayTro = Validation.TextFieldVallidation.isTextFieldnotEmpty(TextField_SuaTenDayTro, error_ChuaNhapDayDuThongTin, "Vui lòng nhập đầy đủ thông tin");
+        boolean ChuaNhapDiaChi = Validation.TextFieldVallidation.isTextFieldnotEmpty(TextField_SuaDiaChi, error_ChuaNhapDayDuThongTin, "Vui lòng nhập đầy đủ thông tin");
+        boolean ChuaNhapSLphong = Validation.TextFieldVallidation.isTextFieldnotEmpty(TextField_SuaSLphong, error_ChuaNhapDayDuThongTin, "Vui lòng nhập đầy đủ thông tin");
+        if (ChuaNhapMaDayTro && ChuaNhapTenDayTro && ChuaNhapDiaChi && ChuaNhapSLphong) {
+            String sql = "UPDATE daytro SET ten = ? , Slphong = ?, diachi = ? WHERE madaytro = ?";
+            try {
+                DatabaseConnection databaseConnection = new DatabaseConnection();
+                Connection connection = databaseConnection.getConnection();
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setString(1, TextField_SuaTenDayTro.getText());
+                preparedStatement.setInt(2, Integer.parseInt(TextField_SuaSLphong.getText()));
+                preparedStatement.setString(3, TextField_SuaDiaChi.getText());
+                preparedStatement.setString(4, TextField_SuaMaDayTro.getText());
+                preparedStatement.executeUpdate();
+                preparedStatement.close();
+                Data_DayTro.set(Data_DayTro.indexOf(Selected_DayTro), new DayTro(TextField_SuaMaDayTro.getText(), TextField_SuaTenDayTro.getText(), Integer.parseInt(TextField_SuaSLphong.getText()), TextField_SuaDiaChi.getText()));
+                Stage stage = (Stage) GiaoDienSuaDayTro.getScene().getWindow();
+                stage.close();
+                System.out.println("Update thanh cong");
+            } catch (Exception e) {
+                System.out.println("Update that bai");
+            }
         }
     }
+
     @FXML
-     void Button_CancelOnAction_SuaDayTro(ActionEvent event) {
+    void Button_CancelOnAction_SuaDayTro(ActionEvent event) {
         Stage stage = (Stage) GiaoDienSuaDayTro.getScene().getWindow();
         stage.close();
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

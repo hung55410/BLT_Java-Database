@@ -34,15 +34,15 @@
             <TextField fx:id="TextField_SuaSLphong" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
         </HBox>
         <HBox>
-            <Label styleClass="label_message_wrong" stylesheets="@../styles/Style.css" HBox.hgrow="ALWAYS" />
+            <Label fx:id="error_ChuaNhapDayDuThongTin" styleClass="label_message_wrong" stylesheets="@../styles/Style.css" HBox.hgrow="ALWAYS" />
         </HBox>
         <HBox alignment="CENTER_RIGHT" spacing="24.0">
-            <Button fx:id="button_confirm_SuaDayTro" mnemonicParsing="false" onAction="#Button_ConfirmOnAction_SuaDayTro" stylesheets="@../styles/Style.css" text="Xác nhận">
+            <Button mnemonicParsing="false" onAction="#Button_ConfirmOnAction_SuaDayTro" stylesheets="@../styles/Style.css" text="Xác nhận">
             <styleClass>
                <String fx:value="button_confirm" />
                <String fx:value="button_style" />
             </styleClass></Button>
-            <Button fx:id="button_cancel_SuaDayTro" mnemonicParsing="false" onAction="#Button_CancelOnAction_SuaDayTro" stylesheets="@../styles/Style.css" text="Hủy">
+            <Button mnemonicParsing="false" onAction="#Button_CancelOnAction_SuaDayTro" stylesheets="@../styles/Style.css" text="Hủy">
             <styleClass>
                <String fx:value="button_cancel" />
                <String fx:value="button_style" />

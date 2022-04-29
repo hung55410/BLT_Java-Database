@@ -213,22 +213,73 @@ public class ManHinhChinh_Controller implements Initializable {
             System.out.println("Lỗi xóa day tro");
         }
     }
-
     public void Button_ThemPhongTroOnAction(ActionEvent event) {
+        try {
+            Stage stage = new Stage();
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("GiaoDienThemPhongTro.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            ThemPhongTro_Controller themPhongTro_controller = fxmlLoader.getController();
+            themPhongTro_controller.setItems(tableView_PhongTro.getItems());
+            stage.setTitle("Thêm dãy trọ ");
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            System.out.println("Lỗi them phong tro");
+        }
     }
 
     public void Button_SuaPhongTroOnAction(ActionEvent event) {
+        try {
+            Stage stage = new Stage();
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("GiaoDienSuaPhongTro.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            SuaPhongTro_Controller suaPhongTro_controller = fxmlLoader.getController();
+            suaPhongTro_controller.SuaPhongTro(tableView_PhongTro.getSelectionModel().getSelectedItem());
+            suaPhongTro_controller.setItems(tableView_PhongTro.getItems());
+            stage.setTitle("Sửa phòng trọ");
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            System.out.println("Lỗi sua phong tro");
+        }
     }
-
     public void Button_XoaPhongTroOnAction(ActionEvent event) {
+        try {
+            DatabaseConnection databaseConnection = new DatabaseConnection();
+            Connection connection = databaseConnection.getConnection();
+            String sql = "DELETE FROM phongtro WHERE maphongtro = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, tableView_PhongTro.getSelectionModel().getSelectedItem().getMaPhongTro());
+            tableView_PhongTro.getItems().remove(tableView_PhongTro.getSelectionModel().getSelectedItem());
+            preparedStatement.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Lỗi xóa phòng tro");
+        }
     }
-
     public void Button_ThemKhachThueOnAction(ActionEvent event) {
+        try {
+            Stage stage = new Stage();
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("GiaoDienThemKhachThue.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setTitle("Thêm Khách Thuê");
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            System.out.println("Lỗi them khách thuê");
+        }
     }
-
     public void Button_SuaKhachThueOnAction(ActionEvent event) {
+        try {
+            Stage stage = new Stage();
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("GiaoDienSuaKhachThue.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setTitle("Sửa Khách Thuê");
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            System.out.println("Lỗi Sửa Khách Thuê ");
+        }
     }
-
     public void Button_XoaKhachThueOnAction(ActionEvent event) {
     }
 }
