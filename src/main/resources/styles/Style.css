@@ -21,12 +21,14 @@
     -fx-padding: 8px 12px;
     -fx-font-weight: bold;
     -fx-border-radius: 0;
+    -fx-background-radius: 0;
 }
 
 .button_navbar:hover {
-    -fx-background-color: #f3f4f9;
+    -fx-background-color: #797979;
     -fx-border-width:0;
     -fx-border-color: #CCC;
+    -fx-text-fill: #FFF;
     -fx-cursor: hand;
     -fx-border-radius: 0;
 }
