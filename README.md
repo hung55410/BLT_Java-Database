@@ -22,7 +22,7 @@ Trong quá trình xây dựng một phần mềm quản lý, phân tích hệ th
 
 #### :speaker: Limit
 
-Phần mềm Quản Lý Phòng Trọ (Dành cho chủ trọ) sẽ quản lý dãy trọ bao gồm những phòng nào. Mỗi phòng sẽ có mã riêng để quản lý. Quản lý số lượng, thông tin của người sử dụng phòng, tổng tiền cần phải thanh toán trong 1 tháng. Các tác vụ mà phần mềm sẽ có như là: Thêm, sửa, xóa, tìm kiếm các đối tượng trọ hay người sử dụng trọ.
+Phần mềm Quản Lý Phòng Trọ (Dành cho chủ trọ) sẽ quản lý dãy trọ bao gồm những phòng nào. Mỗi phòng sẽ có mã riêng để quản lý. Quản lý số lượng, thông tin của người sử dụng phòng. Các tác vụ mà phần mềm sẽ có như là: Thêm, sửa, xóa các đối tượng trọ hay người sử dụng trọ.
 
 #### Environment
 
@@ -34,6 +34,7 @@ Phần mềm Quản Lý Phòng Trọ (Dành cho chủ trọ) sẽ quản lý dã
 - FontAwesomeFX_controls_9.1.2
 - FontAwesomeFX_FontAwesome_9.1.2
 - mysql_connector_java_8.0.28
+- mssql_jdbc_10.2.0_jre17
 
 #### Libraries
 - JavaFX: https://openjfx.io/
@@ -67,7 +68,7 @@ Phần mềm Quản Lý Phòng Trọ (Dành cho chủ trọ) sẽ quản lý dã
 
 #### :mag_right: Place
 - English name: University of Transport and Communications campus in HCMC
-- Vietnamese name: Trường Đại Học Giao Thông Vận Tải phân hiệu tại TP.Hồ Chí Minh
+- Tên tiếng Việt: Trường Đại Học Giao Thông Vận Tải phân hiệu tại TP.Hồ Chí Minh
 
 ### Update Comming Soon
 
