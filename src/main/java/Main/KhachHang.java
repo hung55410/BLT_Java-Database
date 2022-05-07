@@ -3,10 +3,11 @@ package Main;
 public class KhachHang {
     private String HoTenKhachHang;
     private String CCCD;
-    private boolean GT;
+    private String GT;
     private String SDT;
     private String QueQuan;
     private String NgayBatDauO;
+    private String MaPhongTro;
 
     public String getHoTenKhachHang() {
         return HoTenKhachHang;
@@ -24,11 +25,11 @@ public class KhachHang {
         this.CCCD = CCCD;
     }
 
-    public boolean isGT() {
+    public String getGT() {
         return GT;
     }
 
-    public void setGT(boolean GT) {
+    public void setGT(String GT) {
         this.GT = GT;
     }
 
@@ -56,12 +57,21 @@ public class KhachHang {
         NgayBatDauO = ngayBatDauO;
     }
 
-    public KhachHang(String hoTenKhachHang, String CCCD, boolean GT, String SDT, String queQuan, String ngayBatDauO) {
+    public String getMaPhongTro() {
+        return MaPhongTro;
+    }
+
+    public void setMaPhongTro(String maPhongTro) {
+        MaPhongTro = maPhongTro;
+    }
+
+    public KhachHang(String hoTenKhachHang, String CCCD, String GT, String SDT, String queQuan, String ngayBatDauO, String maPhongTro) {
         HoTenKhachHang = hoTenKhachHang;
         this.CCCD = CCCD;
         this.GT = GT;
         this.SDT = SDT;
         QueQuan = queQuan;
         NgayBatDauO = ngayBatDauO;
+        MaPhongTro = maPhongTro;
     }
 }

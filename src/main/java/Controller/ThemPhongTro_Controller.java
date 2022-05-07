@@ -1,6 +1,7 @@
 package Controller;
 
 import Main.DatabaseConnection;
+import Main.DayTro;
 import Main.PhongTro;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -40,64 +41,57 @@ public class ThemPhongTro_Controller implements Initializable {
     private Label error_ChuaNhapDayDuThongTin;
 
     @FXML
-    private ComboBox ComboBox_PhongTro;
     private ObservableList<PhongTro> Data_PhongTro;
+    private ObservableList<DayTro> Data_DayTro;
+    private DayTro selectedDayTro;
+
 
     public void setItems(ObservableList<PhongTro> Data_PhongTro) {
         this.Data_PhongTro = Data_PhongTro;
     }
-
+    private String madaytro;
     @FXML
     void Button_CancelOnAction_ThemPhongTro(ActionEvent event) {
         Stage stage = (Stage) GiaoDienThemPhongTro.getScene().getWindow();
         stage.close();
     }
+    public void LayDataTuDayTro(DayTro Data_DayTro){
+        selectedDayTro = Data_DayTro;
+        madaytro = selectedDayTro.getMaDayTro();
+    }
     @FXML
     void Button_ConfirmOnAction_ThemPhongTro(ActionEvent event) {
-        String sql = "insert into PHONGTRO(maphong,tenphong,songuoitro,giaphong,madaytro) values(?,?,?,?,'MaDay_01')";
-        String maphongtro = TextField_MaPhongTro.getText();
-        String giaphongtro = TextField_GiaPhongTro.getText();
-        String tenphongtro = TextField_TenPhongTro.getText();
-        int soluongnguoitrongphong = Integer.parseInt(TextField_SLPhongNguoiTrongPhong.getText());
-        try {
-            DatabaseConnection databaseConnection = new DatabaseConnection();
-            Connection connection = databaseConnection.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, maphongtro);
-            preparedStatement.setString(2, tenphongtro);
-            preparedStatement.setInt(3, soluongnguoitrongphong);
-            preparedStatement.setString(4, giaphongtro);
-            preparedStatement.executeUpdate();
-            preparedStatement.close();
-            Data_PhongTro.add(new PhongTro(TextField_MaPhongTro.getText(), TextField_TenPhongTro.getText(), Integer.parseInt(TextField_SLPhongNguoiTrongPhong.getText()), TextField_GiaPhongTro.getText()));
-            Stage stage = (Stage) GiaoDienThemPhongTro.getScene().getWindow();
-            stage.close();
-        } catch (SQLException e) {
-            System.out.println("Loi them day tro");
-            e.printStackTrace();
+        boolean ChuaNhapMaPhongTro = Validation.TextFieldVallidation.isTextFieldnotEmpty(TextField_MaPhongTro, error_ChuaNhapDayDuThongTin, "Vui lòng nhập đầy đủ thông tin");
+        boolean ChuaNhapTenPhongTRo = Validation.TextFieldVallidation.isTextFieldnotEmpty(TextField_TenPhongTro, error_ChuaNhapDayDuThongTin, "Vui lòng nhập đầy đủ thông tin");
+        boolean ChuaNhapGiaPhongTro = Validation.TextFieldVallidation.isTextFieldnotEmpty(TextField_GiaPhongTro, error_ChuaNhapDayDuThongTin, "Vui lòng nhập đầy đủ thông tin");
+        boolean ChuaNhapSLPhongNguoiTrongPHong = Validation.TextFieldVallidation.isTextFieldnotEmpty(TextField_SLPhongNguoiTrongPhong, error_ChuaNhapDayDuThongTin, "Vui lòng nhập đầy đủ thông tin");
+        if (ChuaNhapMaPhongTro && ChuaNhapTenPhongTRo && ChuaNhapGiaPhongTro && ChuaNhapSLPhongNguoiTrongPHong) {
+            String sql = "insert into PHONGTRO(maphong,tenphong,songuoitro,giaphong,madaytro) values(?,?,?,?,?)";
+            String maphongtro = TextField_MaPhongTro.getText();
+            String giaphongtro = TextField_GiaPhongTro.getText();
+            String tenphongtro = TextField_TenPhongTro.getText();
+            int soluongnguoitrongphong = Integer.parseInt(TextField_SLPhongNguoiTrongPhong.getText());
+            try {
+                DatabaseConnection databaseConnection = new DatabaseConnection();
+                Connection connection = databaseConnection.getConnection();
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setString(1, maphongtro);
+                preparedStatement.setString(2, tenphongtro);
+                preparedStatement.setInt(3, soluongnguoitrongphong);
+                preparedStatement.setString(4, giaphongtro);
+                preparedStatement.setString(5, madaytro);
+                preparedStatement.executeUpdate();
+                preparedStatement.close();
+                Data_PhongTro.add(new PhongTro(TextField_MaPhongTro.getText(), TextField_TenPhongTro.getText(), Integer.parseInt(TextField_SLPhongNguoiTrongPhong.getText()), TextField_GiaPhongTro.getText()));
+                Stage stage = (Stage) GiaoDienThemPhongTro.getScene().getWindow();
+                stage.close();
+            } catch (SQLException e) {
+                System.out.println("Loi them day tro");
+                e.printStackTrace();
+            }
         }
     }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Data_PhongTro = FXCollections.observableArrayList();
-        options_selectchutro();
-    }
-    public void options_selectchutro() {
-        try {
-            String sql = "SELECT madaytro FROM daytro";
-            DatabaseConnection databaseConnection = new DatabaseConnection();
-            Connection connection = databaseConnection.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                String madaytro = resultSet.getString("madaytro");
-                ComboBox_PhongTro.getItems().add(madaytro);
-            }
-            preparedStatement.close();
-            resultSet.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }

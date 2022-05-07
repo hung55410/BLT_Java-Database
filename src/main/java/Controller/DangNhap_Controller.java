@@ -1,9 +1,16 @@
 package Controller;
 
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import Main.User;
+import Main.DayTro;
+
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
@@ -16,9 +23,7 @@ import Main.DatabaseConnection;
 import Main.Main;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.Statement;
-import java.sql.ResultSet;
+import java.sql.*;
 
 public class DangNhap_Controller {
     @FXML
@@ -36,26 +41,28 @@ public class DangNhap_Controller {
 //        CHUYEN kieu char sang kieu string
         String userName = TextField_TenDangNhap.getText();
         String password = PasswordField_MatKhau.getText();
-
         DatabaseConnection databaseConnection = new DatabaseConnection();
         Connection connection = databaseConnection.getConnection();
-        String verifyLogin = "select count(1) as count from chutro where madinhdanh = '" + userName + "' and matkhau = '" + password + "'";
+        String verifyLogin = "select count(1) as count from chutro where madinhdanh = ? and matkhau = ?";
         if (userName.equals("") || password.equals("")) {
             Label_Message.setText("Vui lòng nhập đầy đủ thông tin");
         }
         else {
             try {
-                Statement statement = connection.createStatement();
-                ResultSet resultSet = statement.executeQuery(verifyLogin);
+                PreparedStatement preparedStatement = connection.prepareStatement(verifyLogin);
+                preparedStatement.setString(1,userName);
+                preparedStatement.setString(2, password);
+                ResultSet resultSet = preparedStatement.executeQuery();
                 resultSet.next();
                 int count = resultSet.getInt(1);
                 if (count == 1) {
                     Stage stage = (Stage) GiaodienDangNhap.getScene().getWindow();
                     stage.close();
-                    FXMLLoader loader = new FXMLLoader();
-                    loader.setLocation(Main.class.getResource("ManHinhChinh1.fxml"));
-                    Scene scene = new Scene(loader.load());
                     Stage stage1 = new Stage();
+                    FXMLLoader loader = new FXMLLoader(Main.class.getResource("ManHinhChinh1.fxml"));
+                    Scene scene = new Scene(loader.load());
+                    ManHinhChinh_Controller manHinhChinh_controller = loader.getController();
+                    manHinhChinh_controller.loaddata_daytro(userName);
                     stage1.setScene(scene);
                     stage1.show();
                 } else {
@@ -80,4 +87,6 @@ public class DangNhap_Controller {
             System.out.println("Dangki");
         }
     }
+    //truyền username vào thêm dãy trọ trong database
+
 }

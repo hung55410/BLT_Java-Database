@@ -6,12 +6,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane stylesheets="@../styles/Style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SuaKhachThue_Controller">
-    <VBox fx:id="GiaoDienSuaKhachThue" spacing="16.0" stylesheets="@../styles/Style.css">
+<AnchorPane fx:id="GiaoDienSuaKhachThue" stylesheets="@../styles/Style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SuaKhachThue_Controller">
+    <VBox spacing="16.0" stylesheets="@../styles/Style.css">
         <padding>
             <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
         </padding>
@@ -20,26 +21,28 @@
         </HBox>
         <HBox alignment="CENTER_LEFT">
             <Label prefWidth="150.0" text="Họ và tên" />
-            <TextField fx:id="TextField_SuaHovaTen_KhachThue" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
+            <TextField fx:id="TextField_SuaHovaTen_KhachHang" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
         </HBox>
         <HBox alignment="CENTER_LEFT">
             <Label prefWidth="150.0" text="CCCD/CMND" />
-            <TextField fx:id="TextField_SuaCCCD_CMND_KhachThue" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
+            <TextField fx:id="TextField_SuaCCCD_CMND_KhachHang" editable="false" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
         </HBox>
         <HBox alignment="CENTER_LEFT">
             <Label prefWidth="150.0" text="Quê quán" />
-            <TextField fx:id="TextField_SuaQueQuan_KhachThue" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
+            <TextField fx:id="TextField_SuaQueQuan_KhachHang" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
         </HBox>
         <HBox alignment="CENTER_LEFT">
             <Label prefWidth="150.0" text="Số điện thoại" />
-            <TextField fx:id="TextField_SuaSDT_KhachThue" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
+            <TextField fx:id="TextField_SuaSDT_KhachHang" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
         </HBox>
         <HBox alignment="CENTER_LEFT">
             <Label prefWidth="150.0" text="Giới tính" />
             <HBox spacing="24.0">
-                <RadioButton mnemonicParsing="false" text="Nam" />
-                <RadioButton mnemonicParsing="false" text="Nữ" />
-                <RadioButton mnemonicParsing="false" text="Khác" />
+                <RadioButton fx:id="RadioButton_SuaGT_Nam" mnemonicParsing="false" text="Nam">
+               <toggleGroup>
+                  <ToggleGroup fx:id="gender" />
+               </toggleGroup></RadioButton>
+                <RadioButton fx:id="RadioButton_SuaGT_Nu" mnemonicParsing="false" text="Nu" toggleGroup="$gender" />
             </HBox>
         </HBox>
         <HBox>
