@@ -11,11 +11,15 @@
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane fx:id="GiaodienDangNhap" styleClass="AnchorPane" stylesheets="@../styles/Style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DangNhap_Controller">
-   <VBox spacing="24.0">
+   <VBox alignment="CENTER" spacing="24.0">
       <padding>
          <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
       </padding>
-      <Label styleClass="heading" stylesheets="@../styles/Style.css" text="Quản lý phòng trọ" />
+      <HBox VBox.vgrow="ALWAYS">
+         <children>
+            <Label styleClass="heading" stylesheets="@../styles/Style.css" text="Quản lý phòng trọ" />
+         </children>
+      </HBox>
       <HBox alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT" spacing="24.0">
          <Label prefWidth="100.0" style="-fx-font-size: 14;" stylesheets="@../styles/Style.css" text="Tên đăng nhập" />
          <TextField fx:id="TextField_TenDangNhap" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
