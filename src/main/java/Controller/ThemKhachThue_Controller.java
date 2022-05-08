@@ -19,7 +19,8 @@ import java.sql.PreparedStatement;
 import java.util.ResourceBundle;
 
 public class ThemKhachThue_Controller{
-
+    @FXML
+    private ToggleGroup gender;
     @FXML
     private AnchorPane GiaoDienThemKhachThue;
 
@@ -39,8 +40,11 @@ public class ThemKhachThue_Controller{
 
     @FXML
     private RadioButton RadioButton_Nu;
+    @FXML
     private ObservableList<KhachHang> Data_KhachHang;
+    @FXML
     private ObservableList<PhongTro> Data_PhongTro;
+    @FXML
     private String RadioButton_GioiTinh;
 
     public void setItems(ObservableList<KhachHang> Data_KhachHang) {
@@ -53,7 +57,7 @@ public class ThemKhachThue_Controller{
         stage.close();
     }
 
-    private PhongTro Selected_PhongTro;
+    public PhongTro Selected_PhongTro;
     private String maphong;
 
     public void LayDataTuPhongTro(PhongTro Data_PhongTro) {

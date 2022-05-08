@@ -10,8 +10,8 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane stylesheets="@../styles/Style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SuaKhachThue_Controller">
-    <VBox fx:id="GiaoDienSuaKhachThue" spacing="16.0" stylesheets="@../styles/Style.css">
+<AnchorPane fx:id="GiaoDienSuaKhachThue" stylesheets="@../styles/Style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SuaKhachThue_Controller">
+    <VBox spacing="16.0" stylesheets="@../styles/Style.css">
         <padding>
             <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
         </padding>

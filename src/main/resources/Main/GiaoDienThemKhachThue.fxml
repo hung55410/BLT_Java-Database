@@ -36,12 +36,10 @@
             <Label prefWidth="150.0" text="Số điện thoại" />
             <TextField fx:id="TextField_SDT_KhachThue" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
         </HBox>
-      <HBox alignment="CENTER_LEFT">
-         <children>
-            <Label prefWidth="150.0" text="Ngày đăng ký" />
-            <DatePicker prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
-         </children>
-      </HBox>
+        <HBox alignment="CENTER_LEFT">
+            <Label prefWidth="150.0" text="Ngày đăng ký"/>
+            <DatePicker prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css"/>
+        </HBox>
         <HBox alignment="CENTER_LEFT">
             <Label prefWidth="150.0" text="Giới tính" />
             <HBox spacing="24.0">

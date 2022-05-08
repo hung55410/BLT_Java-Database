@@ -18,7 +18,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 public class SuaKhachThue_Controller {
-
+    @FXML
+    private TextField TextField_SuaSDT_KhachThue;
+    @FXML
+    private TextField TextField_SuaCCCD_CMND_KhachThue;
+    @FXML
+    private TextField TextField_SuaQueQuan_KhachThue;
+    @FXML
+    private TextField TextField_SuaHovaTen_KhachThue;
     @FXML
     private AnchorPane GiaoDienSuaKhachThue;
 
