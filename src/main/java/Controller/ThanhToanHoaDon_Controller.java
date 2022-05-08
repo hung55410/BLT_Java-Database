@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class DoanhThu_Controller {
+public class ThanhToanHoaDon_Controller {
     @FXML
     public ScrollPane ThanhToanHoaDon, DoanhThu, ManHinhChinh;
 
@@ -21,7 +21,7 @@ public class DoanhThu_Controller {
 
     public void button_QuanLyPhongOnAction (ActionEvent event) {
         try {
-            Stage stage = (Stage) DoanhThu.getScene().getWindow();
+            Stage stage = (Stage) ThanhToanHoaDon.getScene().getWindow();
             stage.close();
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("ManHinhChinh1.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
@@ -35,7 +35,7 @@ public class DoanhThu_Controller {
 
     public void button_ThanhToanHoaDonOnAction (ActionEvent event) {
         try {
-            Stage stage = (Stage) DoanhThu.getScene().getWindow();
+            Stage stage = (Stage) ThanhToanHoaDon.getScene().getWindow();
             stage.close();
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("GiaoDienThanhToanHoaDon.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
@@ -49,7 +49,7 @@ public class DoanhThu_Controller {
 
     public void button_DoanhThuOnAction (ActionEvent event) {
         try {
-            Stage stage = (Stage) DoanhThu.getScene().getWindow();
+            Stage stage = (Stage) ThanhToanHoaDon.getScene().getWindow();
             stage.close();
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("GiaoDienDoanhThu.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
@@ -60,5 +60,4 @@ public class DoanhThu_Controller {
             e.printStackTrace();
         }
     }
-
 }

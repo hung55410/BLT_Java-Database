@@ -13,181 +13,152 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="Controller.ManHinhChinh_Controller">
+<ScrollPane fx:id="ManHinhChinh" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ManHinhChinh_Controller">
     <AnchorPane style="-fx-background-color: #FFF;">
         <VBox>
-            <HBox alignment="BASELINE_LEFT" minHeight="60.0" style="-fx-background-color: #f3f4f9;"
-                  VBox.vgrow="ALWAYS">
+            <HBox alignment="BASELINE_LEFT" minHeight="60.0" style="-fx-background-color: #f3f4f9;" VBox.vgrow="ALWAYS">
                 <padding>
-                    <Insets bottom="12.0" left="12.0" right="12.0" top="12.0"/>
+                    <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
                 </padding>
                 <HBox>
-                    <Label minHeight="21.0" style="-fx-font-weight: bold;" text="QUẢN LÝ PHÒNG TRỌ"
-                           HBox.hgrow="ALWAYS">
+                    <Label minHeight="21.0" style="-fx-font-weight: bold;" text="QUẢN LÝ PHÒNG TRỌ" HBox.hgrow="ALWAYS">
                         <HBox.margin>
-                            <Insets left="24.0" right="24.0"/>
+                            <Insets left="24.0" right="24.0" />
                         </HBox.margin>
                     </Label>
                 </HBox>
                 <HBox minHeight="34.0" HBox.hgrow="ALWAYS">
                     <HBox.margin>
-                        <Insets left="24.0" right="24.0"/>
+                        <Insets left="24.0" right="24.0" />
                     </HBox.margin>
-                    <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="0.0"
-                          styleClass="search_width" stylesheets="@../styles/Style.css">
+                    <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="0.0" styleClass="search_width" stylesheets="@../styles/Style.css">
                         <Button mnemonicParsing="false" stylesheets="@../styles/Style.css">
                             <graphic>
-                                <FontAwesomeIconView fill="WHITE" glyphName="SEARCH"/>
+                                <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" />
                             </graphic>
                             <styleClass>
-                                <String fx:value="search"/>
-                                <String fx:value="button_search"/>
+                                <String fx:value="search" />
+                                <String fx:value="button_search" />
                             </styleClass>
                             <HBox.margin>
-                                <Insets/>
+                                <Insets />
                             </HBox.margin>
                             <padding>
-                                <Insets left="12.0" right="12.0"/>
+                                <Insets left="12.0" right="12.0" />
                             </padding>
                         </Button>
-                        <TextField prefWidth="250.0" promptText="Nhập từ khóa"
-                                   style="-fx-background-color: #f3f4f9;" styleClass="search"
-                                   stylesheets="@../styles/Style.css"/>
+                        <TextField prefWidth="250.0" promptText="Nhập từ khóa" style="-fx-background-color: #f3f4f9;" styleClass="search" stylesheets="@../styles/Style.css" />
                     </HBox>
                 </HBox>
                 <HBox spacing="24.0">
                     <padding>
-                        <Insets left="24.0" right="24.0"/>
+                        <Insets left="24.0" right="24.0" />
                     </padding>
-                    <Button mnemonicParsing="false" styleClass="button_navbar"
-                            stylesheets="@../styles/Style.css" text="Quản lý phòng"/>
-                    <Button mnemonicParsing="false" styleClass="button_navbar"
-                            stylesheets="@../styles/Style.css" text="Thanh toán hóa đơn"/>
-                    <Button mnemonicParsing="false" styleClass="button_navbar"
-                            stylesheets="@../styles/Style.css" text="Doanh thu"/>
+                    <Button fx:id="button_QuanLyPhong" mnemonicParsing="false" onAction="#button_QuanLyPhongOnAction" style="-fx-border-color: #000; -fx-border-width: 0 0 2 0;" styleClass="button_navbar" stylesheets="@../styles/Style.css" text="Quản lý phòng" />
+                    <Button fx:id="button_ThanhToanHoaDon" mnemonicParsing="false" onAction="#button_ThanhToanHoaDonOnAction" styleClass="button_navbar" stylesheets="@../styles/Style.css" text="Thanh toán hóa đơn" />
+                    <Button fx:id="button_DoanhThu" mnemonicParsing="false" onAction="#button_DoanhThuOnAction" styleClass="button_navbar" stylesheets="@../styles/Style.css" text="Doanh thu" />
                 </HBox>
             </HBox>
             <HBox alignment="CENTER" spacing="24.0" VBox.vgrow="ALWAYS">
                 <padding>
-                    <Insets bottom="24.0" left="24.0" right="24.0" top="24.0"/>
+                    <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
                 </padding>
                 <VBox spacing="12.0">
                     <HBox alignment="CENTER_LEFT" spacing="24.0">
-                        <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="DS dãy trọ"
-                               HBox.hgrow="ALWAYS"/>
+                        <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="DS dãy trọ" HBox.hgrow="ALWAYS" />
                         <HBox alignment="CENTER_RIGHT" spacing="24.0" HBox.hgrow="ALWAYS">
-                            <Button mnemonicParsing="false"
-                                    onAction="#Button_ThemDayTroOnAction"
-                                    stylesheets="@../styles/Style.css" text="Thêm dãy mới">
+                            <Button mnemonicParsing="false" onAction="#Button_ThemDayTroOnAction" stylesheets="@../styles/Style.css" text="Thêm dãy mới">
                                 <styleClass>
-                                    <String fx:value="button_style"/>
-                                    <String fx:value="button_add"/>
+                                    <String fx:value="button_style" />
+                                    <String fx:value="button_add" />
                                 </styleClass>
                             </Button>
-                            <Button mnemonicParsing="false" onAction="#Button_SuaDayTroOnAction"
-                                    stylesheets="@../styles/Style.css" text="Chỉnh sửa">
+                            <Button mnemonicParsing="false" onAction="#Button_SuaDayTroOnAction" stylesheets="@../styles/Style.css" text="Chỉnh sửa">
                                 <styleClass>
-                                    <String fx:value="button_style"/>
-                                    <String fx:value="button_edit"/>
+                                    <String fx:value="button_style" />
+                                    <String fx:value="button_edit" />
                                 </styleClass>
                             </Button>
-                            <Button mnemonicParsing="false" onAction="#Button_XoaDayTroOnAction"
-                                    stylesheets="@../styles/Style.css" text="Xóa dãy">
+                            <Button mnemonicParsing="false" onAction="#Button_XoaDayTroOnAction" stylesheets="@../styles/Style.css" text="Xóa dãy">
                                 <styleClass>
-                                    <String fx:value="button_style"/>
-                                    <String fx:value="button_delete"/>
+                                    <String fx:value="button_style" />
+                                    <String fx:value="button_delete" />
                                 </styleClass>
                             </Button>
                         </HBox>
                     </HBox>
                     <TableView fx:id="tableView_DayTro" prefHeight="550.0">
                         <columns>
-                            <TableColumn fx:id="MaDayTro" prefWidth="100.0" text="Mã dãy"/>
-                            <TableColumn fx:id="TenDayTro" prefWidth="100.0" text="Tên dãy"/>
-                            <TableColumn fx:id="SLphong" prefWidth="70.0" text="SL Phòng"/>
-                            <TableColumn fx:id="DiaChi" prefWidth="300.0" text="Địa chỉ"/>
+                            <TableColumn fx:id="MaDayTro" prefWidth="100.0" text="Mã dãy" />
+                            <TableColumn fx:id="TenDayTro" prefWidth="100.0" text="Tên dãy" />
+                            <TableColumn fx:id="SLphong" prefWidth="70.0" text="SL Phòng" />
+                            <TableColumn fx:id="DiaChi" prefWidth="300.0" text="Địa chỉ" />
                         </columns>
                     </TableView>
                 </VBox>
                 <VBox spacing="12.0">
                     <HBox alignment="CENTER_LEFT" spacing="24.0" VBox.vgrow="ALWAYS">
-                        <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="DS phòng"
-                               HBox.hgrow="ALWAYS"/>
+                        <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="DS phòng" HBox.hgrow="ALWAYS" />
                         <HBox alignment="CENTER_RIGHT" spacing="24.0" HBox.hgrow="ALWAYS">
-                            <Button mnemonicParsing="false"
-                                    onAction="#Button_ThemPhongTroOnAction"
-                                    stylesheets="@../styles/Style.css" text="Thêm phòng mới">
+                            <Button mnemonicParsing="false" onAction="#Button_ThemPhongTroOnAction" stylesheets="@../styles/Style.css" text="Thêm phòng mới">
                                 <styleClass>
-                                    <String fx:value="button_add"/>
-                                    <String fx:value="button_style"/>
+                                    <String fx:value="button_add" />
+                                    <String fx:value="button_style" />
                                 </styleClass>
                             </Button>
-                            <Button mnemonicParsing="false"
-                                    onAction="#Button_SuaPhongTroOnAction"
-                                    stylesheets="@../styles/Style.css" text="Chỉnh sửa">
+                            <Button mnemonicParsing="false" onAction="#Button_SuaPhongTroOnAction" stylesheets="@../styles/Style.css" text="Chỉnh sửa">
                                 <styleClass>
-                                    <String fx:value="button_edit"/>
-                                    <String fx:value="button_style"/>
+                                    <String fx:value="button_edit" />
+                                    <String fx:value="button_style" />
                                 </styleClass>
                             </Button>
-                            <Button mnemonicParsing="false"
-                                    onAction="#Button_XoaPhongTroOnAction"
-                                    stylesheets="@../styles/Style.css" text="Xóa phòng">
+                            <Button mnemonicParsing="false" onAction="#Button_XoaPhongTroOnAction" stylesheets="@../styles/Style.css" text="Xóa phòng">
                                 <styleClass>
-                                    <String fx:value="button_delete"/>
-                                    <String fx:value="button_style"/>
+                                    <String fx:value="button_delete" />
+                                    <String fx:value="button_style" />
                                 </styleClass>
                             </Button>
                         </HBox>
                     </HBox>
                     <TableView fx:id="tableView_PhongTro" prefHeight="263.0" prefWidth="502.0">
                         <columns>
-                            <TableColumn fx:id="MaPhongTro" prefWidth="130.0" text="Mã phòng"/>
-                            <TableColumn fx:id="TenPhongTro" prefWidth="140.0" text="Tên Phòng"/>
-                            <TableColumn fx:id="SoNguoiTro" prefWidth="70.0" text="Đã ở"/>
-                            <TableColumn fx:id="GiaPhongTro" prefWidth="100.0" text="Giá phòng"/>
+                            <TableColumn fx:id="MaPhongTro" prefWidth="130.0" text="Mã phòng" />
+                            <TableColumn fx:id="TenPhongTro" prefWidth="140.0" text="Tên Phòng" />
+                            <TableColumn fx:id="SoNguoiTro" prefWidth="70.0" text="Đã ở" />
+                            <TableColumn fx:id="GiaPhongTro" prefWidth="100.0" text="Giá phòng" />
                         </columns>
                     </TableView>
                     <HBox alignment="CENTER_LEFT" spacing="24.0">
-                        <Label style="-fx-font-size: 14px; -fx-font-weight: bold;"
-                               text="Thông tin phòng" HBox.hgrow="ALWAYS"/>
+                        <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Thông tin phòng" HBox.hgrow="ALWAYS" />
                         <HBox alignment="CENTER_RIGHT" spacing="24.0" HBox.hgrow="ALWAYS">
-                            <Button mnemonicParsing="false"
-                                    onAction="#Button_ThemKhachThueOnAction"
-                                    stylesheets="@../styles/Style.css" text="Đăng ký">
+                            <Button mnemonicParsing="false" onAction="#Button_ThemKhachThueOnAction" stylesheets="@../styles/Style.css" text="Đăng ký">
                                 <styleClass>
-                                    <String fx:value="button_add"/>
-                                    <String fx:value="button_style"/>
+                                    <String fx:value="button_add" />
+                                    <String fx:value="button_style" />
                                 </styleClass>
                             </Button>
-                            <Button mnemonicParsing="false"
-                                    onAction="#Button_SuaKhachThueOnAction"
-                                    stylesheets="@../styles/Style.css" text="Chỉnh sửa">
+                            <Button mnemonicParsing="false" onAction="#Button_SuaKhachThueOnAction" stylesheets="@../styles/Style.css" text="Chỉnh sửa">
                                 <styleClass>
-                                    <String fx:value="button_edit"/>
-                                    <String fx:value="button_style"/>
+                                    <String fx:value="button_edit" />
+                                    <String fx:value="button_style" />
                                 </styleClass>
                             </Button>
-                            <Button mnemonicParsing="false"
-                                    onAction="#Button_XoaKhachThueOnAction"
-                                    stylesheets="@../styles/Style.css" text="Hủy đăng ký">
+                            <Button mnemonicParsing="false" onAction="#Button_XoaKhachThueOnAction" stylesheets="@../styles/Style.css" text="Hủy đăng ký">
                                 <styleClass>
-                                    <String fx:value="button_delete"/>
-                                    <String fx:value="button_style"/>
+                                    <String fx:value="button_delete" />
+                                    <String fx:value="button_style" />
                                 </styleClass>
                             </Button>
                         </HBox>
                     </HBox>
                     <TableView fx:id="tableview_KhachHang" prefHeight="238.0">
                         <columns>
-                            <TableColumn fx:id="HovaTen" prefWidth="135.0" text="Họ và tên"/>
-                            <TableColumn fx:id="CCCD" prefWidth="115.0" text="CCCD"/>
-                            <TableColumn fx:id="GioiTinh" prefWidth="70.0" text="Giới tính"/>
-                            <TableColumn fx:id="SDT" prefWidth="110.0" text="SĐT"/>
-                            <TableColumn fx:id="QueQuan" prefWidth="180.0" text="Quê Quán"/>
-                            <TableColumn fx:id="NgayBatDauO" prefWidth="100.0" text="Ngày đăng ký"/>
+                            <TableColumn fx:id="HovaTen" prefWidth="135.0" text="Họ và tên" />
+                            <TableColumn fx:id="CCCD" prefWidth="115.0" text="CCCD" />
+                            <TableColumn fx:id="GioiTinh" prefWidth="70.0" text="Giới tính" />
+                            <TableColumn fx:id="SDT" prefWidth="110.0" text="SĐT" />
+                            <TableColumn fx:id="QueQuan" prefWidth="180.0" text="Quê Quán" />
+                            <TableColumn fx:id="NgayBatDauO" prefWidth="100.0" text="Ngày đăng ký" />
                         </columns>
                     </TableView>
                 </VBox>

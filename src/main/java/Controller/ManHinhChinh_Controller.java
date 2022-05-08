@@ -4,7 +4,6 @@ import Main.DatabaseConnection;
 import Main.Main;
 import Main.KhachHang;
 import Main.DayTro;
-import Main.User;
 
 import Main.PhongTro;
 import javafx.collections.FXCollections;
@@ -24,6 +23,8 @@ import java.sql.*;
 import java.util.ResourceBundle;
 
 public class ManHinhChinh_Controller implements Initializable {
+    @FXML
+    public ScrollPane ThanhToanHoaDon, DoanhThu, ManHinhChinh;
     @FXML
     private TableColumn<PhongTro, String> TenPhongTro;
     @FXML
@@ -49,8 +50,6 @@ public class ManHinhChinh_Controller implements Initializable {
     @FXML
     private TableView<KhachHang> tableview_KhachHang;
 
-    @FXML
-    private ScrollPane ManHinhChinh;
     @FXML
     private TableColumn<DayTro, Integer> SLphong;
 
@@ -347,6 +346,52 @@ public class ManHinhChinh_Controller implements Initializable {
             preparedStatement.executeUpdate();
         } catch (Exception e) {
             System.out.println("Lỗi xóa khách thuê");
+        }
+    }
+
+//    Navbar
+    @FXML
+    private Button button_QuanLyPhong, button_ThanhToanHoaDon, button_DoanhThu;
+
+    public void button_QuanLyPhongOnAction (ActionEvent event) {
+        try {
+            Stage stage = (Stage) ManHinhChinh.getScene().getWindow();
+            stage.close();
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("ManHinhChinh1.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setTitle("Quản lý phòng trọ");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void button_ThanhToanHoaDonOnAction (ActionEvent event) {
+        try {
+            Stage stage = (Stage) ManHinhChinh.getScene().getWindow();
+            stage.close();
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("GiaoDienThanhToanHoaDon.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setTitle("Thanh toán hóa đơn");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void button_DoanhThuOnAction (ActionEvent event) {
+        try {
+            Stage stage = (Stage) ManHinhChinh.getScene().getWindow();
+            stage.close();
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("GiaoDienDoanhThu.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setTitle("Doanh thu");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
