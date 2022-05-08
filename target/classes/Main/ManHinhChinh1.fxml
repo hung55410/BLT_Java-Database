@@ -54,9 +54,9 @@
                     <padding>
                         <Insets left="24.0" right="24.0" />
                     </padding>
-                    <Button mnemonicParsing="false" style="-fx-border-color: #000; -fx-border-width: 0 0 2 0;" styleClass="button_navbar" stylesheets="@../styles/Style.css" text="Quản lý phòng" />
-                    <Button mnemonicParsing="false" styleClass="button_navbar" stylesheets="@../styles/Style.css" text="Thanh toán hóa đơn" />
-                    <Button mnemonicParsing="false" styleClass="button_navbar" stylesheets="@../styles/Style.css" text="Doanh thu" />
+                    <Button fx:id="button_QuanLyPhong" mnemonicParsing="false" onAction="#button_QuanLyPhongOnAction" style="-fx-border-color: #000; -fx-border-width: 0 0 2 0;" styleClass="button_navbar" stylesheets="@../styles/Style.css" text="Quản lý phòng" />
+                    <Button fx:id="button_ThanhToanHoaDon" mnemonicParsing="false" onAction="#button_ThanhToanHoaDonOnAction" styleClass="button_navbar" stylesheets="@../styles/Style.css" text="Thanh toán hóa đơn" />
+                    <Button fx:id="button_DoanhThu" mnemonicParsing="false" onAction="#button_DoanhThuOnAction" styleClass="button_navbar" stylesheets="@../styles/Style.css" text="Doanh thu" />
                 </HBox>
             </HBox>
             <HBox alignment="CENTER" spacing="24.0" VBox.vgrow="ALWAYS">

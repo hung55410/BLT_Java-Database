@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class ThanhToanHoaDon_Controller {
     @FXML
-    public ScrollPane ThanhToanHoaDon, DoanhThu, ManHinhChinh;
+    public ScrollPane ThanhToanHoaDon;
 
     //    Navbar
     @FXML

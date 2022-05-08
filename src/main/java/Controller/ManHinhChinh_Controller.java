@@ -24,7 +24,7 @@ import java.util.ResourceBundle;
 
 public class ManHinhChinh_Controller implements Initializable {
     @FXML
-    public ScrollPane ThanhToanHoaDon, DoanhThu, ManHinhChinh;
+    public ScrollPane ManHinhChinh;
     @FXML
     private TableColumn<PhongTro, String> TenPhongTro;
     @FXML
@@ -49,13 +49,10 @@ public class ManHinhChinh_Controller implements Initializable {
     private TableColumn<KhachHang, Boolean> GioiTinh;
     @FXML
     private TableView<KhachHang> tableview_KhachHang;
-
     @FXML
     private TableColumn<DayTro, Integer> SLphong;
-
     @FXML
     private TableColumn<DayTro, String> DiaChi;
-
     @FXML
     private TableColumn<DayTro, String> MaDayTro;
     @FXML
@@ -65,13 +62,7 @@ public class ManHinhChinh_Controller implements Initializable {
     private ObservableList<DayTro> Data_DayTro;
     private ObservableList<PhongTro> Data_PhongTro;
     private ObservableList<KhachHang> Data_KhachHang;
-//    private ObservableList<User> Data_User;
-//    private String username;
-//    private User Selected_User;
-//    public void LayDataTuUser(User Data_User){
-//        Selected_User = Data_User;
-//        username = Selected_User.getUsername();
-//    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
