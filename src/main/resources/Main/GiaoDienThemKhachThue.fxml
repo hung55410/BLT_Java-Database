@@ -7,6 +7,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -44,9 +45,11 @@
         <HBox alignment="CENTER_LEFT">
             <Label prefWidth="150.0" text="Giới tính" />
             <HBox spacing="24.0">
-                <RadioButton mnemonicParsing="false" text="Nam" />
-                <RadioButton mnemonicParsing="false" text="Nữ" />
-                <RadioButton mnemonicParsing="false" text="Khác" />
+                <RadioButton fx:id="RadioButton_Nam" mnemonicParsing="false" text="Nam">
+               <toggleGroup>
+                  <ToggleGroup fx:id="gender" />
+               </toggleGroup></RadioButton>
+                <RadioButton fx:id="RadioButton_Nu" mnemonicParsing="false" text="Nu" toggleGroup="$gender" />
             </HBox>
         </HBox>
         <HBox>

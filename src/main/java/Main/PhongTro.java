@@ -5,6 +5,23 @@ public class PhongTro {
     private String TenPhongTro;
     private Integer SoNguoiTro;
     private String GiaPhongTro;
+    private String MaDayTro;
+
+    public PhongTro(String maPhongTro, String tenPhongTro, Integer soNguoiTro, String giaPhongTro, String maDayTro) {
+        MaPhongTro = maPhongTro;
+        TenPhongTro = tenPhongTro;
+        SoNguoiTro = soNguoiTro;
+        GiaPhongTro = giaPhongTro;
+        MaDayTro = maDayTro;
+    }
+
+    public String getMaDayTro() {
+        return MaDayTro;
+    }
+
+    public void setMaDayTro(String maDayTro) {
+        MaDayTro = maDayTro;
+    }
 
     public PhongTro(String maPhongTro, String tenPhongTro, Integer soNguoiTro, String giaPhongTro) {
         MaPhongTro = maPhongTro;

@@ -19,7 +19,7 @@
         </HBox>
         <HBox alignment="CENTER_LEFT">
             <Label prefWidth="150.0" text="Mã phòng trọ" />
-            <TextField fx:id="TextField_SuaMaPhongTro" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
+            <TextField fx:id="TextField_SuaMaPhongTro" editable="false" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
         </HBox>
         <HBox alignment="CENTER_LEFT">
             <Label prefWidth="150.0" text="Tên phòng trọ" />

@@ -97,13 +97,14 @@ package Controller;
 
 import Main.DatabaseConnection;
 import Main.DayTro;
+import Main.PhongTro;
+import Main.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -113,8 +114,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLOutput;
 import java.util.ResourceBundle;
 
 public class ThemDayTro_Controller implements Initializable {
@@ -137,27 +138,27 @@ public class ThemDayTro_Controller implements Initializable {
     private Label error_ChuaNhapDayDuThongTin;
     private ObservableList<DayTro> Data_DayTro;
 
-    @FXML
-    private ComboBox ComboBox_DayTro;;
-
     public void setItems(ObservableList<DayTro> Data_DayTro) {
         this.Data_DayTro = Data_DayTro;
     }
-
+//    private String username;
+//    public void LayDataTuUser(User Data_User){
+//        Selected_User = Data_User;
+//        username = Selected_User.getUsername();
+//    }
     @FXML
     void Button_ConfirmOnAction_DayTro(ActionEvent event) throws IOException {
-        //loi kiem tra thong tin chua nhap day du
         boolean ChuaNhapMaDayTro = Validation.TextFieldVallidation.isTextFieldnotEmpty(TextField_MaDayTro, error_ChuaNhapDayDuThongTin, "Vui lòng nhập đầy đủ thông tin");
         boolean ChuaNhapTenDayTro = Validation.TextFieldVallidation.isTextFieldnotEmpty(TextField_TenDayTro, error_ChuaNhapDayDuThongTin, "Vui lòng nhập đầy đủ thông tin");
-        boolean ChuaNhapSLphong = Validation.TextFieldVallidation.isTextFieldnotEmpty(TextField_SLphong, error_ChuaNhapDayDuThongTin, "Vui lòng nhập đầy đủ thông tin");
         boolean ChuaNhapDiaChi = Validation.TextFieldVallidation.isTextFieldnotEmpty(TextField_DiaChi, error_ChuaNhapDayDuThongTin, "Vui lòng nhập đầy đủ thông tin");
-        if (ChuaNhapMaDayTro && ChuaNhapTenDayTro && ChuaNhapSLphong && ChuaNhapDiaChi) {
+        boolean ChuaNhapSLphong = Validation.TextFieldVallidation.isTextFieldnotEmpty(TextField_SLphong, error_ChuaNhapDayDuThongTin, "Vui lòng nhập đầy đủ thông tin");
+        if (ChuaNhapMaDayTro && ChuaNhapTenDayTro && ChuaNhapDiaChi && ChuaNhapSLphong) {
             String sql = "INSERT INTO daytro(madaytro,ten,diachi,SlPhong,madinhdanh) VALUES(?,?,?,?,?)";
             String madaytro = TextField_MaDayTro.getText();
             int slphong = Integer.parseInt(TextField_SLphong.getText());
             String ten = TextField_TenDayTro.getText();
             String diachi = TextField_DiaChi.getText();
-            String madinhdanh = ComboBox_DayTro.getValue().toString();
+
             try {
                 DatabaseConnection databaseConnection = new DatabaseConnection();
                 Connection connection = databaseConnection.getConnection();
@@ -166,7 +167,7 @@ public class ThemDayTro_Controller implements Initializable {
                 preparedStatement.setString(2, ten);
                 preparedStatement.setString(3, diachi);
                 preparedStatement.setInt(4, slphong);
-                preparedStatement.setString(5, madinhdanh);
+                preparedStatement.setString(5, Data_DayTro.get(0).getMadinhdanh());
                 preparedStatement.executeUpdate();
                 preparedStatement.close();
                 Data_DayTro.add(new DayTro(TextField_MaDayTro.getText(), TextField_TenDayTro.getText(), Integer.parseInt(TextField_SLphong.getText()), TextField_DiaChi.getText()));
@@ -177,8 +178,8 @@ public class ThemDayTro_Controller implements Initializable {
                 e.printStackTrace();
             }
         }
-
     }
+
     @FXML
     void Button_CancelOnAction_DayTro(ActionEvent event) {
         Stage stage = (Stage) GiaoDienThemDayTro.getScene().getWindow();
@@ -187,25 +188,6 @@ public class ThemDayTro_Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Data_DayTro = FXCollections.observableArrayList();
-        options_selectchutro();
-    }
-    public void options_selectchutro() {
-        try {
-            String sql = "SELECT madinhdanh FROM chutro";
-            DatabaseConnection databaseConnection = new DatabaseConnection();
-            Connection connection = databaseConnection.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                String madinhdanh = resultSet.getString("madinhdanh");
-                ComboBox_DayTro.getItems().add(madinhdanh);
-            }
-            preparedStatement.close();
-            resultSet.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }
 
