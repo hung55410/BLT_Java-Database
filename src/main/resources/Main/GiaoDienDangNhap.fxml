@@ -16,9 +16,7 @@
          <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
       </padding>
       <HBox VBox.vgrow="ALWAYS">
-         <children>
             <Label styleClass="heading" stylesheets="@../styles/Style.css" text="Quản lý phòng trọ" />
-         </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT" spacing="24.0">
          <Label prefWidth="100.0" style="-fx-font-size: 14;" stylesheets="@../styles/Style.css" text="Tên đăng nhập" />

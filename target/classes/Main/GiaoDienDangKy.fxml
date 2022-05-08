@@ -39,7 +39,6 @@
          <HBox spacing="24.0">
             <RadioButton mnemonicParsing="false" text="Nam" />
             <RadioButton mnemonicParsing="false" text="Nữ" />
-            <RadioButton mnemonicParsing="false" text="Khác" />
          </HBox>
       </HBox>
       <HBox alignment="CENTER_LEFT">
