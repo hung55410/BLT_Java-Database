@@ -19,7 +19,7 @@
         </HBox>
         <HBox alignment="CENTER_LEFT">
             <Label prefWidth="150.0" text="Mã dãy trọ" />
-            <TextField fx:id="TextField_SuaMaDayTro" editable="false" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
+            <TextField id="textField_madaytro" fx:id="TextField_SuaMaDayTro" editable="false" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
         </HBox>
         <HBox alignment="CENTER_LEFT">
             <Label prefWidth="150.0" text="Tên dãy trọ" />
@@ -31,7 +31,7 @@
         </HBox>
         <HBox alignment="CENTER_LEFT">
             <Label prefWidth="150.0" text="Số lượng phòng" />
-            <TextField fx:id="TextField_SuaSLphong" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
+            <TextField id="textField_SLphong_daytro" fx:id="TextField_SuaSLphong" editable="false" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
         </HBox>
         <HBox>
             <Label fx:id="error_ChuaNhapDayDuThongTin" styleClass="label_message_wrong" stylesheets="@../styles/Style.css" HBox.hgrow="ALWAYS" />

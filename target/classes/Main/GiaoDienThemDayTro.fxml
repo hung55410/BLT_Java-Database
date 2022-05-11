@@ -31,7 +31,7 @@
       </HBox>
       <HBox alignment="CENTER_LEFT">
          <Label prefWidth="150.0" text="Số lượng phòng" />
-         <TextField fx:id="TextField_SLphong" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
+         <TextField id="textField_slphong" fx:id="TextField_SLphong" editable="false" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" text="0" />
       </HBox>
       <HBox>
          <Label fx:id="error_ChuaNhapDayDuThongTin" styleClass="label_message_wrong" stylesheets="@../styles/Style.css" HBox.hgrow="ALWAYS" />

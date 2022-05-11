@@ -105,6 +105,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -112,10 +114,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.SQLOutput;
+import java.sql.*;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class ThemDayTro_Controller implements Initializable {
@@ -141,24 +141,22 @@ public class ThemDayTro_Controller implements Initializable {
     public void setItems(ObservableList<DayTro> Data_DayTro) {
         this.Data_DayTro = Data_DayTro;
     }
-//    private String username;
+
+    User data = User.getInstance();
+
+    //    private String username;
 //    public void LayDataTuUser(User Data_User){
 //        Selected_User = Data_User;
 //        username = Selected_User.getUsername();
 //    }
     @FXML
     void Button_ConfirmOnAction_DayTro(ActionEvent event) throws IOException {
-        boolean ChuaNhapMaDayTro = Validation.TextFieldVallidation.isTextFieldnotEmpty(TextField_MaDayTro, error_ChuaNhapDayDuThongTin, "Vui lòng nhập đầy đủ thông tin");
-        boolean ChuaNhapTenDayTro = Validation.TextFieldVallidation.isTextFieldnotEmpty(TextField_TenDayTro, error_ChuaNhapDayDuThongTin, "Vui lòng nhập đầy đủ thông tin");
-        boolean ChuaNhapDiaChi = Validation.TextFieldVallidation.isTextFieldnotEmpty(TextField_DiaChi, error_ChuaNhapDayDuThongTin, "Vui lòng nhập đầy đủ thông tin");
-        boolean ChuaNhapSLphong = Validation.TextFieldVallidation.isTextFieldnotEmpty(TextField_SLphong, error_ChuaNhapDayDuThongTin, "Vui lòng nhập đầy đủ thông tin");
-        if (ChuaNhapMaDayTro && ChuaNhapTenDayTro && ChuaNhapDiaChi && ChuaNhapSLphong) {
+        if (ChuaNhapDayDuThongTin()) {
             String sql = "INSERT INTO daytro(madaytro,ten,diachi,SlPhong,madinhdanh) VALUES(?,?,?,?,?)";
             String madaytro = TextField_MaDayTro.getText();
-            int slphong = Integer.parseInt(TextField_SLphong.getText());
+            int slphong = 0;
             String ten = TextField_TenDayTro.getText();
             String diachi = TextField_DiaChi.getText();
-
             try {
                 DatabaseConnection databaseConnection = new DatabaseConnection();
                 Connection connection = databaseConnection.getConnection();
@@ -167,19 +165,29 @@ public class ThemDayTro_Controller implements Initializable {
                 preparedStatement.setString(2, ten);
                 preparedStatement.setString(3, diachi);
                 preparedStatement.setInt(4, slphong);
-                preparedStatement.setString(5, Data_DayTro.get(0).getMadinhdanh());
+                preparedStatement.setString(5, data.getUsername());
                 preparedStatement.executeUpdate();
                 preparedStatement.close();
-                Data_DayTro.add(new DayTro(TextField_MaDayTro.getText(), TextField_TenDayTro.getText(), Integer.parseInt(TextField_SLphong.getText()), TextField_DiaChi.getText()));
+                Data_DayTro.add(new DayTro(TextField_MaDayTro.getText(), TextField_TenDayTro.getText(), Integer.parseInt(TextField_SLphong.getText()), TextField_DiaChi.getText(), data.getUsername()));
                 Stage stage = (Stage) GiaoDienThemDayTro.getScene().getWindow();
                 stage.close();
+                ThemThanhCong();
             } catch (SQLException e) {
                 System.out.println("Loi them day tro");
                 e.printStackTrace();
             }
         }
     }
-
+    public boolean ChuaNhapDayDuThongTin() {
+        if(TextField_MaDayTro.getText().isEmpty() || TextField_TenDayTro.getText().isEmpty() || TextField_DiaChi.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Lỗi");
+            alert.setHeaderText("Vui lòng nhập đầy đủ thông tin");
+            alert.showAndWait();
+            return false;
+        }
+        return true;
+    }
     @FXML
     void Button_CancelOnAction_DayTro(ActionEvent event) {
         Stage stage = (Stage) GiaoDienThemDayTro.getScene().getWindow();
@@ -188,6 +196,16 @@ public class ThemDayTro_Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+    }
+    public boolean ThemThanhCong() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Thêm Thành Công");
+        alert.setHeaderText("Bạn đã thêm thành công");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK) {
+            return true;
+        }
+        return false;
     }
 }
 

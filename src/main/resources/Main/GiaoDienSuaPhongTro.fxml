@@ -19,7 +19,7 @@
         </HBox>
         <HBox alignment="CENTER_LEFT">
             <Label prefWidth="150.0" text="Mã phòng trọ" />
-            <TextField fx:id="TextField_SuaMaPhongTro" editable="false" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
+            <TextField id="textField_maphongtro" fx:id="TextField_SuaMaPhongTro" editable="false" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
         </HBox>
         <HBox alignment="CENTER_LEFT">
             <Label prefWidth="150.0" text="Tên phòng trọ" />
@@ -27,14 +27,14 @@
         </HBox>
         <HBox alignment="CENTER_LEFT">
             <Label prefWidth="150.0" text="Số lượng người/phòng" />
-            <TextField fx:id="TextField_SuaSLNguoiTrongPhongTro" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
+            <TextField id="textField_slphong" fx:id="TextField_SuaSLNguoiTrongPhongTro" editable="false" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
         </HBox>
         <HBox alignment="CENTER_LEFT">
             <Label prefWidth="150.0" text="Giá phòng" />
             <TextField fx:id="TextField_SuaGiaPhongTro" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
         </HBox>
         <HBox>
-            <Label styleClass="label_message_wrong" stylesheets="@../styles/Style.css" HBox.hgrow="ALWAYS" />
+            <Label fx:id="error_ChuaNhapDayDuThongTin" styleClass="label_message_wrong" stylesheets="@../styles/Style.css" HBox.hgrow="ALWAYS" />
         </HBox>
         <HBox alignment="CENTER_RIGHT" spacing="24.0">
             <Button mnemonicParsing="false" onAction="#Button_ConfirmOnAction_SuaPhongTro" stylesheets="@../styles/Style.css" text="Xác nhận">

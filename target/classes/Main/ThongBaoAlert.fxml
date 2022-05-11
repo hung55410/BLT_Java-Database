@@ -7,16 +7,15 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane xmlns="http://javafx.com/javafx/18">
+<AnchorPane fx:id="ThongBao" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AlertDialog">
       <VBox spacing="16.0">
          <padding>
             <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
          </padding>
             <Label text="Text content" />
             <HBox spacing="24.0">
-                  <Button mnemonicParsing="false" text="Xác nhận" />
-                  <Button mnemonicParsing="false" text="Hủy" />
+                  <Button mnemonicParsing="false" onAction="#XacNhan" text="Xác nhận" />
+                  <Button mnemonicParsing="false" onAction="#Huy" text="Hủy" />
             </HBox>
       </VBox>
 </AnchorPane>

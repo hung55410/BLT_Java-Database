@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -24,7 +25,7 @@
         </HBox>
         <HBox alignment="CENTER_LEFT">
             <Label prefWidth="150.0" text="CCCD/CMND" />
-            <TextField fx:id="TextField_SuaCCCD_CMND_KhachThue" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
+            <TextField id="textField_cccd" fx:id="TextField_SuaCCCD_CMND_KhachThue" editable="false" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
         </HBox>
         <HBox alignment="CENTER_LEFT">
             <Label prefWidth="150.0" text="Quê quán" />
@@ -37,13 +38,15 @@
         <HBox alignment="CENTER_LEFT">
             <Label prefWidth="150.0" text="Giới tính" />
             <HBox spacing="24.0">
-                <RadioButton mnemonicParsing="false" text="Nam" />
-                <RadioButton mnemonicParsing="false" text="Nữ" />
-                <RadioButton mnemonicParsing="false" text="Khác" />
+                <RadioButton fx:id="RadioButton_SuaGT_Nam" mnemonicParsing="false" text="Nam">
+               <toggleGroup>
+                  <ToggleGroup fx:id="gender" />
+               </toggleGroup></RadioButton>
+                <RadioButton fx:id="RadioButton_SuaGT_Nu" mnemonicParsing="false" text="Nu" toggleGroup="$gender" />
             </HBox>
         </HBox>
         <HBox>
-            <Label styleClass="label_message_wrong" stylesheets="@../styles/Style.css" HBox.hgrow="ALWAYS" />
+            <Label fx:id="error_ChuaNhapDayDuThongTin" styleClass="label_message_wrong" stylesheets="@../styles/Style.css" HBox.hgrow="ALWAYS" />
         </HBox>
         <HBox alignment="CENTER_RIGHT" spacing="24.0">
             <Button mnemonicParsing="false" onAction="#Button_ConfirmOnAction_SuaKhachThue" stylesheets="@../styles/Style.css" text="Xác nhận">

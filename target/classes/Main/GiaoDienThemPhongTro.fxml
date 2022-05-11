@@ -27,7 +27,7 @@
         </HBox>
         <HBox alignment="CENTER_LEFT">
             <Label prefWidth="150.0" text="Số lượng người/phòng" />
-            <TextField fx:id="TextField_SLPhongNguoiTrongPhong" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
+            <TextField id="textField_songuoio" fx:id="TextField_SLPhongNguoiTrongPhong" editable="false" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" text="0" />
         </HBox>
         <HBox alignment="CENTER_LEFT">
             <Label prefWidth="150.0" text="Giá phòng" />

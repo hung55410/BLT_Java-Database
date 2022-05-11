@@ -3,24 +3,11 @@ package Main;
 public class DayTro{
     private String MaDayTro;
     private String TenDayTro;
-    private int SLphong;
+    private Integer SLphong;
     private String DiaChi;
     private String madinhdanh;
-    public String getMadinhdanh() {
-        return madinhdanh;
-    }
 
-    public void setMadinhdanh(String madinhdanh) {
-        this.madinhdanh = madinhdanh;
-    }
-
-    public DayTro(String maDayTro, String tenDayTro, int SLphong, String diaChi) {
-        MaDayTro = maDayTro;
-        TenDayTro = tenDayTro;
-        this.SLphong = SLphong;
-        DiaChi = diaChi;
-    }
-    public DayTro(String maDayTro, String tenDayTro, int SLphong, String diaChi, String madinhdanh) {
+    public DayTro(String maDayTro, String tenDayTro, Integer SLphong, String diaChi, String madinhdanh) {
         MaDayTro = maDayTro;
         TenDayTro = tenDayTro;
         this.SLphong = SLphong;
@@ -44,11 +31,11 @@ public class DayTro{
         TenDayTro = tenDayTro;
     }
 
-    public int getSLphong() {
+    public Integer getSLphong() {
         return SLphong;
     }
 
-    public void setSLphong(int SLphong) {
+    public void setSLphong(Integer SLphong) {
         this.SLphong = SLphong;
     }
 
@@ -58,5 +45,13 @@ public class DayTro{
 
     public void setDiaChi(String diaChi) {
         DiaChi = diaChi;
+    }
+
+    public String getMadinhdanh() {
+        return madinhdanh;
+    }
+
+    public void setMadinhdanh(String madinhdanh) {
+        this.madinhdanh = madinhdanh;
     }
 }

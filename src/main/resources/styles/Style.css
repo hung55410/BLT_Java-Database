@@ -130,3 +130,27 @@
     -fx-border-width: 2px;
     -fx-padding: 6px 12px;
 }
+#textField_madaytro{
+        -fx-background-color: transparent;
+        -fx-border-color: transparent;
+}
+#textField_maphongtro{
+        -fx-background-color: transparent;
+        -fx-border-color: transparent;
+}
+#textField_cccd{
+        -fx-background-color: transparent;
+        -fx-border-color: transparent;
+}
+#textField_slphong{
+         -fx-background-color: transparent;
+         -fx-border-color: transparent;
+}
+#textField_songuoio{
+         -fx-background-color: transparent;
+         -fx-border-color: transparent;
+}
+#textField_SLphong_daytro{
+         -fx-background-color: transparent;
+         -fx-border-color: transparent;
+         }

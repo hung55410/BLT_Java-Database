@@ -6,15 +6,14 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class SuaDayTro_Controller implements Initializable {
@@ -56,27 +55,38 @@ public class SuaDayTro_Controller implements Initializable {
 
     @FXML
     public void Button_ConfirmOnAction_SuaDayTro(ActionEvent event) {
-        String sql = "UPDATE daytro SET ten = ? , Slphong = ?, diachi = ?, madinhdanh = ? WHERE madaytro = ?";
-        try {
-            DatabaseConnection databaseConnection = new DatabaseConnection();
-            Connection connection = databaseConnection.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, TextField_SuaTenDayTro.getText());
-            preparedStatement.setInt(2, Integer.parseInt(TextField_SuaSLphong.getText()));
-            preparedStatement.setString(3, TextField_SuaDiaChi.getText());
-            preparedStatement.setString(4, Data_DayTro.get(0).getMadinhdanh());
-            preparedStatement.setString(5, TextField_SuaMaDayTro.getText());
-            preparedStatement.executeUpdate();
-            preparedStatement.close();
-            Data_DayTro.set(Data_DayTro.indexOf(Selected_DayTro), new DayTro(TextField_SuaMaDayTro.getText(), TextField_SuaTenDayTro.getText(), Integer.parseInt(TextField_SuaSLphong.getText()), TextField_SuaDiaChi.getText()));
-            Stage stage = (Stage) GiaoDienSuaDayTro.getScene().getWindow();
-            stage.close();
-            System.out.println("Update thanh cong");
-        } catch (Exception e) {
-            System.out.println("Update that bai");
+        if (ChuaNhapDayDuThongTin()) {
+            String sql = "UPDATE daytro SET ten = ? , Slphong = ?, diachi = ?, madinhdanh = ? WHERE madaytro = ?";
+            try {
+                DatabaseConnection databaseConnection = new DatabaseConnection();
+                Connection connection = databaseConnection.getConnection();
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setString(1, TextField_SuaTenDayTro.getText());
+                preparedStatement.setInt(2, Integer.parseInt(TextField_SuaSLphong.getText()));
+                preparedStatement.setString(3, TextField_SuaDiaChi.getText());
+                preparedStatement.setString(4, Data_DayTro.get(0).getMadinhdanh());
+                preparedStatement.setString(5, TextField_SuaMaDayTro.getText());
+                preparedStatement.executeUpdate();
+                preparedStatement.close();
+                Data_DayTro.set(Data_DayTro.indexOf(Selected_DayTro), new DayTro(TextField_SuaMaDayTro.getText(), TextField_SuaTenDayTro.getText(), Integer.parseInt(TextField_SuaSLphong.getText()), TextField_SuaDiaChi.getText(), Data_DayTro.get(0).getMadinhdanh()));
+                Stage stage = (Stage) GiaoDienSuaDayTro.getScene().getWindow();
+                stage.close();
+                SuaThanhCong();
+            } catch (Exception e) {
+                System.out.println("Update that bai");
+            }
         }
     }
-
+    public boolean ChuaNhapDayDuThongTin() {
+        if (TextField_SuaTenDayTro.getText().isEmpty() ||TextField_SuaDiaChi.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Lỗi");
+            alert.setHeaderText("Vui lòng nhập đầy đủ thông tin");
+            alert.showAndWait();
+            return false;
+        }
+        return true;
+    }
     @FXML
     void Button_CancelOnAction_SuaDayTro(ActionEvent event) {
         Stage stage = (Stage) GiaoDienSuaDayTro.getScene().getWindow();
@@ -85,6 +95,15 @@ public class SuaDayTro_Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+    }
+    public boolean SuaThanhCong() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Sửa Thành Công");
+        alert.setHeaderText("Bạn đã sửa thành công");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK) {
+            return true;
+        }
+        return false;
     }
 }

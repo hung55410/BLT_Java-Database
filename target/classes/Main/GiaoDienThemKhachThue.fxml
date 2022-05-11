@@ -37,13 +37,13 @@
             <TextField fx:id="TextField_SDT_KhachThue" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
         </HBox>
         <HBox alignment="CENTER_LEFT">
-            <Label prefWidth="150.0" text="Ngày đăng ký"/>
-            <DatePicker prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css"/>
+            <Label prefWidth="150.0" text="Ngày đăng ký" />
+            <DatePicker fx:id="date" prefWidth="250.0" styleClass="textField" stylesheets="@../styles/Style.css" />
         </HBox>
         <HBox alignment="CENTER_LEFT">
             <Label prefWidth="150.0" text="Giới tính" />
             <HBox spacing="24.0">
-                <RadioButton fx:id="RadioButton_Nam" mnemonicParsing="false" text="Nam">
+                <RadioButton fx:id="RadioButton_Nam" mnemonicParsing="false" selected="true" text="Nam">
                <toggleGroup>
                   <ToggleGroup fx:id="gender" />
                </toggleGroup></RadioButton>
@@ -51,7 +51,7 @@
             </HBox>
         </HBox>
         <HBox>
-            <Label styleClass="label_message_wrong" stylesheets="@../styles/Style.css" HBox.hgrow="ALWAYS" />
+            <Label fx:id="error_ChuaNhapDayDuThongTin" styleClass="label_message_wrong" stylesheets="@../styles/Style.css" HBox.hgrow="ALWAYS" />
         </HBox>
         <HBox alignment="CENTER_RIGHT" spacing="24.0">
             <Button mnemonicParsing="false" onAction="#Button_ConfirmOnAction_ThemKhachThue" stylesheets="@../styles/Style.css" text="Xác nhận">

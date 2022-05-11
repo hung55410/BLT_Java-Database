@@ -36,21 +36,22 @@ public class DangNhap_Controller {
     private Label Label_Message;
     @FXML
     private Button button_DangKy;
+    User data = User.getInstance();
     @FXML
     private void Button_DangNhapOnAction(ActionEvent event) throws IOException {
 //        CHUYEN kieu char sang kieu string
-        String userName = TextField_TenDangNhap.getText();
+        data.setUsername(TextField_TenDangNhap.getText());
         String password = PasswordField_MatKhau.getText();
         DatabaseConnection databaseConnection = new DatabaseConnection();
         Connection connection = databaseConnection.getConnection();
         String verifyLogin = "select count(1) as count from chutro where madinhdanh = ? and matkhau = ?";
-        if (userName.equals("") || password.equals("")) {
+        if (TextField_TenDangNhap.getText().equals("") || password.equals("")) {
             Label_Message.setText("Vui lòng nhập đầy đủ thông tin");
         }
         else {
             try {
                 PreparedStatement preparedStatement = connection.prepareStatement(verifyLogin);
-                preparedStatement.setString(1,userName);
+                preparedStatement.setString(1,TextField_TenDangNhap.getText());
                 preparedStatement.setString(2, password);
                 ResultSet resultSet = preparedStatement.executeQuery();
                 resultSet.next();
@@ -61,8 +62,6 @@ public class DangNhap_Controller {
                     Stage stage1 = new Stage();
                     FXMLLoader loader = new FXMLLoader(Main.class.getResource("ManHinhChinh1.fxml"));
                     Scene scene = new Scene(loader.load());
-                    ManHinhChinh_Controller manHinhChinh_controller = loader.getController();
-                    manHinhChinh_controller.loaddata_daytro(userName);
                     stage1.setScene(scene);
                     stage1.show();
                 } else {

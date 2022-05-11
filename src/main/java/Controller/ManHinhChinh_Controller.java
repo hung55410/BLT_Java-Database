@@ -1,11 +1,6 @@
 package Controller;
 
-import Main.DatabaseConnection;
-import Main.Main;
-import Main.KhachHang;
-import Main.DayTro;
-
-import Main.PhongTro;
+import Main.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,7 +14,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class ManHinhChinh_Controller implements Initializable {
@@ -62,6 +60,7 @@ public class ManHinhChinh_Controller implements Initializable {
     private ObservableList<DayTro> Data_DayTro;
     private ObservableList<PhongTro> Data_PhongTro;
     private ObservableList<KhachHang> Data_KhachHang;
+    User data = User.getInstance();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -70,13 +69,13 @@ public class ManHinhChinh_Controller implements Initializable {
             Connection connection = databaseConnection.getConnection();
             Data_DayTro = FXCollections.observableArrayList();
             setcelltable_daytro();
-            loaddata_daytro("");
-//            Data_PhongTro = FXCollections.observableArrayList();
-//            setcelltable_phongtro();
-//            loaddata_phongtro();
-//            Data_KhachHang = FXCollections.observableArrayList();
-//            setcelltable_KhachHang();
-//            loaddata_KhachHang();
+            loaddata_daytro();
+            Data_PhongTro = FXCollections.observableArrayList();
+            setcelltable_phongtro();
+            loaddata_phongtro();
+            Data_KhachHang = FXCollections.observableArrayList();
+            setcelltable_KhachHang();
+            loaddata_khachhang();
         } catch (Exception e) {
             System.out.println("Loi initialize");
         }
@@ -88,14 +87,14 @@ public class ManHinhChinh_Controller implements Initializable {
         DiaChi.setCellValueFactory(new PropertyValueFactory<DayTro, String>("diaChi"));
         SLphong.setCellValueFactory(new PropertyValueFactory<DayTro, Integer>("SLphong"));
     }
-    public void loaddata_daytro(String username) {
-        Data_DayTro.clear();
+
+    public void loaddata_daytro() {
         try {
             DatabaseConnection databaseConnection = new DatabaseConnection();
             Connection connection = databaseConnection.getConnection();
             String sql = "SELECT * FROM daytro where madinhdanh = ?";
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, username);
+            ps.setString(1, data.getUsername());
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()) {
                 Data_DayTro.add(new DayTro(resultSet.getString("madaytro"), resultSet.getString("ten"), resultSet.getInt("SLphong"), resultSet.getString("diachi"), resultSet.getString("madinhdanh")));
@@ -105,6 +104,10 @@ public class ManHinhChinh_Controller implements Initializable {
             e.printStackTrace();
         }
         tableView_DayTro.setItems(Data_DayTro);
+        tableView_DayTro.getSelectionModel().selectFirst();
+    }
+
+    public void loaddata_phongtro() {
         tableView_DayTro.setOnMouseClicked(e -> {
             String check = tableView_DayTro.getSelectionModel().getSelectedItem().getMaDayTro();
             try {
@@ -119,11 +122,18 @@ public class ManHinhChinh_Controller implements Initializable {
                 while (resultSet.next()) {
                     Data_PhongTro.add(new PhongTro(resultSet.getString("maphong"), resultSet.getString("tenphong"), resultSet.getInt("songuoitro"), resultSet.getString("giaphong"), resultSet.getString("madaytro")));
                 }
+                if (tableview_KhachHang.getSelectionModel().getSelectedItem() != null) {
+                    Data_KhachHang.clear();
+                }
             } catch (Exception event) {
                 System.out.println("Lỗi loaddata_phongtro");
             }
             tableView_PhongTro.setItems(Data_PhongTro);
+            tableView_PhongTro.getSelectionModel().selectFirst();
         });
+    }
+
+    public void loaddata_khachhang() {
         tableView_PhongTro.setOnMouseClicked(e -> {
             try {
                 String checkmaphong = tableView_PhongTro.getSelectionModel().getSelectedItem().getMaPhongTro();
@@ -142,10 +152,10 @@ public class ManHinhChinh_Controller implements Initializable {
                 System.out.println("Lỗi loaddata_khachhang");
             }
             tableview_KhachHang.setItems(Data_KhachHang);
-//            tableview_KhachHang.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-
+            tableview_KhachHang.getSelectionModel().selectFirst();
         });
     }
+
     public void setcelltable_phongtro() {
         TenPhongTro.setCellValueFactory(new PropertyValueFactory<PhongTro, String>("tenPhongTro"));
         MaPhongTro.setCellValueFactory(new PropertyValueFactory<PhongTro, String>("maPhongTro"));
@@ -154,20 +164,14 @@ public class ManHinhChinh_Controller implements Initializable {
     }
 
     public void setcelltable_KhachHang() {
-        try {
-            HovaTen.setCellValueFactory(new PropertyValueFactory<KhachHang, String>("hoTenKhachHang"));
-            CCCD.setCellValueFactory(new PropertyValueFactory<KhachHang, String>("CCCD"));
-            GioiTinh.setCellValueFactory(new PropertyValueFactory<KhachHang, Boolean>("GT"));
-            SDT.setCellValueFactory(new PropertyValueFactory<KhachHang, String>("SDT"));
-            QueQuan.setCellValueFactory(new PropertyValueFactory<KhachHang, String>("queQuan"));
-            NgayBatDauO.setCellValueFactory(new PropertyValueFactory<KhachHang, String>("ngayBatDauO"));
-        } catch (Exception e) {
-            System.out.println("Lỗi setcelltable_KhachHang");
-        }
+        HovaTen.setCellValueFactory(new PropertyValueFactory<KhachHang, String>("hoTenKhachHang"));
+        CCCD.setCellValueFactory(new PropertyValueFactory<KhachHang, String>("CCCD"));
+        GioiTinh.setCellValueFactory(new PropertyValueFactory<KhachHang, Boolean>("GT"));
+        SDT.setCellValueFactory(new PropertyValueFactory<KhachHang, String>("SDT"));
+        QueQuan.setCellValueFactory(new PropertyValueFactory<KhachHang, String>("queQuan"));
+        NgayBatDauO.setCellValueFactory(new PropertyValueFactory<KhachHang, String>("ngayBatDauO"));
     }
-    public void loaddata_phongtro() {
 
-    }
     @FXML
     private void Button_ThemDayTroOnAction(ActionEvent event) throws IOException {
         try {
@@ -199,47 +203,51 @@ public class ManHinhChinh_Controller implements Initializable {
             System.out.println("Lỗi sua day tro");
         }
     }
+
     @FXML
     private void Button_XoaDayTroOnAction(ActionEvent event) throws IOException {
-        String sql = tableView_DayTro.getSelectionModel().getSelectedItem().getMaDayTro();
-        for (int i = 0; i < tableView_PhongTro.getItems().size(); i++) {
-            if (tableView_PhongTro.getItems().get(i).getMaDayTro().equals(sql)) {
-                try{
-                    DatabaseConnection databaseConnection = new DatabaseConnection();
-                    Connection connection = databaseConnection.getConnection();
-                    String sql1 = "DELETE FROM Khachhang WHERE maphong = ?";
-                    PreparedStatement ps = connection.prepareStatement(sql1);
-                    ps.setString(1, tableView_PhongTro.getItems().get(i).getMaPhongTro());
-                    ps.executeUpdate();
-                }catch (Exception e){
-                    System.out.println("Lỗi xóa khách hàng");
-                }
-                try{
-                    DatabaseConnection databaseConnection = new DatabaseConnection();
-                    Connection connection = databaseConnection.getConnection();
-                    String sql2 = "DELETE FROM Phongtro WHERE maphong = ?";
-                    PreparedStatement ps = connection.prepareStatement(sql2);
-                    ps.setString(1, tableView_PhongTro.getItems().get(i).getMaPhongTro());
-                    ps.executeUpdate();
-                }catch (Exception e){
-                    System.out.println("Lỗi xóa phòng");
+        if (Xoa_DayTro()) {
+            String sql = tableView_DayTro.getSelectionModel().getSelectedItem().getMaDayTro();
+            for (int i = 0; i < tableView_PhongTro.getItems().size(); i++) {
+                if (tableView_PhongTro.getItems().get(i).getMaDayTro().equals(sql)) {
+                    try {
+                        DatabaseConnection databaseConnection = new DatabaseConnection();
+                        Connection connection = databaseConnection.getConnection();
+                        String sql1 = "DELETE FROM Khachhang WHERE maphong = ?";
+                        PreparedStatement ps = connection.prepareStatement(sql1);
+                        ps.setString(1, tableView_PhongTro.getItems().get(i).getMaPhongTro());
+                        ps.executeUpdate();
+                    } catch (Exception e) {
+                        System.out.println("Lỗi xóa khách hàng");
+                    }
+                    try {
+                        DatabaseConnection databaseConnection = new DatabaseConnection();
+                        Connection connection = databaseConnection.getConnection();
+                        String sql2 = "DELETE FROM Phongtro WHERE maphong = ?";
+                        PreparedStatement ps = connection.prepareStatement(sql2);
+                        ps.setString(1, tableView_PhongTro.getItems().get(i).getMaPhongTro());
+                        ps.executeUpdate();
+                    } catch (Exception e) {
+                        System.out.println("Lỗi xóa phòng");
+                    }
                 }
             }
+            try {
+                DatabaseConnection databaseConnection = new DatabaseConnection();
+                Connection connection = databaseConnection.getConnection();
+                String sql3 = "DELETE FROM daytro WHERE madaytro = ?";
+                PreparedStatement ps = connection.prepareStatement(sql3);
+                ps.setString(1, tableView_DayTro.getSelectionModel().getSelectedItem().getMaDayTro());
+                ps.executeUpdate();
+            } catch (Exception e) {
+                System.out.println("Lỗi xóa dãy trọ");
+            }
+            tableview_KhachHang.getItems().clear();
+            tableView_PhongTro.getItems().clear();
+            tableView_DayTro.getItems().remove(tableView_DayTro.getSelectionModel().getSelectedItem());
         }
-        try{
-            DatabaseConnection databaseConnection = new DatabaseConnection();
-            Connection connection = databaseConnection.getConnection();
-            String sql3 = "DELETE FROM daytro WHERE madaytro = ?";
-            PreparedStatement ps = connection.prepareStatement(sql3);
-            ps.setString(1, tableView_DayTro.getSelectionModel().getSelectedItem().getMaDayTro());
-            ps.executeUpdate();
-        }catch (Exception e){
-            System.out.println("Lỗi xóa dãy trọ");
-        }
-        tableview_KhachHang.getItems().clear();
-        tableView_PhongTro.getItems().clear();
-        tableView_DayTro.getItems().remove(tableView_DayTro.getSelectionModel().getSelectedItem());
     }
+
     public void Button_ThemPhongTroOnAction(ActionEvent event) {
         try {
             Stage stage = new Stage();
@@ -247,8 +255,8 @@ public class ManHinhChinh_Controller implements Initializable {
             Scene scene = new Scene(fxmlLoader.load());
             ThemPhongTro_Controller themPhongTro_controller = fxmlLoader.getController();
             themPhongTro_controller.LayDataTuDayTro(tableView_DayTro.getSelectionModel().getSelectedItem());
-            System.out.println(tableView_DayTro.getSelectionModel().getSelectedItem());
             themPhongTro_controller.setItems(tableView_PhongTro.getItems());
+            themPhongTro_controller.setItems1(tableView_DayTro.getItems());
             stage.setTitle("Thêm dãy trọ ");
             stage.setScene(scene);
             stage.show();
@@ -256,7 +264,7 @@ public class ManHinhChinh_Controller implements Initializable {
             System.out.println("Lỗi them phong tro");
         }
     }
-//lỗi chỉ sửa được 1 lần
+
     public void Button_SuaPhongTroOnAction(ActionEvent event) {
         try {
             Stage stage = new Stage();
@@ -272,30 +280,66 @@ public class ManHinhChinh_Controller implements Initializable {
             System.out.println("Lỗi sua phong tro");
         }
     }
+
     public void Button_XoaPhongTroOnAction(ActionEvent event) {
-        try{
-            DatabaseConnection databaseConnection = new DatabaseConnection();
-            Connection connection = databaseConnection.getConnection();
-            String sql = "DELETE FROM Khachhang WHERE maphong = ?";
-            PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, tableView_PhongTro.getSelectionModel().getSelectedItem().getMaPhongTro());
-            ps.executeUpdate();
-        }catch (Exception e){
-            System.out.println("Lỗi xoa phong tro 1");
+        if (Xoa_PhongTro()) {
+            try {
+                DatabaseConnection databaseConnection = new DatabaseConnection();
+                Connection connection = databaseConnection.getConnection();
+                String sql = "DELETE FROM Khachhang WHERE maphong = ?";
+                PreparedStatement ps = connection.prepareStatement(sql);
+                ps.setString(1, tableView_PhongTro.getSelectionModel().getSelectedItem().getMaPhongTro());
+                ps.executeUpdate();
+            } catch (Exception e) {
+                System.out.println("Lỗi xoa phong tro 1");
+            }
+            try {
+                DatabaseConnection databaseConnection = new DatabaseConnection();
+                Connection connection = databaseConnection.getConnection();
+                String sql1 = "delete from phongtro where maphong = ?";
+                PreparedStatement ps1 = connection.prepareStatement(sql1);
+                ps1.setString(1, tableView_PhongTro.getSelectionModel().getSelectedItem().getMaPhongTro());
+                tableView_PhongTro.getItems().remove(tableView_PhongTro.getSelectionModel().getSelectedItem());
+                ps1.executeUpdate();
+            } catch (Exception e) {
+                System.out.println("Lỗi xóa phòng tro 2 ");
+            }
+            try {
+                String sql1 = "Update daytro set SLphong = SLphong - 1 where madaytro = ?";
+                DatabaseConnection databaseConnection = new DatabaseConnection();
+                Connection connection = databaseConnection.getConnection();
+                PreparedStatement ps = connection.prepareStatement(sql1);
+                ps.setString(1, tableView_DayTro.getSelectionModel().getSelectedItem().getMaDayTro());
+                ps.executeUpdate();
+            } catch (Exception e) {
+                System.out.println("Lỗi update slphong trong daytro");
+            }
+            try {
+                DatabaseConnection databaseConnection = new DatabaseConnection();
+                Connection connection = databaseConnection.getConnection();
+                String sql = "SELECT * FROM daytro where madinhdanh = ?";
+                PreparedStatement ps = connection.prepareStatement(sql);
+                ps.setString(1, tableView_DayTro.getSelectionModel().getSelectedItem().getMadinhdanh());
+                ResultSet resultSet = ps.executeQuery();
+                Data_DayTro.clear();
+                while (resultSet.next()) {
+                    Data_DayTro.add(new DayTro(resultSet.getString("madaytro"), resultSet.getString("ten"), resultSet.getInt("SLphong"), resultSet.getString("diachi"), resultSet.getString("madinhdanh")));
+                }
+                for (int i = 0; i < Data_DayTro.size(); i++) {
+                    if (tableView_PhongTro.getSelectionModel().getSelectedItem() == null) {
+                        tableView_DayTro.getSelectionModel().selectFirst();
+                    } else if (Data_DayTro.get(i).getMaDayTro().equals(tableView_PhongTro.getSelectionModel().getSelectedItem().getMaDayTro())) {
+                        tableView_DayTro.getSelectionModel().select(i);
+                    }
+                }
+            } catch (Exception e) {
+                System.out.println("Loi loaddata_daytro");
+                e.printStackTrace();
+            }
+            tableview_KhachHang.getItems().clear();
         }
-        try {
-            DatabaseConnection databaseConnection = new DatabaseConnection();
-            Connection connection = databaseConnection.getConnection();
-            String sql1 = "delete from phongtro where maphong = ?";
-            PreparedStatement ps1 = connection.prepareStatement(sql1);
-            ps1.setString(1, tableView_PhongTro.getSelectionModel().getSelectedItem().getMaPhongTro());
-            tableView_PhongTro.getItems().remove(tableView_PhongTro.getSelectionModel().getSelectedItem());
-            ps1.executeUpdate();
-        } catch (Exception e) {
-            System.out.println("Lỗi xóa phòng tro 2 ");
-        }
-        tableview_KhachHang.getItems().clear();
     }
+
     public void Button_ThemKhachThueOnAction(ActionEvent event) {
         try {
             Stage stage = new Stage();
@@ -304,6 +348,7 @@ public class ManHinhChinh_Controller implements Initializable {
             ThemKhachThue_Controller themKhachThue_controller = fxmlLoader.getController();
             themKhachThue_controller.LayDataTuPhongTro(tableView_PhongTro.getSelectionModel().getSelectedItem());
             themKhachThue_controller.setItems(tableview_KhachHang.getItems());
+            themKhachThue_controller.setItems1(tableView_PhongTro.getItems());
             stage.setTitle("Thêm Khách Thuê");
             stage.setScene(scene);
             stage.show();
@@ -311,6 +356,7 @@ public class ManHinhChinh_Controller implements Initializable {
             System.out.println("Lỗi them khách thuê");
         }
     }
+
     public void Button_SuaKhachThueOnAction(ActionEvent event) {
         try {
             Stage stage = new Stage();
@@ -323,45 +369,113 @@ public class ManHinhChinh_Controller implements Initializable {
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
-            System.out.println("Lỗi Sửa Khách Thuê ");
-        }
-    }
-    public void Button_XoaKhachThueOnAction(ActionEvent event) {
-        try {
-            DatabaseConnection databaseConnection = new DatabaseConnection();
-            Connection connection = databaseConnection.getConnection();
-            String sql = "DELETE FROM khachhang WHERE CCCD = ?";
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, tableview_KhachHang.getSelectionModel().getSelectedItem().getCCCD());
-            tableview_KhachHang.getItems().remove(tableview_KhachHang.getSelectionModel().getSelectedItem());
-            preparedStatement.executeUpdate();
-        } catch (Exception e) {
-            System.out.println("Lỗi xóa khách thuê");
-        }
-    }
-
-//    Navbar
-    @FXML
-    private Button button_QuanLyPhong, button_ThanhToanHoaDon, button_DoanhThu;
-
-    public void button_QuanLyPhongOnAction (ActionEvent event) {
-        try {
-            Stage stage = (Stage) ManHinhChinh.getScene().getWindow();
-            stage.close();
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("ManHinhChinh1.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            stage.setTitle("Quản lý phòng trọ");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void button_ThanhToanHoaDonOnAction (ActionEvent event) {
+    public void Button_XoaKhachThueOnAction(ActionEvent event) {
+        if (Xoa_KhacThue()) {
+            try {
+                DatabaseConnection databaseConnection = new DatabaseConnection();
+                Connection connection = databaseConnection.getConnection();
+                String sql = "DELETE FROM khachhang WHERE CCCD = ?";
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setString(1, tableview_KhachHang.getSelectionModel().getSelectedItem().getCCCD());
+                tableview_KhachHang.getItems().remove(tableview_KhachHang.getSelectionModel().getSelectedItem());
+                preparedStatement.executeUpdate();
+            } catch (Exception e) {
+                System.out.println("Lỗi xóa khách thuê");
+            }
+            try {
+                String sql1 = "Update phongtro set songuoitro = songuoitro - 1 where maphong = ?";
+                DatabaseConnection databaseConnection = new DatabaseConnection();
+                Connection connection = databaseConnection.getConnection();
+                PreparedStatement ps = connection.prepareStatement(sql1);
+                ps.setString(1, tableView_PhongTro.getSelectionModel().getSelectedItem().getMaPhongTro());
+                ps.executeUpdate();
+            } catch (Exception e) {
+                System.out.println("Lỗi update songuoitro trong phongtro");
+            }
+            try {
+                DatabaseConnection databaseConnection = new DatabaseConnection();
+                Connection connection = databaseConnection.getConnection();
+                String sql = "SELECT * FROM phongtro where madaytro = ?";
+                PreparedStatement ps = connection.prepareStatement(sql);
+                ps.setString(1, tableView_DayTro.getSelectionModel().getSelectedItem().getMaDayTro());
+                ResultSet resultSet = ps.executeQuery();
+                Data_PhongTro.clear();
+                while (resultSet.next()) {
+                    Data_PhongTro.add(new PhongTro(resultSet.getString("maphong"), resultSet.getString("tenphong"), resultSet.getInt("songuoitro"), resultSet.getString("giaphong"), resultSet.getString("madaytro")));
+                }
+                for (int i = 0; i < Data_PhongTro.size(); i++) {
+                    if (tableview_KhachHang.getSelectionModel().getSelectedItem() == null) {
+                        tableView_PhongTro.getSelectionModel().selectFirst();
+                    } else if (Data_PhongTro.get(i).getMaPhongTro().equals(tableview_KhachHang.getSelectionModel().getSelectedItem().getMaPhongTro())) {
+                        tableView_PhongTro.getSelectionModel().select(i);
+                    }
+                }
+            } catch (Exception e) {
+                System.out.println("Loi loaddata_daytro");
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public boolean Xoa_KhacThue() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Xóa Khách Thuê");
+        alert.setHeaderText("Bạn có chắc chắn muốn xóa khách thuê này không?");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean Xoa_PhongTro() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Xóa Khách Thuê");
+        alert.setHeaderText("Bạn có chắc chắn muốn xóa phòng trọ này không?");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean Xoa_DayTro() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Xóa Khách Thuê");
+        alert.setHeaderText("Bạn có chắc chắn muốn xóa dãy trọ này không?");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @FXML
+    private Button button_QuanLyPhong, button_ThanhToanHoaDon, button_DoanhThu;
+
+    public void button_QuanLyPhongOnAction(ActionEvent event) {
+//        try {
+//            Stage stage = (Stage) ManHinhChinh.getScene().getWindow();
+//            stage.close();
+//            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("ManHinhChinh1.fxml"));
+//            Scene scene = new Scene(fxmlLoader.load());
+//            stage.setTitle("Quản lý phòng trọ");
+//            stage.setScene(scene);
+//            stage.show();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+    }
+    public void button_ThanhToanHoaDonOnAction(ActionEvent event) {
         try {
-            Stage stage = (Stage) ManHinhChinh.getScene().getWindow();
-            stage.close();
+            Stage stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("GiaoDienThanhToanHoaDon.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             stage.setTitle("Thanh toán hóa đơn");
@@ -371,8 +485,7 @@ public class ManHinhChinh_Controller implements Initializable {
             e.printStackTrace();
         }
     }
-
-    public void button_DoanhThuOnAction (ActionEvent event) {
+    public void button_DoanhThuOnAction(ActionEvent event) {
         try {
             Stage stage = (Stage) ManHinhChinh.getScene().getWindow();
             stage.close();
