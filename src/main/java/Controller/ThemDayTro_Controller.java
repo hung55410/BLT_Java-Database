@@ -127,13 +127,10 @@ public class ThemDayTro_Controller implements Initializable {
 
     @FXML
     private TextField TextField_MaDayTro;
-
     @FXML
     private TextField TextField_SLphong;
-
     @FXML
     private TextField TextField_TenDayTro;
-
     @FXML
     private Label error_ChuaNhapDayDuThongTin;
     private ObservableList<DayTro> Data_DayTro;

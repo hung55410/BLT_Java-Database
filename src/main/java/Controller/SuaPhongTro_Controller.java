@@ -59,7 +59,7 @@ public class SuaPhongTro_Controller {
 
     @FXML
     void Button_ConfirmOnAction_SuaPhongTro(ActionEvent event) {
-        if(ChuaNhapDayDuThongTin()){
+        if (ChuaNhapDayDuThongTin()) {
             String sql = "UPDATE phongtro SET tenphong = ? , songuoitro = ?, giaphong = ?, madaytro = ?  WHERE maphong = ?";
             try {
                 DatabaseConnection databaseConnection = new DatabaseConnection();
@@ -98,6 +98,7 @@ public class SuaPhongTro_Controller {
         }
         return true;
     }
+
     public boolean SuaThanhCong() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Sửa Thành Công");

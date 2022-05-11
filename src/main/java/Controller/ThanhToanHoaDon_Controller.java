@@ -60,4 +60,30 @@ public class ThanhToanHoaDon_Controller {
             e.printStackTrace();
         }
     }
+    public void Button_ThemDayTroOnAction(ActionEvent event) {
+    }
+
+    public void Button_SuaDayTroOnAction(ActionEvent event) {
+    }
+
+    public void Button_XoaDayTroOnAction(ActionEvent event) {
+    }
+
+    public void Button_ThemPhongTroOnAction(ActionEvent event) {
+    }
+
+    public void Button_SuaPhongTroOnAction(ActionEvent event) {
+    }
+
+    public void Button_XoaPhongTroOnAction(ActionEvent event) {
+    }
+
+    public void Button_ThemKhachThueOnAction(ActionEvent event) {
+    }
+
+    public void Button_SuaKhachThueOnAction(ActionEvent event) {
+    }
+
+    public void Button_XoaKhachThueOnAction(ActionEvent event) {
+    }
 }

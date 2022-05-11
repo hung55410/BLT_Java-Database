@@ -92,7 +92,7 @@ public class ThemPhongTro_Controller implements Initializable {
                 preparedStatement.setString(5, madaytro);
                 preparedStatement.executeUpdate();
                 preparedStatement.close();
-                Data_PhongTro.add(0, new PhongTro(TextField_MaPhongTro.getText(), TextField_TenPhongTro.getText(), Integer.parseInt(TextField_SLPhongNguoiTrongPhong.getText()), TextField_GiaPhongTro.getText(), madaytro));
+                Data_PhongTro.add(new PhongTro(TextField_MaPhongTro.getText(), TextField_TenPhongTro.getText(), Integer.parseInt(TextField_SLPhongNguoiTrongPhong.getText()), TextField_GiaPhongTro.getText(), madaytro));
                 Stage stage = (Stage) GiaoDienThemPhongTro.getScene().getWindow();
                 stage.close();
             } catch (SQLException e) {

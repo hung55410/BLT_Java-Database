@@ -280,7 +280,6 @@ public class ManHinhChinh_Controller implements Initializable {
             System.out.println("Lỗi sua phong tro");
         }
     }
-
     public void Button_XoaPhongTroOnAction(ActionEvent event) {
         if (Xoa_PhongTro()) {
             try {
@@ -356,7 +355,6 @@ public class ManHinhChinh_Controller implements Initializable {
             System.out.println("Lỗi them khách thuê");
         }
     }
-
     public void Button_SuaKhachThueOnAction(ActionEvent event) {
         try {
             Stage stage = new Stage();
@@ -372,7 +370,6 @@ public class ManHinhChinh_Controller implements Initializable {
             e.printStackTrace();
         }
     }
-
     public void Button_XoaKhachThueOnAction(ActionEvent event) {
         if (Xoa_KhacThue()) {
             try {
@@ -420,7 +417,6 @@ public class ManHinhChinh_Controller implements Initializable {
             }
         }
     }
-
     public boolean Xoa_KhacThue() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Xóa Khách Thuê");
@@ -432,10 +428,9 @@ public class ManHinhChinh_Controller implements Initializable {
             return false;
         }
     }
-
     public boolean Xoa_PhongTro() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Xóa Khách Thuê");
+        alert.setTitle("Xóa Phòng Trọ");
         alert.setHeaderText("Bạn có chắc chắn muốn xóa phòng trọ này không?");
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK) {
@@ -447,7 +442,7 @@ public class ManHinhChinh_Controller implements Initializable {
 
     public boolean Xoa_DayTro() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Xóa Khách Thuê");
+        alert.setTitle("Xóa Dãy Trọ");
         alert.setHeaderText("Bạn có chắc chắn muốn xóa dãy trọ này không?");
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK) {
@@ -487,8 +482,7 @@ public class ManHinhChinh_Controller implements Initializable {
     }
     public void button_DoanhThuOnAction(ActionEvent event) {
         try {
-            Stage stage = (Stage) ManHinhChinh.getScene().getWindow();
-            stage.close();
+            Stage stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("GiaoDienDoanhThu.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             stage.setTitle("Doanh thu");
