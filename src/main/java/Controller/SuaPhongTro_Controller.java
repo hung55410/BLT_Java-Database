@@ -68,11 +68,11 @@ public class SuaPhongTro_Controller {
                 preparedStatement.setString(1, TextField_SuaTenPhongTro.getText());
                 preparedStatement.setInt(2, Integer.parseInt(TextField_SuaSLNguoiTrongPhongTro.getText()));
                 preparedStatement.setString(3, TextField_SuaGiaPhongTro.getText());
-                preparedStatement.setString(4, Data_PhongTro.get(0).getMaDayTro());
+                preparedStatement.setString(4, Selected_PhongTro.getMaDayTro());
                 preparedStatement.setString(5, TextField_SuaMaPhongTro.getText());
                 preparedStatement.executeUpdate();
                 preparedStatement.close();
-                Data_PhongTro.set(Data_PhongTro.indexOf(Selected_PhongTro), new PhongTro(TextField_SuaMaPhongTro.getText(), TextField_SuaTenPhongTro.getText(), Integer.parseInt(TextField_SuaSLNguoiTrongPhongTro.getText()), TextField_SuaGiaPhongTro.getText()));
+                Data_PhongTro.set(Data_PhongTro.indexOf(Selected_PhongTro), new PhongTro(TextField_SuaMaPhongTro.getText(), TextField_SuaTenPhongTro.getText(), Integer.parseInt(TextField_SuaSLNguoiTrongPhongTro.getText()), TextField_SuaGiaPhongTro.getText(),Selected_PhongTro.getMaDayTro()));
                 Stage stage = (Stage) GiaoDienSuaPhongTro.getScene().getWindow();
                 stage.close();
                 SuaThanhCong();

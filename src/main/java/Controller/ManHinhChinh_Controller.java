@@ -398,7 +398,7 @@ public class ManHinhChinh_Controller implements Initializable {
                 Connection connection = databaseConnection.getConnection();
                 String sql = "SELECT * FROM phongtro where madaytro = ?";
                 PreparedStatement ps = connection.prepareStatement(sql);
-                ps.setString(1, tableView_DayTro.getSelectionModel().getSelectedItem().getMaDayTro());
+                ps.setString(1, tableView_PhongTro.getSelectionModel().getSelectedItem().getMaDayTro());
                 ResultSet resultSet = ps.executeQuery();
                 Data_PhongTro.clear();
                 while (resultSet.next()) {

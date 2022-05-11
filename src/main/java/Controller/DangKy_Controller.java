@@ -74,10 +74,7 @@ public class DangKy_Controller {
 
     @FXML
     public void Button_DangKyOnAction(ActionEvent event) {
-
-
         if (info() == true) {
-
             String sql = "INSERT INTO CHUTRO(madinhdanh,matkhau,hoten,GT,sdt,diachi,ngaysinh) VALUES(?,?,?,?,?,?,?)";
             String madinhdanh = txt_TenDangNhap.getText();
             String matkhau = txt_MatKhau.getText();

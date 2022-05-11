@@ -121,10 +121,10 @@ public class ThemKhachThue_Controller {
                 Connection connection = databaseConnection.getConnection();
                 PreparedStatement ps = connection.prepareStatement(sql2);
                 ps.setString(1, madaytro);
-                Data_PhongTro.clear();
                 ResultSet rs = ps.executeQuery();
+                Data_PhongTro.clear();
                 while (rs.next()) {
-                    Data_PhongTro.add(0, new PhongTro(rs.getString("maphong"), rs.getString("tenphong"), rs.getInt("songuoitro"), rs.getString("giaphong")));
+                    Data_PhongTro.add(new PhongTro(rs.getString("maphong"), rs.getString("tenphong"), rs.getInt("songuoitro"), rs.getString("giaphong"),rs.getString("madaytro")));
                 }
                 ThemThanhCong();
             } catch (Exception e) {
